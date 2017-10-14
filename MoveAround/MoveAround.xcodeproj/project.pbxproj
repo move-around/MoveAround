@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644ACFB01F91E424003C5B97 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */; };
+		644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F601F91D1BE00743DDA /* YelpPlace.swift */; };
+		64BB8F581F91C23B00743DDA /* PlaceDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64BB8F571F91C23B00743DDA /* PlaceDetailViewController.storyboard */; };
+		64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F5A1F91CF4A00743DDA /* PlaceDetailViewController.swift */; };
+		64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
+		64BB8F661F91D9B200743DDA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
 		6ACCD971F78D073D659815F8 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2128A30B0C9952D0EDF0DD68 /* Pods_MoveAround.framework */; };
 		E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */; };
 		E4A04C131F8DDB0900E03A19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C121F8DDB0900E03A19 /* ViewController.swift */; };
-		E4A04C161F8DDB0A00E03A19 /* Itenerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C141F8DDB0A00E03A19 /* Itenerary.storyboard */; };
+		E4A04C161F8DDB0A00E03A19 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C141F8DDB0A00E03A19 /* Itinerary.storyboard */; };
 		E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */; };
 		E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2128A30B0C9952D0EDF0DD68 /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BB8F571F91C23B00743DDA /* PlaceDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceDetailViewController.storyboard; sourceTree = "<group>"; };
+		64BB8F5A1F91CF4A00743DDA /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		64BB8F601F91D1BE00743DDA /* YelpPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YelpPlace.swift; path = MoveAround/Models/YelpPlace.swift; sourceTree = SOURCE_ROOT; };
+		64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoursquarePlace.swift; path = MoveAround/Models/FoursquarePlace.swift; sourceTree = SOURCE_ROOT; };
+		64BB8F651F91D9B200743DDA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = MoveAround/Models/Place.swift; sourceTree = SOURCE_ROOT; };
 		670453937A20469C6D5E6DD2 /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
 		737F9448960299D30DA2CB3D /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
 		E4A04C0D1F8DDB0900E03A19 /* MoveAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4A04C121F8DDB0900E03A19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E4A04C151F8DDB0A00E03A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Itenerary.storyboard; sourceTree = "<group>"; };
+		E4A04C151F8DDB0A00E03A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Itinerary.storyboard; sourceTree = "<group>"; };
 		E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4A04C1A1F8DDB0A00E03A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4A04C1C1F8DDB0A00E03A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +62,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		644ACFAF1F91E352003C5B97 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */,
+			);
+			name = API;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		64BB8F641F91D2E800743DDA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				64BB8F5A1F91CF4A00743DDA /* PlaceDetailViewController.swift */,
+				64BB8F571F91C23B00743DDA /* PlaceDetailViewController.storyboard */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		E4A04C041F8DDB0900E03A19 = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +101,13 @@
 		E4A04C0F1F8DDB0900E03A19 /* MoveAround */ = {
 			isa = PBXGroup;
 			children = (
+				644ACFAF1F91E352003C5B97 /* API */,
+				64BB8F641F91D2E800743DDA /* Details */,
 				E4A04C621F90346700E03A19 /* ItineraryCell */,
 				E4A04C241F8DDD2200E03A19 /* Models */,
-				E4A04C221F8DDC5900E03A19 /* API */,
 				E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */,
 				E4A04C121F8DDB0900E03A19 /* ViewController.swift */,
-				E4A04C141F8DDB0A00E03A19 /* Itenerary.storyboard */,
+				E4A04C141F8DDB0A00E03A19 /* Itinerary.storyboard */,
 				E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */,
 				E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */,
 				E4A04C1C1F8DDB0A00E03A19 /* Info.plist */,
@@ -85,17 +115,12 @@
 			path = MoveAround;
 			sourceTree = "<group>";
 		};
-		E4A04C221F8DDC5900E03A19 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		E4A04C241F8DDD2200E03A19 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				64BB8F601F91D1BE00743DDA /* YelpPlace.swift */,
+				64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */,
+				64BB8F651F91D9B200743DDA /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,8 +130,7 @@
 			children = (
 				E4A04C641F9034E600E03A19 /* ItineraryCell.xib */,
 			);
-			name = ItineraryCell;
-			path = "New Group";
+			path = ItineraryCell;
 			sourceTree = "<group>";
 		};
 		E4DAF6CA666249B4686CDFAE /* Frameworks */ = {
@@ -181,7 +205,8 @@
 			files = (
 				E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */,
 				E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */,
-				E4A04C161F8DDB0A00E03A19 /* Itenerary.storyboard in Resources */,
+				E4A04C161F8DDB0A00E03A19 /* Itinerary.storyboard in Resources */,
+				64BB8F581F91C23B00743DDA /* PlaceDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
+				64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */,
+				64BB8F661F91D9B200743DDA /* Place.swift in Sources */,
 				E4A04C131F8DDB0900E03A19 /* ViewController.swift in Sources */,
+				644ACFB01F91E424003C5B97 /* YelpClient.swift in Sources */,
+				644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */,
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,12 +286,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4A04C141F8DDB0A00E03A19 /* Itenerary.storyboard */ = {
+		E4A04C141F8DDB0A00E03A19 /* Itinerary.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E4A04C151F8DDB0A00E03A19 /* Base */,
 			);
-			name = Itenerary.storyboard;
+			name = Itinerary.storyboard;
 			sourceTree = "<group>";
 		};
 		E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */ = {
@@ -389,6 +419,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R737QPTNBS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = MoveAround/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movearound.MoveAround;

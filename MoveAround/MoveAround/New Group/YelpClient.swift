@@ -40,11 +40,11 @@ class YelpClient: BDBOAuth1RequestOperationManager {
     self.requestSerializer.saveAccessToken(token)
   }
   
-  func searchWithTerm(_ term: String, completion: @escaping ([Business]?, Error?) -> Void) -> AFHTTPRequestOperation {
+  func searchWithTerm(_ term: String, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
     return searchWithTerm(term, sort: nil, categories: nil, deals: nil, radius: nil, limit: nil, offset: nil, completion: completion)
   }
   
-  func searchWithTerm(_ term: String, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Business]?, Error?) -> Void) -> AFHTTPRequestOperation {
+  func searchWithTerm(_ term: String, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
     
     // Default the location to San Francisco
@@ -81,7 +81,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
                       if let response = response as? [String: Any]{
                         let dictionaries = response["businesses"] as? [NSDictionary]
                         if dictionaries != nil {
-                          completion(Business.businesses(array: dictionaries!), nil)
+                          completion(YelpPlace.places(array: dictionaries!), nil)
                         }
                       }
     },
