@@ -24,6 +24,10 @@
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
 		D21F9E127F177948E696A55E /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983423D62DDAAA9AC84C1858 /* Pods_MoveAround.framework */; };
 		E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */; };
+		6ACCD971F78D073D659815F8 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2128A30B0C9952D0EDF0DD68 /* Pods_MoveAround.framework */; };
+		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
+		E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */; };
+		E4A04C131F8DDB0900E03A19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C121F8DDB0900E03A19 /* LoginViewController.swift */; };
 		E4A04C161F8DDB0A00E03A19 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C141F8DDB0A00E03A19 /* Itinerary.storyboard */; };
 		E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */; };
 		E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */; };
@@ -49,6 +53,12 @@
 		983423D62DDAAA9AC84C1858 /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A04C0D1F8DDB0900E03A19 /* MoveAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		670453937A20469C6D5E6DD2 /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
+		737F9448960299D30DA2CB3D /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
+		92D466641F92C5F600ED2EAA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E4A04C0D1F8DDB0900E03A19 /* MoveAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4A04C121F8DDB0900E03A19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E4A04C151F8DDB0A00E03A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Itinerary.storyboard; sourceTree = "<group>"; };
 		E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4A04C1A1F8DDB0A00E03A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,7 +172,9 @@
 				E4A04C241F8DDD2200E03A19 /* Models */,
 				64D8F85F1F929DE40099F1F8 /* Transitions */,
 				E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */,
+				E4A04C121F8DDB0900E03A19 /* LoginViewController.swift */,
 				E4A04C141F8DDB0A00E03A19 /* Itinerary.storyboard */,
+				92D466641F92C5F600ED2EAA /* Login.storyboard */,
 				E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */,
 				E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */,
 				E4A04C1C1F8DDB0A00E03A19 /* Info.plist */,
@@ -254,6 +266,7 @@
 				64D8F85E1F929B780099F1F8 /* PlaceSwiping.storyboard in Resources */,
 				E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */,
 				E4A04C161F8DDB0A00E03A19 /* Itinerary.storyboard in Resources */,
+				92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */,
 				64BB8F581F91C23B00743DDA /* PlaceDetailViewController.storyboard in Resources */,
 				647D6F641F92ABE800DCE0D9 /* PlaceSwipeableView.xib in Resources */,
 			);
@@ -289,11 +302,25 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -327,6 +354,7 @@
 				64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */,
 				64BB8F661F91D9B200743DDA /* Place.swift in Sources */,
 				64920D2A1F92B41E00A96D25 /* PlaceViewController.swift in Sources */,
+				E4A04C131F8DDB0900E03A19 /* LoginViewController.swift in Sources */,
 				644ACFB01F91E424003C5B97 /* YelpClient.swift in Sources */,
 				644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */,
 				64920D2E1F92EA9300A96D25 /* Int.swift in Sources */,
@@ -473,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R737QPTNBS;
+				DEVELOPMENT_TEAM = 8KH6T9A5WW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -494,7 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R737QPTNBS;
+				DEVELOPMENT_TEAM = 8KH6T9A5WW;
 				INFOPLIST_FILE = MoveAround/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movearound.MoveAround;

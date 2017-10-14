@@ -6,6 +6,9 @@ target 'MoveAround' do
   use_frameworks!
   pod 'AFNetworking', '~> 2.5'
   pod 'BDBOAuth1Manager'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
   # Pods for MoveAround
 
