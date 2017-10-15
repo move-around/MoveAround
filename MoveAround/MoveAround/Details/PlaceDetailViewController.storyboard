@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FW4-Xl-yS7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,63 +12,63 @@
         <!--Place Detail View Controller-->
         <scene sceneID="86m-Jw-TAU">
             <objects>
-                <viewController id="4Ar-Z3-Uk0" customClass="PlaceDetailViewController" customModule="MoveAround" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaceDetailViewController" id="4Ar-Z3-Uk0" customClass="PlaceDetailViewController" customModule="MoveAround" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ynX-fe-Prl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-JD-ASn">
-                                <rect key="frame" x="8" y="320" width="85" height="15"/>
+                                <rect key="frame" x="8" y="276" width="85" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="11l-41-6qd"/>
                                     <constraint firstAttribute="width" constant="85" id="cqO-ON-iyP"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5v-RU-4aE">
-                                <rect key="frame" x="56" y="478" width="70" height="30"/>
+                                <rect key="frame" x="56" y="434" width="70" height="30"/>
                                 <state key="normal" title="Directions"/>
                                 <connections>
                                     <action selector="onDirectionsTapped:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="laT-UC-Sco"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-yS-a6W">
-                                <rect key="frame" x="8" y="72" width="359" height="200"/>
+                                <rect key="frame" x="8" y="28" width="359" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="pSN-0G-VzB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tartine Bakery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUL-Bb-8VS">
-                                <rect key="frame" x="8" y="280" width="359" height="32"/>
+                                <rect key="frame" x="8" y="236" width="359" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="600 Guerrero St, Mission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFm-wB-cd2">
-                                <rect key="frame" x="8" y="343" width="192" height="21"/>
+                                <rect key="frame" x="8" y="299" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8am-8pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jix-9G-eAH">
-                                <rect key="frame" x="8" y="372" width="77" height="21"/>
+                                <rect key="frame" x="8" y="328" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bakery, Breakfast Spot, Cafe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsa-cE-tJb">
-                                <rect key="frame" x="8" y="401" width="218" height="21"/>
+                                <rect key="frame" x="8" y="357" width="218" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visiting 4pm tomorrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuw-UJ-upI">
-                                <rect key="frame" x="100.5" y="437" width="174" height="21"/>
+                                <rect key="frame" x="100.5" y="393" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEE-HG-Ava">
-                                <rect key="frame" x="217" y="478" width="56" height="30"/>
+                                <rect key="frame" x="217" y="434" width="56" height="30"/>
                                 <state key="normal" title="Reserve"/>
                                 <connections>
                                     <action selector="onReserveTapped:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="MNU-YK-1VE"/>
@@ -117,24 +117,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aK4-ij-4Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="440.80000000000001" y="170.46476761619192"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Irh-Q2-Ybd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FW4-Xl-yS7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tDB-iy-MC2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4Ar-Z3-Uk0" kind="relationship" relationship="rootViewController" id="3jT-QS-47g"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NUB-02-Epp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-311" y="170"/>
         </scene>
     </scenes>
 </document>

@@ -81,5 +81,10 @@ class YelpPlace: Place {
     class func searchWithTerm(term: String, completion: @escaping ([Place]?, Error?) -> Void) {
         _ = YelpClient.sharedInstance.searchWithTerm(term, completion: completion)
     }
+    
+    class func searchWithTerm(term: String?, location: String?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> Void {
+        _ = YelpClient.sharedInstance.searchWithTerm(term, location: location, sort: sort, categories: categories, deals: deals, radius: radius, limit: limit, offset: offset, completion: completion)
+    }
+    
 
 }

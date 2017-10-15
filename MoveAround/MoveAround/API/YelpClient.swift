@@ -4,7 +4,7 @@
 //
 
 import UIKit
-
+	
 import AFNetworking
 import BDBOAuth1Manager
 
@@ -41,15 +41,22 @@ class YelpClient: BDBOAuth1RequestOperationManager {
   }
   
   func searchWithTerm(_ term: String, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
-    return searchWithTerm(term, sort: nil, categories: nil, deals: nil, radius: nil, limit: nil, offset: nil, completion: completion)
+    return searchWithTerm(term, location: nil, sort: nil, categories: nil, deals: nil, radius: nil, limit: nil, offset: nil, completion: completion)
   }
   
-  func searchWithTerm(_ term: String, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
+    func searchWithTerm(_ term: String?, location: String?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
     
-    // Default the location to San Francisco
-    var parameters: [String : AnyObject] = ["term": term as AnyObject, "ll": "37.785771,-122.406165" as AnyObject]
-    
+    var parameters: [String : AnyObject] = [String :AnyObject]()
+
+    if term != nil {
+        parameters["term"] = term as AnyObject
+    }
+        
+    if location != nil {
+        parameters["location"] = location as AnyObject
+    }
+
     if sort != nil {
       parameters["sort"] = sort!.rawValue as AnyObject?
     }
@@ -84,10 +91,11 @@ class YelpClient: BDBOAuth1RequestOperationManager {
                           completion(YelpPlace.places(array: dictionaries!), nil)
                         }
                       }
-    },
+                    },
                     failure: { (operation: AFHTTPRequestOperation?, error: Error) -> Void in
+                        print(error)
                       completion(nil, error)
-    })!
+                    })!
   }
 }
 
