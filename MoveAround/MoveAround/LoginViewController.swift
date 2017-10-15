@@ -10,7 +10,22 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, LoginButtonDelegate {
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .success(grantedPermissions: _, declinedPermissions:  _, token: _):
+            print("logged in")
+            break;
+        default:
+            print("Could not login.")
+            break
+        }
+    }
+
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("Logged Out")
+    }
+
 
   override func viewDidLoad() {
     super.viewDidLoad()
