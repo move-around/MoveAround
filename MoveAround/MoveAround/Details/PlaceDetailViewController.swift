@@ -46,6 +46,11 @@ class PlaceDetailViewController: UIViewController {
     @IBAction func onReserveTapped(_ sender: UIButton) {
     }
     
+    @IBAction func onImageTap(_ sender: UITapGestureRecognizer) {
+        // Temporary for now until we hook up the flows properly
+        dismiss(animated: true, completion: nil)
+
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

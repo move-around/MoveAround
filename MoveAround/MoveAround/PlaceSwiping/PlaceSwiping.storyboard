@@ -43,11 +43,19 @@
                                 </constraints>
                                 <state key="normal" title="Skip"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-J2-jbz">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-J2-jbz">
                                 <rect key="frame" x="225" y="491.5" width="50" height="50"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eZb-jJ-mgP" appends="YES" id="WRq-Ag-FF0"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="xfS-yg-qVO">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="xfS-yg-qVO">
                                 <rect key="frame" x="100" y="491.5" width="50" height="50"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7ck-7u-8zA" appends="YES" id="Ry0-8e-2l9"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,13 +75,23 @@
                     </view>
                     <connections>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
-                        <segue destination="tde-iE-43e" kind="presentation" identifier="showDetailPage" id="ema-FU-A3Q"/>
+                        <segue destination="tde-iE-43e" kind="presentation" identifier="showDetailPage" id="MYp-OD-KcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-wV-woI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xnI-IE-hmL">
+                <tapGestureRecognizer id="xnI-IE-hmL" userLabel="Picture Tap Gesture">
                     <connections>
                         <action selector="onPlaceTapped:" destination="eTa-Zm-uaY" id="qxU-vy-H6m"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7ck-7u-8zA" userLabel="Negative Tap Gesture">
+                    <connections>
+                        <action selector="onNoTapped:" destination="eTa-Zm-uaY" id="nfC-zH-YSx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eZb-jJ-mgP" userLabel="Positive Tap Gesture">
+                    <connections>
+                        <action selector="onYesTapped:" destination="eTa-Zm-uaY" id="iKl-Sw-VYa"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -85,7 +103,7 @@
                 <viewControllerPlaceholder storyboardName="PlaceDetailViewController" referencedIdentifier="PlaceDetailViewController" id="tde-iE-43e" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ku5-AX-kW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-45"/>
+            <point key="canvasLocation" x="834" y="-31"/>
         </scene>
     </scenes>
     <resources>

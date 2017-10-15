@@ -18,7 +18,8 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     }
 
     @IBAction func onPlaceTapped(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: segueToDetail, sender: self)
+        let place = placeImageView.loadedViews.first?.place
+        performSegue(withIdentifier: segueToDetail, sender: place)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,14 +27,22 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("tapped gesture detected")
-//        if segue.identifier == segueToDetail {
-//            let vc = segue.destination as! PlaceDetailViewController
-//            vc.transitioningDelegate = self
-//            vc.image = placeImageView.image
-//        }
+        if segue.identifier == segueToDetail {
+            let vc = segue.destination as! PlaceDetailViewController
+            vc.transitioningDelegate = self
+            vc.place = sender as! Place
+        }
     }
 
+    @IBAction func onYesTapped(_ sender: UITapGestureRecognizer) {
+        placeImageView.clickedRight()
+        
+    }
+    
+    @IBAction func onNoTapped(_ sender: UITapGestureRecognizer) {
+        placeImageView.clickedLeft()
+    }
+    
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeTransition()
     }

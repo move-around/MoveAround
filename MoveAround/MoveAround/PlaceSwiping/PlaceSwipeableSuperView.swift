@@ -32,10 +32,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     func loadPlaceViews() {
         for (index, place) in places.enumerated() {
             let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: 0, y: 0, width: 300, height: 340))
-            newView.name = place.name
-            if let url = place.imageURL {
-                newView.placeImageView.setImageWith(url)
-            }
+            newView.place = place
             newView.delegate = self
             
             loadedViews.append(newView)
@@ -47,12 +44,36 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
         }
     }
     
-    func swiped() {
+    fileprivate func swipeClear() {
         loadedViews.removeFirst()
-        
         if loadedViews.count == 0 {
             populatePlaces()
         }
+    }
+    
+    func swipedLeft() {
+        swipeClear()
+        // Store user preferences etc
+    }
+    
+    func swipedRight() {
+        swipeClear()
+        // Store user preferences etc
+    }
+    
+    func clickedLeft() {
+        let topview = loadedViews.first!
+        topview.removeFromSuperview()
+        swipeClear()
+        // Store user preferences etc
+    }
+    
+    func clickedRight() {
+        print("RIGHT CLICK")
+        let topview = loadedViews.first!
+        topview.removeFromSuperview()
+        swipeClear()
+        // Store user preferences etc
     }
     
     fileprivate func populatePlaces() {

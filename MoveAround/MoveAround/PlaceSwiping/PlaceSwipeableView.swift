@@ -9,7 +9,8 @@
 import UIKit
 
 protocol PlaceSwipeableViewDelegate {
-    func swiped()
+    func swipedRight()
+    func swipedLeft()
 }
 
 class PlaceSwipeableView: UIView {
@@ -23,16 +24,13 @@ class PlaceSwipeableView: UIView {
     
     var originalViewCenter: CGPoint!
     var delegate: PlaceSwipeableViewDelegate!
-    
-    
-    var image: UIImage? {
-        get { return placeImageView.image }
-        set { placeImageView.image = newValue }
-    }
-    
-    var name: String? {
-        get {return nameLabel.text}
-        set {nameLabel.text = newValue }
+    var place: Place! {
+        didSet{
+            if let url = place.imageURL {
+                placeImageView.setImageWith(url)
+            }
+            nameLabel.text = place.name
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -78,12 +76,12 @@ class PlaceSwipeableView: UIView {
             var newCenter: CGPoint = originalViewCenter
             if translation.x > panXLimit { // Move off to right
                 newCenter.x = offScreenX
-                delegate.swiped()
                 self.removeFromSuperview()
+                delegate.swipedRight()
             } else if translation.x < -panXLimit { // Move off to left
                 newCenter.x = -offScreenX
-                delegate.swiped()
                 self.removeFromSuperview()
+                delegate.swipedLeft()
             } else {
                 contentView.transform = CGAffineTransform.identity
             }
