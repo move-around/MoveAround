@@ -11,6 +11,7 @@ import UIKit
 class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet weak var placeImageView: PlaceSwipeableSuperView!
     fileprivate let segueToDetail = "showDetailPage"
+    fileprivate let segueToItinerary = "showItinerary"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,10 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
             let vc = segue.destination as! PlaceDetailViewController
             vc.transitioningDelegate = self
             vc.place = sender as! Place
+        } else if segue.identifier == segueToItinerary {
+            let vc = segue.destination as! ItineraryViewController
         }
+
     }
 
     @IBAction func onYesTapped(_ sender: UITapGestureRecognizer) {

@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="width" constant="50" id="4W6-Fg-cml"/>
                                     <constraint firstAttribute="height" constant="50" id="cbB-rv-kBH"/>
                                 </constraints>
-                                <state key="normal" title="Skip"/>
+                                <state key="normal" title="Done"/>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-J2-jbz">
                                 <rect key="frame" x="225" y="491.5" width="50" height="50"/>
