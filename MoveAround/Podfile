@@ -8,5 +8,5 @@ target 'MoveAround' do
   pod 'BDBOAuth1Manager'
 
   # Pods for MoveAround
-
+  pod 'Parse'
 end
