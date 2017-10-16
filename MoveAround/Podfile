@@ -6,7 +6,19 @@ target 'MoveAround' do
   use_frameworks!
   pod 'AFNetworking', '~> 2.5'
   pod 'BDBOAuth1Manager'
-
-  # Pods for MoveAround
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   pod 'Parse'
+end
+swift_32 = ['FacebookCore', 'FacebookShare']
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |configuration|
+            # these libs work now only with Swift3.2 in Xcode9
+            if swift_32.include? target.name
+                configuration.build_settings['SWIFT_VERSION'] = "3.2"
+            end
+        end
+    end
 end
