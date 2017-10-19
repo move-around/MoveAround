@@ -6,8 +6,9 @@
 //  Copyright © 2017 Mohit Taneja. All rights reserved.
 
 import UIKit
+import MapKit
 
-class PlaceDetailViewController: UIViewController {
+class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
 
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -16,7 +17,9 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var itineraryTime: UILabel!
-    
+    @IBOutlet weak var mapView: MKMapView!
+    var locationManager: CLLocationManager!
+
     var place: Place!
     
     override func viewDidLoad() {
@@ -33,6 +36,21 @@ class PlaceDetailViewController: UIViewController {
         hoursLabel.text = place.hours
         categoriesLabel.text = place.categories
         itineraryTime.text = place.itineraryTime
+        
+        let centerLocation = CLLocation(latitude: place.latitude!, longitude: place.longitude!)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let region = MKCoordinateRegionMake(centerLocation.coordinate, span)
+        mapView.setRegion(region, animated: false)
+
+        addAnnotationAtCoordinate(title: place.name!, coordinate: CLLocationCoordinate2D.init(latitude: place.latitude!, longitude: place.longitude!))
+
+    }
+    
+    func addAnnotationAtCoordinate(title: String, coordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = title
+        mapView.addAnnotation(annotation)
     }
     
     static func storyboardInstance() -> PlaceDetailViewController? {

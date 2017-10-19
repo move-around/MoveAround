@@ -24,6 +24,10 @@ class YelpPlace: Place {
         let location = dictionary["location"] as? NSDictionary
         var address = ""
         if location != nil {
+            if let coordinates = location!["coordinate"] as? [String:Double] {
+                self.longitude = coordinates["longitude"]
+                self.latitude = coordinates["latitude"]
+            }
             let addressArray = location!["address"] as? NSArray
             if addressArray != nil && addressArray!.count > 0 {
                 address = addressArray![0] as! String

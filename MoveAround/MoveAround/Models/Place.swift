@@ -17,6 +17,8 @@ class Place: NSObject {
     var ratingImageURL: URL?
     var reviewCount: NSNumber?
     var itineraryTime: String?  // Will probs change be a enum/struct
+    var latitude: Double?
+    var longitude: Double?
     
     override init() {
         super.init()

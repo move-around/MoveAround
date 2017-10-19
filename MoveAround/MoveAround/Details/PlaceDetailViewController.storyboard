@@ -78,22 +78,29 @@
                                     <action selector="onReserveTapped:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="MNU-YK-1VE"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-A8-d0d">
+                                <rect key="frame" x="0.0" y="516" width="375" height="151"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vv2-jc-dyE" firstAttribute="trailing" secondItem="tEE-HG-Ava" secondAttribute="trailing" constant="102" id="0mL-LK-x3Q"/>
+                            <constraint firstItem="Boa-A8-d0d" firstAttribute="top" secondItem="k5v-RU-4aE" secondAttribute="bottom" constant="8" id="2Pw-kn-KjR"/>
                             <constraint firstItem="HQd-JD-ASn" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="5a5-OH-3uD"/>
                             <constraint firstItem="k5v-RU-4aE" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="56" id="7fR-V0-LAX"/>
                             <constraint firstItem="HQd-JD-ASn" firstAttribute="top" secondItem="aUL-Bb-8VS" secondAttribute="bottom" constant="8" id="8fy-Ga-pb0"/>
                             <constraint firstItem="vv2-jc-dyE" firstAttribute="trailing" secondItem="aUL-Bb-8VS" secondAttribute="trailing" constant="8" id="E8v-sp-fu2"/>
                             <constraint firstItem="tEE-HG-Ava" firstAttribute="leading" secondItem="k5v-RU-4aE" secondAttribute="trailing" constant="91" id="Edj-fZ-dcd"/>
+                            <constraint firstItem="Boa-A8-d0d" firstAttribute="bottom" secondItem="vv2-jc-dyE" secondAttribute="bottom" id="GAV-S9-jpW"/>
                             <constraint firstItem="bsa-cE-tJb" firstAttribute="top" secondItem="jix-9G-eAH" secondAttribute="bottom" constant="8" id="GP2-a1-DvE"/>
                             <constraint firstItem="jix-9G-eAH" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="K2N-Qn-GjM"/>
                             <constraint firstItem="HFm-wB-cd2" firstAttribute="top" secondItem="HQd-JD-ASn" secondAttribute="bottom" constant="8" id="KFH-va-mjh"/>
                             <constraint firstItem="aUL-Bb-8VS" firstAttribute="top" secondItem="fgo-yS-a6W" secondAttribute="bottom" constant="8" id="Kv0-1n-8Vc"/>
+                            <constraint firstItem="Boa-A8-d0d" firstAttribute="trailing" secondItem="vv2-jc-dyE" secondAttribute="trailing" id="LXE-Ld-iWQ"/>
                             <constraint firstItem="vv2-jc-dyE" firstAttribute="trailing" secondItem="fgo-yS-a6W" secondAttribute="trailing" constant="8" id="NaP-9e-RTp"/>
                             <constraint firstItem="fgo-yS-a6W" firstAttribute="top" secondItem="vv2-jc-dyE" secondAttribute="top" constant="8" id="QsI-mf-enn"/>
                             <constraint firstItem="HFm-wB-cd2" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="XQv-LY-VKx"/>
+                            <constraint firstItem="Boa-A8-d0d" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" id="YTG-L6-9RZ"/>
                             <constraint firstItem="tEE-HG-Ava" firstAttribute="top" secondItem="Wuw-UJ-upI" secondAttribute="bottom" constant="20" id="ekm-iv-1Vz"/>
                             <constraint firstItem="aUL-Bb-8VS" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="jug-Fp-T4b"/>
                             <constraint firstItem="bsa-cE-tJb" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="l85-H8-nmL"/>
@@ -114,6 +121,7 @@
                         <outlet property="categoriesLabel" destination="bsa-cE-tJb" id="oME-fm-HzF"/>
                         <outlet property="hoursLabel" destination="jix-9G-eAH" id="HkS-du-Fh5"/>
                         <outlet property="itineraryTime" destination="Wuw-UJ-upI" id="l0b-rS-Nl9"/>
+                        <outlet property="mapView" destination="Boa-A8-d0d" id="06B-6s-BEC"/>
                         <outlet property="nameLabel" destination="aUL-Bb-8VS" id="qQw-o7-1sI"/>
                         <outlet property="placeImageView" destination="fgo-yS-a6W" id="03r-sP-8Lo"/>
                         <outlet property="ratingImageView" destination="HQd-JD-ASn" id="zlD-vT-fWl"/>
