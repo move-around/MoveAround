@@ -79,7 +79,7 @@
                     <connections>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
                         <segue destination="tde-iE-43e" kind="presentation" identifier="showDetailPage" id="MYp-OD-KcZ"/>
-                        <segue destination="Ux9-cy-FX8" kind="presentation" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
+                        <segue destination="Ux9-cy-FX8" kind="show" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-wV-woI" userLabel="First Responder" sceneMemberID="firstResponder"/>

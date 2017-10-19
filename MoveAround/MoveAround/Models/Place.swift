@@ -19,8 +19,27 @@ class Place: NSObject {
     var itineraryTime: String?  // Will probs change be a enum/struct
     var latitude: Double?
     var longitude: Double?
+    var isSelected: Bool?  = false {
+        didSet {
+            if oldValue != isSelected {
+                if isSelected! {
+                    Place.selectedPlaces.append(self)
+                }
+                else {
+                    if let index = Place.selectedPlaces.index(of: self) {
+                        Place.selectedPlaces.remove(at: index)
+                    }
+                }
+            }
+        }
+    }
     
     override init() {
         super.init()
     }
+    
+    // List of places user has selected to visit
+    static var selectedPlaces: [Place] = []
+
 }
+
