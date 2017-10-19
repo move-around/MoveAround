@@ -27,7 +27,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="civiccenter" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="civiccenter" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
                     <rect key="frame" x="15" y="8" width="270" height="250"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="K2D-GE-qeX"/>

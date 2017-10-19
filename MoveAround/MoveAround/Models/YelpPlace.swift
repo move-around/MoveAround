@@ -14,8 +14,9 @@ class YelpPlace: Place {
         super.init()
         name = dictionary["name"] as? String
         
-        let imageURLString = dictionary["image_url"] as? String
+        var imageURLString = dictionary["image_url"] as? String
         if imageURLString != nil {
+            imageURLString = imageURLString?.replacingOccurrences(of: "ms.jpg", with: "l.jpg")
             imageURL = URL(string: imageURLString!)!
         } else {
             imageURL = nil
@@ -82,8 +83,8 @@ class YelpPlace: Place {
         return places
     }
     
-    class func searchWithTerm(term: String, completion: @escaping ([Place]?, Error?) -> Void) {
-        _ = YelpClient.sharedInstance.searchWithTerm(term, completion: completion)
+  class func searchWithTerm(term: String, offset: Int, completion: @escaping ([Place]?, Error?) -> Void) {
+    _ = YelpClient.sharedInstance.searchWithTerm(term, offset: offset, completion: completion)
     }
     
     class func searchWithTerm(term: String?, location: String?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> Void {

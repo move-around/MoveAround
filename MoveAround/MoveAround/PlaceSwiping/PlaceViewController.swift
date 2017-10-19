@@ -11,7 +11,7 @@ import UIKit
 class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet weak var placeImageView: PlaceSwipeableSuperView!
     fileprivate let segueToDetail = "showDetailPage"
-    fileprivate let segueToItinerary = "showItinerary"
+    fileprivate let segueToItinerary = "showListOfPlaces"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
             vc.transitioningDelegate = self
             vc.place = sender as! Place
         } else if segue.identifier == segueToItinerary {
-            let vc = segue.destination as! ItineraryViewController
+            // Do something special here if required
         }
 
     }
@@ -47,7 +47,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         placeImageView.clickedLeft()
     }
     
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    @IBAction func onDonePressed(_ sender: Any) {
+        performSegue(withIdentifier: segueToItinerary, sender: nil)
+    }
+  
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return FadeTransition()
     }
     

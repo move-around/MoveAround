@@ -42,6 +42,9 @@
                                     <constraint firstAttribute="height" constant="50" id="cbB-rv-kBH"/>
                                 </constraints>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="onDonePressed:" destination="eTa-Zm-uaY" eventType="touchUpInside" id="Q4k-V7-IGg"/>
+                                </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-J2-jbz">
                                 <rect key="frame" x="225" y="491.5" width="50" height="50"/>
@@ -76,6 +79,7 @@
                     <connections>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
                         <segue destination="tde-iE-43e" kind="presentation" identifier="showDetailPage" id="MYp-OD-KcZ"/>
+                        <segue destination="Ux9-cy-FX8" kind="presentation" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-wV-woI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,6 +100,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="36" y="169.56521739130437"/>
+        </scene>
+        <!--Itinerary-->
+        <scene sceneID="djQ-9g-usi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Itinerary" id="Ux9-cy-FX8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3F-vy-TUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="396"/>
         </scene>
         <!--PlaceDetailViewController-->
         <scene sceneID="INo-Y1-SIO">
