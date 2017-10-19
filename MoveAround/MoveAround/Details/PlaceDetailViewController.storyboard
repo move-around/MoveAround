@@ -31,7 +31,7 @@
                                     <action selector="onDirectionsTapped:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="laT-UC-Sco"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-yS-a6W">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-yS-a6W">
                                 <rect key="frame" x="8" y="72" width="359" height="200"/>
                                 <gestureRecognizers/>
                                 <constraints>
