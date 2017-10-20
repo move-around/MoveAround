@@ -18,7 +18,9 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var itineraryTime: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var callButton: UIButton!
     var locationManager: CLLocationManager!
+
 
     var place: Place!
     
@@ -37,14 +39,39 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
         categoriesLabel.text = place.categories
         itineraryTime.text = place.itineraryTime
         
-        let centerLocation = CLLocation(latitude: place.latitude!, longitude: place.longitude!)
+        if (place.phoneNumber ?? "").isEmpty {
+            callButton.isHidden = true
+        }
+        
+        let centerLocation: CLLocation!
+        if let latitude = place.latitude, let longitude = place.longitude {
+            centerLocation = CLLocation(latitude: latitude, longitude: longitude)
+            addAnnotationAtCoordinate(title: place.name!, coordinate: CLLocationCoordinate2D.init(latitude: centerLocation.coordinate.latitude, longitude: centerLocation.coordinate.longitude))
+        } else {
+            // For now, center in SF if place has no coordinates (ex. 49 Mile Scenic Drive)
+            centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
+        }
+        
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegionMake(centerLocation.coordinate, span)
         mapView.setRegion(region, animated: false)
-
-        addAnnotationAtCoordinate(title: place.name!, coordinate: CLLocationCoordinate2D.init(latitude: place.latitude!, longitude: place.longitude!))
-
     }
+    
+    @IBAction func onCallTap(_ sender: UIButton) {
+        // Have to run on a device to test
+        if let number = place.phoneNumber {
+            let url: NSURL = URL(string: "TEL://\(number)")! as NSURL
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func onDirectionsTap(_ sender: UIButton) {
+        let coordinate = CLLocationCoordinate2DMake(place.latitude!, place.longitude!)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = place.name
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+    }
+
     
     func addAnnotationAtCoordinate(title: String, coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()

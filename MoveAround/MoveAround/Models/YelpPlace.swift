@@ -22,6 +22,9 @@ class YelpPlace: Place {
             imageURL = nil
         }
         
+        phoneNumber = dictionary["phone"] as? String
+        
+        
         let location = dictionary["location"] as? NSDictionary
         var address = ""
         if location != nil {

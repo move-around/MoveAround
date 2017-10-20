@@ -19,6 +19,8 @@ class Place: NSObject {
     var itineraryTime: String?  // Will probs change be a enum/struct
     var latitude: Double?
     var longitude: Double?
+    var phoneNumber: String?
+    
     var isSelected: Bool?  = false {
         didSet {
             if oldValue != isSelected {
