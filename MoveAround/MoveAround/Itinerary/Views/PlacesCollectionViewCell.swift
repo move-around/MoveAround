@@ -27,21 +27,30 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             
         }
     }
+    var isPreSelected: Bool = false {
+        didSet {
+            if !isPreSelected {
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectPlace))
+                placeSelectedImage.addGestureRecognizer(tapGesture)
+                placeSelectedImage.tintColor = UIColor.lightGray
+            }
+            else {
+                placeSelectedImage.isHidden = true
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectPlace))
-        placeSelectedImage.addGestureRecognizer(tapGesture)
-        placeSelectedImage.tintColor = UIColor.lightGray
     }
     
     @objc func selectPlace() {
         place?.isSelected = !((place?.isSelected!)!)
         if ((place?.isSelected)!) {
-            placeSelectedImage.tintColor = UIColor.lightGray
+            placeSelectedImage.tintColor = UIColor.blue
         }
         else {
-            placeSelectedImage.tintColor = UIColor.blue
+            placeSelectedImage.tintColor = UIColor.lightGray
         }
     }
 
