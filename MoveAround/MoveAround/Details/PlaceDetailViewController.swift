@@ -84,18 +84,6 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
         let storyboard = UIStoryboard(name: String(describing: type(of: self)), bundle: nil)
         return storyboard.instantiateInitialViewController() as? PlaceDetailViewController
     }
-
-    @IBAction func onDirectionsTapped(_ sender: UIButton) {
-    }    
-    
-    @IBAction func onReserveTapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func onImageTap(_ sender: UITapGestureRecognizer) {
-        // Temporary for now until we hook up the flows properly
-        dismiss(animated: true, completion: nil)
-
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
