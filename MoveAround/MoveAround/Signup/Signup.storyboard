@@ -32,14 +32,6 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-Yc-qWK">
-                                <rect key="frame" x="161" y="514" width="53" height="44"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="7QG-vh-LCJ" kind="show" id="SOT-jU-7uG"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-p0-gwM">
                                 <rect key="frame" x="147.5" y="292" width="80" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -59,19 +51,34 @@
                                     <!--1970-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-Yc-qWK">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cw1-ec-olj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Select Places">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7QG-vh-LCJ" kind="show" id="SOT-jU-7uG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Aeq-dI-lUs" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="12N-Bj-08H"/>
                             <constraint firstItem="at4-p0-gwM" firstAttribute="top" secondItem="qU9-Yd-WLC" secondAttribute="bottom" constant="80" id="1yW-eq-hme"/>
                             <constraint firstItem="Aeq-dI-lUs" firstAttribute="top" secondItem="at4-p0-gwM" secondAttribute="bottom" constant="50" id="7bJ-iP-Ecw"/>
+                            <constraint firstItem="KQo-bq-u9e" firstAttribute="trailing" secondItem="FCM-Yc-qWK" secondAttribute="trailing" id="DHo-I5-KgU"/>
                             <constraint firstItem="jE8-4Q-Ing" firstAttribute="top" secondItem="KQo-bq-u9e" secondAttribute="top" constant="80" id="IcI-mB-ndB"/>
                             <constraint firstItem="at4-p0-gwM" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="P4L-mn-80l"/>
                             <constraint firstItem="jE8-4Q-Ing" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="QGp-aK-lMw"/>
-                            <constraint firstItem="FCM-Yc-qWK" firstAttribute="top" secondItem="Aeq-dI-lUs" secondAttribute="bottom" constant="100" id="SEV-AE-4oR"/>
-                            <constraint firstItem="FCM-Yc-qWK" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="cK2-TX-pQO"/>
                             <constraint firstItem="qU9-Yd-WLC" firstAttribute="top" secondItem="jE8-4Q-Ing" secondAttribute="bottom" constant="50" id="dVc-ee-CWj"/>
+                            <constraint firstItem="FCM-Yc-qWK" firstAttribute="leading" secondItem="KQo-bq-u9e" secondAttribute="leading" id="e0s-aS-YhL"/>
                             <constraint firstItem="qU9-Yd-WLC" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="qOo-5b-5BE"/>
+                            <constraint firstItem="FCM-Yc-qWK" firstAttribute="bottom" secondItem="KQo-bq-u9e" secondAttribute="bottom" id="tcl-ec-Ab0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KQo-bq-u9e"/>
                     </view>
