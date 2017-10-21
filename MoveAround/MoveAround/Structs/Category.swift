@@ -7,4 +7,5 @@
 //
 struct Category {
     var name: String
+    var yelpCode: String
 }

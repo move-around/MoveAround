@@ -14,6 +14,9 @@ class CategoryItem {
     var name: String {
         return item.name
     }
+    var yelpCode: String {
+        return item.yelpCode
+    }
     
     init(item: Category) {
         self.item = item

@@ -73,13 +73,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEE-HG-Ava">
-                                <rect key="frame" x="226" y="478" width="56" height="30"/>
-                                <state key="normal" title="Reserve"/>
-                                <connections>
-                                    <action selector="onReserveTapped:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="MNU-YK-1VE"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-A8-d0d">
                                 <rect key="frame" x="0.0" y="516" width="375" height="151"/>
                             </mapView>
@@ -110,11 +103,9 @@
                             <constraint firstItem="HFm-wB-cd2" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="XQv-LY-VKx"/>
                             <constraint firstItem="Boa-A8-d0d" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" id="YTG-L6-9RZ"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="top" secondItem="Wuw-UJ-upI" secondAttribute="bottom" constant="20" id="Zuc-gv-6ah"/>
-                            <constraint firstItem="tEE-HG-Ava" firstAttribute="top" secondItem="Wuw-UJ-upI" secondAttribute="bottom" constant="20" id="ekm-iv-1Vz"/>
                             <constraint firstItem="aUL-Bb-8VS" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="jug-Fp-T4b"/>
                             <constraint firstItem="bsa-cE-tJb" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="8" id="l85-H8-nmL"/>
                             <constraint firstItem="Boa-A8-d0d" firstAttribute="top" secondItem="ggU-Wd-zYc" secondAttribute="bottom" constant="8" id="tjI-En-Xfd"/>
-                            <constraint firstItem="tEE-HG-Ava" firstAttribute="leading" secondItem="ggU-Wd-zYc" secondAttribute="trailing" constant="35" id="ttc-S6-Ub1"/>
                             <constraint firstItem="Wuw-UJ-upI" firstAttribute="centerX" secondItem="ynX-fe-Prl" secondAttribute="centerX" id="uHB-Pb-H1S"/>
                             <constraint firstItem="k5v-RU-4aE" firstAttribute="top" secondItem="Wuw-UJ-upI" secondAttribute="bottom" constant="20" id="vk6-vy-coO"/>
                             <constraint firstItem="Wuw-UJ-upI" firstAttribute="top" secondItem="bsa-cE-tJb" secondAttribute="bottom" constant="15" id="wXF-zh-vzQ"/>

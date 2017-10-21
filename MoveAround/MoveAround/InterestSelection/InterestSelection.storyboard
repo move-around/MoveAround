@@ -50,22 +50,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqw-BW-atN">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqw-BW-atN">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xlL-a3-b8D"/>
+                                </constraints>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onNextTapped:" destination="oEd-tQ-cCX" eventType="touchUpInside" id="NtT-36-4dH"/>
-                                    <segue destination="TS5-lh-FcG" kind="show" id="Kk9-Nv-llo"/>
+                                    <segue destination="TS5-lh-FcG" kind="show" identifier="showPlaceSwiping" id="aCZ-BR-NSE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4nE-Dl-Bth" firstAttribute="centerX" secondItem="MyB-Qv-gkf" secondAttribute="centerX" id="RRO-k7-LkX"/>
+                            <constraint firstItem="Fqw-BW-atN" firstAttribute="leading" secondItem="W2U-xJ-NO7" secondAttribute="leading" id="SM5-k2-0IR"/>
+                            <constraint firstItem="Fqw-BW-atN" firstAttribute="bottom" secondItem="W2U-xJ-NO7" secondAttribute="bottom" id="WVs-ah-geq"/>
+                            <constraint firstItem="Fqw-BW-atN" firstAttribute="trailing" secondItem="W2U-xJ-NO7" secondAttribute="trailing" id="YBi-SX-JMa"/>
                             <constraint firstItem="4nE-Dl-Bth" firstAttribute="top" secondItem="W2U-xJ-NO7" secondAttribute="top" constant="36" id="oQs-l9-B9h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W2U-xJ-NO7"/>

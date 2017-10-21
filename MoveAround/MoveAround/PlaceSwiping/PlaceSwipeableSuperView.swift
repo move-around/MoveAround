@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
@@ -69,27 +70,43 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     }
     
     func clickedRight() {
-        print("RIGHT CLICK")
         let topview = loadedViews.first!
         topview.removeFromSuperview()
         swipeClear()
         // Store user preferences etc
     }
     
-    fileprivate func populatePlaces() {
+    func populatePlaces() {
         // For now, let's just do a Yelp search.
         let location = "San Francisco" // Hard-code this now for testing
-        let term = "Landmarks"
         let sort = YelpSortMode.bestMatched
+
+        let categoryItems = TempCache.sharedInstance.categoryItems!
+        let categories = categoryItems.map{$0.yelpCode}
+        
+        // Display HUD right before the request is made
+        MBProgressHUD.showAdded(to: self, animated: true)
         
         // Perform request to Yelp API to get the list of places
-        YelpPlace.searchWithTerm(term: term, location: location, sort: sort, categories: nil, deals: false, radius: nil, limit:  limit, offset: offset) { (places: [Place]?, error: Error?) in
+        YelpPlace.searchWithTerm(term: nil, location: location, sort: sort, categories: categories, deals: false, radius: nil, limit:  limit, offset: offset) { (places: [Place]?, error: Error?) in
             if let places = places {
                 self.places = places
                 self.loadPlaceViews()
                 self.offset += self.limit
             }
+            MBProgressHUD.hide(for: self, animated: true)
+
         }
+        
+//        FoursquarePlace.search(query: "thai", near: "San Francisco,CA") { (places: [Place]?, error: Error?) in
+//            if let places = places {
+//                self.places = places
+//                self.loadPlaceViews()
+//                self.offset += self.limit
+//            }
+//        }
+        
+        
     }
     
     

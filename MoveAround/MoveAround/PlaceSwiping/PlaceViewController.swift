@@ -68,5 +68,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+// Not ideal, but waiting for user login/persistance stuff to be finished
+class TempCache{
+    static let sharedInstance = TempCache()
+    
+    var categoryItems: [CategoryItem]?
 }

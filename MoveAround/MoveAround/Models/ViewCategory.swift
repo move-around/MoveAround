@@ -15,15 +15,17 @@ class ViewCategory: NSObject {
     }
     
     let categoryArray =
-        [Category(name: "Bars"),
-         Category(name: "Restaurants"),
-         Category(name: "Art Galleries"),
-         Category(name: "Museums"),
-         Category(name: "Landmarks"),
-         Category(name: "Shopping"),
-         Category(name: "Sports"),
-         Category(name: "Outdoors")
+        [Category(name: "Art Galleries", yelpCode: "galleries"),
+         Category(name: "Bars", yelpCode: "bars"),
+         Category(name: "Coffee & Tea Shops", yelpCode: "coffee"),
+         Category(name: "Gyms", yelpCode: "gyms"),
+         Category(name: "Landmarks", yelpCode: "landmarks"),
+         Category(name: "Music Venues", yelpCode: "musicvenues"),
+         Category(name: "Museums", yelpCode: "museums"),
+         Category(name: "Restaurants", yelpCode: "restaurants"),
+         Category(name: "Shopping", yelpCode: "shoppingcenters") // Restrict to malls for now
     ]
+
     
     override init() {
         items = categoryArray.map{ CategoryItem(item: $0)}

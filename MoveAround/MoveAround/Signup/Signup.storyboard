@@ -88,13 +88,5 @@
             </objects>
             <point key="canvasLocation" x="676" y="-60"/>
         </scene>
-        <!--PlaceViewController-->
-        <scene sceneID="SQj-WW-QrO">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PlaceSwiping" referencedIdentifier="PlaceViewController" id="t0X-nG-cL9" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bzA-Iw-Apz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1474" y="-189"/>
-        </scene>
     </scenes>
 </document>

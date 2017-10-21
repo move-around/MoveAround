@@ -18,6 +18,7 @@ class PlaceSwipeableView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     let panXLimit:CGFloat = 50
     let offScreenX: CGFloat = 800
     let rotationAngle:CGFloat = 10
@@ -30,6 +31,7 @@ class PlaceSwipeableView: UIView {
                 placeImageView.setImageWith(url)
             }
             nameLabel.text = place.name
+            addressLabel.text = place.address
         }
     }
     
