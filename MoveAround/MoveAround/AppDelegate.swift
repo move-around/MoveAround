@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseFacebookUtilsV4
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://movearound.herokuapp.com/parse"
         })
     )
+    PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+
     
     // Override point for customization after application launch.
     return true

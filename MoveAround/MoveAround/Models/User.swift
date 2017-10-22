@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class User: NSObject {
     var id: String!

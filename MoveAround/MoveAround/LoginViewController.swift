@@ -9,6 +9,8 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import Parse
+import ParseFacebookUtilsV4
 
 class LoginViewController: UIViewController, LoginButtonDelegate {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
@@ -50,6 +52,14 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
 
     func presentSignupVC() {
         print("will present")
+
+        if (AccessToken.current != nil) {
+            PFFacebookUtils.logInInBackground(with: FBSDKAccessToken.current())
+            print("Logged with parse.")
+            let pfUser = PFUser.current()
+            print(pfUser)
+        }
+
         let signupStoryBoard = UIStoryboard(name: "Signup", bundle: nil)
         let signupVC = signupStoryBoard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
         self.navigationController?.present(signupVC, animated: true, completion: nil)
@@ -59,7 +69,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let current = User.currentUser {
+        if (User.currentUser != nil) {
             self.presentSignupVC()
         }
 
