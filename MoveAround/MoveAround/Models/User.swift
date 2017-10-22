@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class User: NSObject {
     var id: String!
     var firstName: String!
     var lastName: String?
+    var email: String?
     var destinationCity: String!
     var startDate: Date!
     var endDate: Date?
@@ -31,6 +33,9 @@ class User: NSObject {
         }
         if let dictLastName = dictionary["last_name"] as? String {
             lastName = dictLastName
+        }
+        if let dictEmail = dictionary["email"] as? String {
+            email = dictEmail
         }
     }
 

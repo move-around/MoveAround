@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
 
     func getUserDetails() {
-        let params = ["fields" : "id, first_name, last_name"]
+        let params = ["fields" : "id, email, first_name, last_name"]
         let graphRequest = GraphRequest(graphPath: "me", parameters: params)
         graphRequest.start {
             (urlResponse, requestResult) in
