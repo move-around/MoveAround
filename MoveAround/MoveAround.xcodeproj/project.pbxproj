@@ -27,12 +27,14 @@
 		64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F5A1F91CF4A00743DDA /* PlaceDetailViewController.swift */; };
 		64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
 		64BB8F661F91D9B200743DDA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
+		64CA81071F9C577700909603 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA81061F9C577700909603 /* Itinerary.swift */; };
 		64CA913F1F9475B60029C267 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CA913E1F9475B60029C267 /* Signup.storyboard */; };
 		64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA91401F9475DB0029C267 /* SignupViewController.swift */; };
 		64CA91431F9482A10029C267 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA91421F9482A10029C267 /* PreferencesViewController.swift */; };
 		64CA91451F94832C0029C267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA91441F94832C0029C267 /* User.swift */; };
 		64D8F85E1F929B780099F1F8 /* PlaceSwiping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64D8F85D1F929B780099F1F8 /* PlaceSwiping.storyboard */; };
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
+		784411C78D77B32379540EA6 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */; };
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
@@ -44,12 +46,10 @@
 		E4A04C131F8DDB0900E03A19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C121F8DDB0900E03A19 /* LoginViewController.swift */; };
 		E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */; };
 		E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */; };
-		EE71E4414AB94312F51AA5AE /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D858B7A271440EB706C53E9 /* Pods_MoveAround.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4072E3EFB03FFC8C0D4947F0 /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
-		5D858B7A271440EB706C53E9 /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0705ECB261E0D01932CF31E7 /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
 		647D6F631F92ABE800DCE0D9 /* PlaceSwipeableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceSwipeableView.xib; sourceTree = "<group>"; };
 		64920D271F92B26900A96D25 /* PlaceSwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableView.swift; sourceTree = "<group>"; };
 		64920D291F92B41E00A96D25 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
@@ -69,14 +69,16 @@
 		64BB8F601F91D1BE00743DDA /* YelpPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YelpPlace.swift; path = MoveAround/Models/YelpPlace.swift; sourceTree = SOURCE_ROOT; };
 		64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoursquarePlace.swift; path = MoveAround/Models/FoursquarePlace.swift; sourceTree = SOURCE_ROOT; };
 		64BB8F651F91D9B200743DDA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = MoveAround/Models/Place.swift; sourceTree = SOURCE_ROOT; };
+		64CA81061F9C577700909603 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
 		64CA913E1F9475B60029C267 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		64CA91401F9475DB0029C267 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		64CA91421F9482A10029C267 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		64CA91441F94832C0029C267 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		64D8F85D1F929B780099F1F8 /* PlaceSwiping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceSwiping.storyboard; sourceTree = "<group>"; };
 		64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableSuperView.swift; sourceTree = "<group>"; };
-		84B3F53575423CA268537B0D /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
 		92D466641F92C5F600ED2EAA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
+		DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E494181D1F98879700B5E8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Itinerary.storyboard; sourceTree = "<group>"; };
@@ -97,21 +99,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE71E4414AB94312F51AA5AE /* Pods_MoveAround.framework in Frameworks */,
+				784411C78D77B32379540EA6 /* Pods_MoveAround.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B7E7016D17802B79B100204 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5D858B7A271440EB706C53E9 /* Pods_MoveAround.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		644ACFAF1F91E352003C5B97 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +193,15 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
+		984D4700F8D09C44F5B23EE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0705ECB261E0D01932CF31E7 /* Pods-MoveAround.debug.xcconfig */,
+				9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E49418251F99C50F00B5E8F1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,8 +225,8 @@
 			children = (
 				E4A04C0F1F8DDB0900E03A19 /* MoveAround */,
 				E4A04C0E1F8DDB0900E03A19 /* Products */,
-				E5973755A08BA0139A6651A4 /* Pods */,
-				5B7E7016D17802B79B100204 /* Frameworks */,
+				984D4700F8D09C44F5B23EE3 /* Pods */,
+				F4D67A7342BE48E42D90CC2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,17 +270,18 @@
 				64CA91441F94832C0029C267 /* User.swift */,
 				64AD1A731F99DFD200713A3B /* CategoryItem.swift */,
 				64AD1A7B1F99EC9300713A3B /* ViewCategory.swift */,
+				64CA81061F9C577700909603 /* Itinerary.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
+			name = Models;
+			path = /Users/nngan/Documents/PROJECTS/CodePath/MoveAround/MoveAround/MoveAround/Models;
+			sourceTree = "<absolute>";
 		};
-		E5973755A08BA0139A6651A4 /* Pods */ = {
+		F4D67A7342BE48E42D90CC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84B3F53575423CA268537B0D /* Pods-MoveAround.debug.xcconfig */,
-				4072E3EFB03FFC8C0D4947F0 /* Pods-MoveAround.release.xcconfig */,
+				DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4A04C1F1F8DDB0A00E03A19 /* Build configuration list for PBXNativeTarget "MoveAround" */;
 			buildPhases = (
-				60C7B100DB09FF562B30C64C /* [CP] Check Pods Manifest.lock */,
+				F1A715FA9150CBBA98B0664D /* [CP] Check Pods Manifest.lock */,
 				E4A04C091F8DDB0900E03A19 /* Sources */,
 				E4A04C0A1F8DDB0900E03A19 /* Frameworks */,
 				E4A04C0B1F8DDB0900E03A19 /* Resources */,
-				57D86771B7DD3BB73FDD8424 /* [CP] Embed Pods Frameworks */,
-				53F6A0557325FEE854D326B6 /* [CP] Copy Pods Resources */,
+				6218E0C7780122C71650FC47 /* [CP] Embed Pods Frameworks */,
+				8A8AA194A136BF2AA48F8585 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,22 +361,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53F6A0557325FEE854D326B6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		57D86771B7DD3BB73FDD8424 /* [CP] Embed Pods Frameworks */ = {
+		6218E0C7780122C71650FC47 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,7 +401,25 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		60C7B100DB09FF562B30C64C /* [CP] Check Pods Manifest.lock */ = {
+		8A8AA194A136BF2AA48F8585 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1A715FA9150CBBA98B0664D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,6 +467,7 @@
 				64AD1A741F99DFD200713A3B /* CategoryItem.swift in Sources */,
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
 				64CA91431F9482A10029C267 /* PreferencesViewController.swift in Sources */,
+				64CA81071F9C577700909603 /* Itinerary.swift in Sources */,
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
 				64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */,
@@ -599,11 +607,11 @@
 		};
 		E4A04C201F8DDB0A00E03A19 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84B3F53575423CA268537B0D /* Pods-MoveAround.debug.xcconfig */;
+			baseConfigurationReference = 0705ECB261E0D01932CF31E7 /* Pods-MoveAround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				DEVELOPMENT_TEAM = ZBWHW3V2R2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -620,11 +628,11 @@
 		};
 		E4A04C211F8DDB0A00E03A19 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4072E3EFB03FFC8C0D4947F0 /* Pods-MoveAround.release.xcconfig */;
+			baseConfigurationReference = 9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				DEVELOPMENT_TEAM = ZBWHW3V2R2;
 				INFOPLIST_FILE = MoveAround/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movearound.MoveAround;

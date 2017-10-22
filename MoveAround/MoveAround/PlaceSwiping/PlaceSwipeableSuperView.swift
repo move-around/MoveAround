@@ -78,11 +78,10 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func populatePlaces() {
         // For now, let's just do a Yelp search.
-        let location = "San Francisco" // Hard-code this now for testing
         let sort = YelpSortMode.bestMatched
 
-        let categoryItems = TempCache.sharedInstance.categoryItems!
-        let categories = categoryItems.map{$0.yelpCode}
+        let categories = TempCache.sharedInstance.itinerary?.interests.map{$0.yelpCode}
+        let location = TempCache.sharedInstance.itinerary?.destination
         
         // Display HUD right before the request is made
         MBProgressHUD.showAdded(to: self, animated: true)

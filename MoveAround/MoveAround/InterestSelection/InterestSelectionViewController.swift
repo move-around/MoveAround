@@ -12,8 +12,9 @@ class InterestSelectionViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
-    var viewCategory = ViewCategory()
     let segueToSwipping = "showPlaceSwiping"
+    var viewCategory = ViewCategory()
+    var itinerary: Itinerary!
 
     
     override func viewDidLoad() {
@@ -52,7 +53,9 @@ class InterestSelectionViewController: UIViewController, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueToSwipping {
             print(viewCategory.selectedItems.map{$0.name})
-            TempCache.sharedInstance.categoryItems = viewCategory.selectedItems
+            itinerary.interests = viewCategory.selectedItems
+            TempCache.sharedInstance.itinerary = itinerary
+            
         }
     }
 

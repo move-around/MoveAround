@@ -70,9 +70,13 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     */
 }
 
-// Not ideal, but waiting for user login/persistance stuff to be finished
+// Not ideal, but waiting for user login/persistance stuff to be finished.  Maybe use NotificationCenter
 class TempCache{
     static let sharedInstance = TempCache()
     
-    var categoryItems: [CategoryItem]?
+    var itinerary: Itinerary?
+
+    init() {
+    }
+    
 }

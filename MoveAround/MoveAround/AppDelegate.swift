@@ -8,7 +8,8 @@
 
 import UIKit
 import Parse
-import ParseFacebookUtilsV4
+import GooglePlaces
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://movearound.herokuapp.com/parse"
         })
     )
-    PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
-
+    GMSPlacesClient.provideAPIKey("AIzaSyCvt5DdJ64JGgx0W44CFynbK0EHcUUHq6c")
     
+
     // Override point for customization after application launch.
     return true
   }

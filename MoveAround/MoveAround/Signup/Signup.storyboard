@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,16 +12,19 @@
         <!--Signup View Controller-->
         <scene sceneID="01y-Tf-brL">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kuc-9x-8P0" customClass="SignupViewController" customModule="MoveAround" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kuc-9x-8P0" customClass="SignupViewController" customModule="MoveAround" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aRc-3G-slm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where you heading to?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE8-4Q-Ing">
+                                <rect key="frame" x="58.5" y="100" width="258" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qU9-Yd-WLC">
                                 <rect key="frame" x="62.5" y="182" width="250" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" searchField="YES"/>
-                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="1Sd-cQ-co5"/>
                                 </constraints>
@@ -29,18 +32,16 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-p0-gwM">
-                                <rect key="frame" x="147.5" y="292" width="80" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-p0-gwM">
+                                <rect key="frame" x="138" y="385" width="105" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aeq-dI-lUs">
-                                <rect key="frame" x="62.5" y="374" width="250" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="USR-uA-kmM"/>
-                                    <constraint firstAttribute="width" constant="250" id="az1-52-Nfn"/>
-                                </constraints>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aeq-dI-lUs">
+                                <rect key="frame" x="62.5" y="442" width="250" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="529823347.93463397">
                                     <!--2017-10-16 05:09:07 +0000-->
                                 </date>
@@ -55,36 +56,36 @@
                                     <constraint firstAttribute="height" constant="50" id="cw1-ec-olj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Select Places">
+                                <state key="normal" title="Select Interests">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="7QG-vh-LCJ" kind="show" id="SOT-jU-7uG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where are you heading to?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE8-4Q-Ing">
-                                <rect key="frame" x="38" y="102" width="298" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ap-oW-FaG">
+                                <rect key="frame" x="62" y="213" width="283" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Aeq-dI-lUs" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="12N-Bj-08H"/>
-                            <constraint firstItem="at4-p0-gwM" firstAttribute="top" secondItem="qU9-Yd-WLC" secondAttribute="bottom" constant="80" id="1yW-eq-hme"/>
-                            <constraint firstItem="Aeq-dI-lUs" firstAttribute="top" secondItem="at4-p0-gwM" secondAttribute="bottom" constant="50" id="7bJ-iP-Ecw"/>
                             <constraint firstItem="KQo-bq-u9e" firstAttribute="trailing" secondItem="FCM-Yc-qWK" secondAttribute="trailing" id="DHo-I5-KgU"/>
-                            <constraint firstItem="jE8-4Q-Ing" firstAttribute="top" secondItem="KQo-bq-u9e" secondAttribute="top" constant="82" id="IcI-mB-ndB"/>
-                            <constraint firstItem="at4-p0-gwM" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="P4L-mn-80l"/>
+                            <constraint firstItem="jE8-4Q-Ing" firstAttribute="top" secondItem="KQo-bq-u9e" secondAttribute="top" constant="80" id="IcI-mB-ndB"/>
                             <constraint firstItem="jE8-4Q-Ing" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="QGp-aK-lMw"/>
-                            <constraint firstItem="qU9-Yd-WLC" firstAttribute="top" secondItem="jE8-4Q-Ing" secondAttribute="bottom" constant="48" id="dVc-ee-CWj"/>
+                            <constraint firstItem="qU9-Yd-WLC" firstAttribute="top" secondItem="jE8-4Q-Ing" secondAttribute="bottom" constant="50" id="dVc-ee-CWj"/>
                             <constraint firstItem="FCM-Yc-qWK" firstAttribute="leading" secondItem="KQo-bq-u9e" secondAttribute="leading" id="e0s-aS-YhL"/>
                             <constraint firstItem="qU9-Yd-WLC" firstAttribute="centerX" secondItem="aRc-3G-slm" secondAttribute="centerX" id="qOo-5b-5BE"/>
                             <constraint firstItem="FCM-Yc-qWK" firstAttribute="bottom" secondItem="KQo-bq-u9e" secondAttribute="bottom" id="tcl-ec-Ab0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KQo-bq-u9e"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Aeq-dI-lUs" id="Sio-b5-uP9"/>
+                        <outlet property="tableView" destination="2Ap-oW-FaG" id="1I9-N2-oX7"/>
+                        <outlet property="textField" destination="qU9-Yd-WLC" id="bcG-oh-7mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwB-fJ-VXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
