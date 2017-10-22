@@ -9,8 +9,8 @@
 import UIKit
 
 protocol PlaceSwipeableViewDelegate {
-    func swipedRight()
-    func swipedLeft()
+    func swipedRight(place:Place)
+    func swipedLeft(place:Place)
 }
 
 class PlaceSwipeableView: UIView {
@@ -79,11 +79,11 @@ class PlaceSwipeableView: UIView {
             if translation.x > panXLimit { // Move off to right
                 newCenter.x = offScreenX
                 self.removeFromSuperview()
-                delegate.swipedRight()
+                delegate.swipedRight(place: place)
             } else if translation.x < -panXLimit { // Move off to left
                 newCenter.x = -offScreenX
                 self.removeFromSuperview()
-                delegate.swipedLeft()
+                delegate.swipedLeft(place: place)
             } else {
                 contentView.transform = CGAffineTransform.identity
             }

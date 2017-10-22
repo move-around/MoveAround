@@ -52,14 +52,16 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
         }
     }
     
-    func swipedLeft() {
+    func swipedLeft(place: Place) {
         swipeClear()
         // Store user preferences etc
     }
     
-    func swipedRight() {
+    func swipedRight(place: Place) {
         swipeClear()
         // Store user preferences etc
+        place.isSelected = true
+        Itinerary.currentItinerary.placesOfInterest.append(place)
     }
     
     func clickedLeft() {

@@ -25,6 +25,13 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             // TODO (mohit) Make this better, also set price range somehow
             placeType.text = place?.categories?.split(separator: ",")[0].lowercased()
             
+            if ((place?.isSelected)!) {
+                placeSelectedImage.tintColor = UIColor.blue
+            }
+            else {
+                placeSelectedImage.tintColor = UIColor.lightGray
+            }
+            
         }
     }
     var isPreSelected: Bool = false {
@@ -47,9 +54,13 @@ class PlacesCollectionViewCell: UICollectionViewCell {
     @objc func selectPlace() {
         place?.isSelected = !((place?.isSelected!)!)
         if ((place?.isSelected)!) {
+            Itinerary.currentItinerary.placesOfInterest.append(place!)
             placeSelectedImage.tintColor = UIColor.blue
         }
         else {
+            if let index = Itinerary.currentItinerary.placesOfInterest.index(of: place!) {
+                Itinerary.currentItinerary.placesOfInterest.remove(at: index)
+            }
             placeSelectedImage.tintColor = UIColor.lightGray
         }
     }

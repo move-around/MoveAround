@@ -58,7 +58,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
 
         }
         else {
-            listOfPlaces = Place.selectedPlaces
+            listOfPlaces = Itinerary.currentItinerary.placesOfInterest
             collectionView.reloadData()
         }
         
@@ -226,7 +226,19 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
                     let i = navigationController?.viewControllers.index(of: self)
                     let previousViewController = navigationController?.viewControllers[i!-1] as! ItineraryViewController
                     let cell = previousViewController.tableView.cellForRow(at: IndexPath(row: cellRowForItineraryView!, section: 0)) as! ItineraryTableViewCell
-                    cell.place = listOfPlaces?[tapIndexPath.section*NUM_PLACES_PER_ROW + tapIndexPath.row]
+                    let newPlaceForCell = listOfPlaces?[tapIndexPath.section*NUM_PLACES_PER_ROW + tapIndexPath.row]
+                    // Remove the place from placesOfInterest and add it to plannedPlaces list for itinerary
+                    if let oldPlaceForCell = cell.place {
+                        if let index = Itinerary.currentItinerary.plannedPlaces.index(of: oldPlaceForCell) {
+                            Itinerary.currentItinerary.plannedPlaces.remove(at: index)
+                        }
+                        Itinerary.currentItinerary.placesOfInterest.append(oldPlaceForCell)
+                    }
+                    Itinerary.currentItinerary.plannedPlaces.append(newPlaceForCell!)
+                    if let index = Itinerary.currentItinerary.placesOfInterest.index(of: newPlaceForCell!) {
+                        Itinerary.currentItinerary.placesOfInterest.remove(at: index)
+                    }
+                    cell.place = newPlaceForCell
                     self.navigationController?.popViewController(animated: true)
                 }
             }
