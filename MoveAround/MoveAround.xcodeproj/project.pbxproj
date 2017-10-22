@@ -272,9 +272,8 @@
 				64AD1A7B1F99EC9300713A3B /* ViewCategory.swift */,
 				64CA81061F9C577700909603 /* Itinerary.swift */,
 			);
-			name = Models;
-			path = /Users/nngan/Documents/PROJECTS/CodePath/MoveAround/MoveAround/MoveAround/Models;
-			sourceTree = "<absolute>";
+			path = Models;
+			sourceTree = "<group>";
 		};
 		F4D67A7342BE48E42D90CC2D /* Frameworks */ = {
 			isa = PBXGroup;
