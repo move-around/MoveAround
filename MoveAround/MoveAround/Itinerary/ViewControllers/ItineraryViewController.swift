@@ -9,6 +9,7 @@
 import UIKit
 
 class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate {
+    @IBOutlet weak var dayLabel: UINavigationItem!
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +26,17 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         // Set Table View data source
         tableView.dataSource = self
         tableView.delegate = self
-        
+
+        let current = Itinerary.currentItinerary
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd"
+
+        if let startDate = current.startDate {
+            let startDateStr = dateFormatterPrint.string(from: startDate)
+            self.dayLabel.title = "\(startDateStr) trip to \(current.destination!)"
+        }
+
+
         // Set Tab bar item title
         self.navigationController?.tabBarItem.title = "Itinerary"
     }

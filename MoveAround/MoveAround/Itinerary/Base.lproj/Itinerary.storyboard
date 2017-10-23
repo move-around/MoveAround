@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -255,6 +255,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Friday" id="OLb-sa-yRj"/>
                     <connections>
+                        <outlet property="dayLabel" destination="OLb-sa-yRj" id="J1S-h7-d4E"/>
                         <outlet property="tableView" destination="paA-OO-hVN" id="fdD-8z-Ts8"/>
                         <segue destination="NcC-7d-Rea" kind="show" identifier="showPlaces" id="jkz-Tv-1Ax"/>
                     </connections>
