@@ -37,3 +37,8 @@ Plan your trip with Move Around.  Move Around will help you plan the perfect iti
   - Display list of liked places (grouped by destination)
   - Recommendations settings 
   - Notifications opt-in/out
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+<img src='https://i.imgur.com/SyvrmvE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
