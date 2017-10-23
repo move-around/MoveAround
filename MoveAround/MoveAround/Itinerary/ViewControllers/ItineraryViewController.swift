@@ -42,7 +42,8 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItineraryTableViewCell", for: indexPath) as! ItineraryTableViewCell
-        cell.travelTime = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
+        // TODO (mohit) : Set the place itinerary data structure here properly
+        cell.timePeriodLabel.text = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
         cell.delegate = self
         
         return cell

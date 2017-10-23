@@ -22,6 +22,8 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var switchPlaceImage: UIImageView!
     @IBOutlet weak var bannerButton: UIButton!
     
+    var placeItinerary: PlaceItinerary = PlaceItinerary()
+    
     var place: Place? {
         didSet {
             if let placeImageUrl: URL = place?.imageURL {
@@ -30,6 +32,7 @@ class ItineraryTableViewCell: UITableViewCell {
             placeName.text = place?.name
             placeAddress.text = place?.address
             bannerButton.isHidden = true
+            placeItinerary.place = place!
         }
     }
     
