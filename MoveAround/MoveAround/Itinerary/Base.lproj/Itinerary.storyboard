@@ -253,7 +253,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Friday" id="OLb-sa-yRj"/>
+                    <navigationItem key="navigationItem" title="Friday" id="OLb-sa-yRj">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="g2w-WK-afN">
+                            <connections>
+                                <segue destination="SPr-M0-atM" kind="show" identifier="showItineraryMap" id="BE0-4k-O4X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TDU-qo-DGx">
+                            <connections>
+                                <action selector="onSaveTap:" destination="BYZ-38-t0r" id="3VE-N5-D1v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dayLabel" destination="OLb-sa-yRj" id="J1S-h7-d4E"/>
                         <outlet property="tableView" destination="paA-OO-hVN" id="fdD-8z-Ts8"/>
@@ -263,6 +274,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813.60000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--ItineraryMap-->
+        <scene sceneID="4zo-fj-Sp8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ItineraryMap" id="SPr-M0-atM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gI-zG-Raq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643" y="155"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZuJ-rc-kZu">

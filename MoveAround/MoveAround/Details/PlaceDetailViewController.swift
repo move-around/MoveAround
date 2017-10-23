@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
+class PlaceDetailViewController: UIViewController  {
 
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,12 +17,11 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var itineraryTime: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var callButton: UIButton!
-    var locationManager: CLLocationManager!
-
-
+    @IBOutlet weak var mapView: MapView!
+    
     var place: Place!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +42,9 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
             callButton.isHidden = true
         }
         
-        let centerLocation: CLLocation!
-        if let latitude = place.latitude, let longitude = place.longitude {
-            centerLocation = CLLocation(latitude: latitude, longitude: longitude)
-            addAnnotationAtCoordinate(title: place.name!, coordinate: CLLocationCoordinate2D.init(latitude: centerLocation.coordinate.latitude, longitude: centerLocation.coordinate.longitude))
-        } else {
-            // For now, center in SF if place has no coordinates (ex. 49 Mile Scenic Drive)
-            centerLocation = CLLocation(latitude: 37.7833, longitude: -122.4167)
-        }
+        mapView.places = [place]
         
-        let span = MKCoordinateSpanMake(0.01, 0.01)
-        let region = MKCoordinateRegionMake(centerLocation.coordinate, span)
-        mapView.setRegion(region, animated: false)
+
     }
     
     @IBAction func onCallTap(_ sender: UIButton) {
@@ -70,14 +60,6 @@ class PlaceDetailViewController: UIViewController, CLLocationManagerDelegate, MK
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         mapItem.name = place.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-    }
-
-    
-    func addAnnotationAtCoordinate(title: String, coordinate: CLLocationCoordinate2D) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = title
-        mapView.addAnnotation(annotation)
     }
     
     static func storyboardInstance() -> PlaceDetailViewController? {
