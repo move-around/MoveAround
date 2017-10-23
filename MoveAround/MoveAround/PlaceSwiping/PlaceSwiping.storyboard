@@ -81,6 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JEg-EA-czB"/>
                     <connections>
+                        <outlet property="doneButton" destination="eiS-WZ-M4Q" id="eIE-LC-dC0"/>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
                         <segue destination="Ux9-cy-FX8" kind="presentation" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
                         <segue destination="tde-iE-43e" kind="show" identifier="showDetailPage" id="L1x-IJ-6sq"/>

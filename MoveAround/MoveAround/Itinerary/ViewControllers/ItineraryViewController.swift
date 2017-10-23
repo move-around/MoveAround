@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate {
+class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var dayLabel: UINavigationItem!
-
     @IBOutlet weak var tableView: UITableView!
 
     //TODO: Gonzalo
@@ -49,6 +48,12 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Set Tab bar item title
         self.navigationController?.tabBarItem.title = "Itinerary"
+        
+        // Add tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapEdit(recognizer:)))
+        tableView.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,8 +94,24 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             // This is where we need to pass over list of places when it exists
             // let vc = segue.destination as! ItineraryMapViewController
         }
+        else if segue.identifier == "showDetail" {
+            let indexPath = sender as! IndexPath
+            let cell = tableView.cellForRow(at: indexPath) as! ItineraryTableViewCell
+            let vc = segue.destination as! PlaceDetailViewController
+            vc.place = cell.place
+        }
 
     }
     
+    // MARK: - TapGestureRecognizer
+    @objc func tapEdit(recognizer: UITapGestureRecognizer)  {
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let tapLocation = recognizer.location(in: self.tableView)
+            if let tapIndexPath = self.tableView.indexPathForRow(at: tapLocation) {
+                performSegue(withIdentifier: "showDetail", sender: tapIndexPath)
+            }
+        }
+    }
+
 
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet weak var placeImageView: PlaceSwipeableSuperView!
+    @IBOutlet weak var doneButton: UIButton!
+    
     fileprivate let segueToDetail = "showDetailPage"
     fileprivate let segueToItinerary = "showListOfPlaces"
 
@@ -48,7 +50,25 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     @IBAction func onDonePressed(_ sender: Any) {
-        performSegue(withIdentifier: segueToItinerary, sender: nil)
+        let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
+        
+        let itineraryNavigationController = itineraryStoryboard.instantiateViewController(withIdentifier: "ItineraryNavigationController") as! UINavigationController
+        itineraryNavigationController.tabBarItem.title = "Itinerary"
+        //itineraryNavigationController.tabBarItem.image = UIImage(named: "itinerary")
+        
+        self.navigationController?.tabBarItem.title = "Explore"
+        //self.navigationController?.tabBarItem.image = UIImage(named: "itinerary")
+
+        doneButton.isHidden = true
+        
+        // Create the TabBarController here itself and set it as the root view controller
+        let tabBarController = UITabBarController()
+        tabBarController.tabBar.tintColor = UIColor(white: 1, alpha: 1)
+        let window: UIWindow = UIApplication.shared.keyWindow!
+        window.rootViewController = tabBarController
+        tabBarController.viewControllers = [self.navigationController!, itineraryNavigationController]
+        tabBarController.selectedViewController = itineraryNavigationController
+        
     }
   
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
