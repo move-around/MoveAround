@@ -64,6 +64,9 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             vc.isShowingSelectedPlaces = true
             let indexPath = tableView.indexPath(for: sender as! UITableViewCell)
             vc.cellRowForItineraryView = indexPath?.row
+        } else if segue.identifier == "showItineraryMap" {
+            // This is where we need to pass over list of places when it exists
+            // let vc = segue.destination as! ItineraryMapViewController
         }
 
     }
