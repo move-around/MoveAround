@@ -67,6 +67,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(tableData[indexPath.row])
         textField.text = tableData[indexPath.row]
         tableView.isHidden = true
+        view.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
