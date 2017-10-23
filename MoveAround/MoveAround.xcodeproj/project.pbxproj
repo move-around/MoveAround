@@ -28,6 +28,8 @@
 		64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
 		64BB8F661F91D9B200743DDA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
 		64CA81071F9C577700909603 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA81061F9C577700909603 /* Itinerary.swift */; };
+		64CA810E1F9D5F5000909603 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA810D1F9D5F5000909603 /* MapView.swift */; };
+		64CA81101F9D607400909603 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CA810F1F9D607400909603 /* MapView.xib */; };
 		64CA913F1F9475B60029C267 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64CA913E1F9475B60029C267 /* Signup.storyboard */; };
 		64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA91401F9475DB0029C267 /* SignupViewController.swift */; };
 		64CA91431F9482A10029C267 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA91421F9482A10029C267 /* PreferencesViewController.swift */; };
@@ -70,6 +72,8 @@
 		64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoursquarePlace.swift; path = MoveAround/Models/FoursquarePlace.swift; sourceTree = SOURCE_ROOT; };
 		64BB8F651F91D9B200743DDA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = MoveAround/Models/Place.swift; sourceTree = SOURCE_ROOT; };
 		64CA81061F9C577700909603 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
+		64CA810D1F9D5F5000909603 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		64CA810F1F9D607400909603 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		64CA913E1F9475B60029C267 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		64CA91401F9475DB0029C267 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		64CA91421F9482A10029C267 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 				64BB8F571F91C23B00743DDA /* PlaceDetailViewController.storyboard */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		64CA810A1F9D5B8A00909603 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				64CA810D1F9D5F5000909603 /* MapView.swift */,
+				64CA810F1F9D607400909603 /* MapView.xib */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		64CA913D1F94759D0029C267 /* Signup */ = {
@@ -241,6 +254,7 @@
 		E4A04C0F1F8DDB0900E03A19 /* MoveAround */ = {
 			isa = PBXGroup;
 			children = (
+				64CA810A1F9D5B8A00909603 /* Map */,
 				64AD1A781F99EBF600713A3B /* Structs */,
 				64AD1A751F99EBAA00713A3B /* InterestSelection */,
 				64CA91481F94855E0029C267 /* Itinerary */,
@@ -354,6 +368,7 @@
 				64CA913F1F9475B60029C267 /* Signup.storyboard in Resources */,
 				647D6F641F92ABE800DCE0D9 /* PlaceSwipeableView.xib in Resources */,
 				64AD1A6E1F99DD3700713A3B /* InterestSelection.storyboard in Resources */,
+				64CA81101F9D607400909603 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +465,7 @@
 				64AD1A7C1F99EC9300713A3B /* ViewCategory.swift in Sources */,
 				64AD1A721F99DEEE00713A3B /* InterestSelectionCell.swift in Sources */,
 				64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */,
+				64CA810E1F9D5F5000909603 /* MapView.swift in Sources */,
 				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,
 				E49418201F98887700B5E8F1 /* PlacesListViewController.swift in Sources */,
