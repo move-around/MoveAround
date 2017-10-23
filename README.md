@@ -41,4 +41,5 @@ Plan your trip with Move Around.  Move Around will help you plan the perfect iti
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
 <img src='https://i.imgur.com/SyvrmvE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
