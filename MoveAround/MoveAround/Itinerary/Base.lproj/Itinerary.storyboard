@@ -254,9 +254,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Friday" id="OLb-sa-yRj">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="g2w-WK-afN">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="g2w-WK-afN">
                             <connections>
                                 <segue destination="SPr-M0-atM" kind="show" identifier="showItineraryMap" id="BE0-4k-O4X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TDU-qo-DGx">
+                            <connections>
+                                <action selector="onSaveTap:" destination="BYZ-38-t0r" id="3VE-N5-D1v"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -11,6 +11,16 @@ import UIKit
 class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+
+    //TODO: Gonzalo
+    @IBAction func onSaveTap(_ sender: UIBarButtonItem) {
+        // Adding the "save" alert code here here temporarily until the
+        // other stuff is ready. The persistance code needs to know about this.
+        
+        let alert = UIAlertController(title: "Awesome!", message: "Your itinerary has been saved.", preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
+
+    }
     
     var initialTimeSlots: [[String]] = [["9:00 AM", "10:00 AM"],
                                         ["10:30 AM", "1:00 PM"],
