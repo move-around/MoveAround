@@ -25,7 +25,9 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             // TODO (mohit) Make this better, also set price range somehow
             placeType.text = place?.categories?.split(separator: ",")[0].lowercased()
             
-            if ((place?.isSelected)!) {
+            if (Itinerary.currentItinerary.placesOfInterest.filter{$0.id == place?.id}.count > 0 ||
+                Itinerary.currentItinerary.plannedPlaces.filter{$0.id == place?.id}.count > 0) {
+                place?.isSelected = true
                 placeSelectedImage.tintColor = UIColor.blue
             }
             else {
@@ -39,8 +41,12 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             if !isPreSelected {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectPlace))
                 placeSelectedImage.addGestureRecognizer(tapGesture)
-                placeSelectedImage.tintColor = UIColor.lightGray
-            }
+                if place?.isSelected == true {
+                    placeSelectedImage.tintColor = UIColor.blue
+                }
+                else {
+                    placeSelectedImage.tintColor = UIColor.lightGray
+                }            }
             else {
                 placeSelectedImage.isHidden = true
             }

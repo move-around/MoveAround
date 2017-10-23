@@ -75,6 +75,8 @@ class YelpPlace: Place {
         }
         
         reviewCount = dictionary["review_count"] as? NSNumber
+        
+        id = dictionary["id"] as? String
     }
     
     class func places(array: [NSDictionary]) -> [YelpPlace] {

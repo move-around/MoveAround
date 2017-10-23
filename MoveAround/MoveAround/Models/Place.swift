@@ -20,28 +20,12 @@ class Place: NSObject {
     var latitude: Double?
     var longitude: Double?
     var phoneNumber: String?
+    var id: String?
     
-    var isSelected: Bool?  = false {
-        didSet {
-            if oldValue != isSelected {
-                if isSelected! {
-                    Place.selectedPlaces.append(self)
-                }
-                else {
-                    if let index = Place.selectedPlaces.index(of: self) {
-                        Place.selectedPlaces.remove(at: index)
-                    }
-                }
-            }
-        }
-    }
+    var isSelected: Bool?  = false
     
     override init() {
         super.init()
     }
-    
-    // List of places user has selected to visit
-    static var selectedPlaces: [Place] = []
-
 }
 
