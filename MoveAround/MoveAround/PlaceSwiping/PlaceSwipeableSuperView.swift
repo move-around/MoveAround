@@ -12,7 +12,7 @@ import MBProgressHUD
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
     var places: [Place]! = [Place]()
-    let limit = 5
+    let limit = 15
     var offset = 0
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,7 +80,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func populatePlaces() {
         // For now, let's just do a Yelp search.
-        let sort = YelpSortMode.bestMatched
+        let sort = YelpSortMode.distance
 
         let categories = TempCache.sharedInstance.itinerary?.interests.map{$0.yelpCode}
         let location = TempCache.sharedInstance.itinerary?.destination
