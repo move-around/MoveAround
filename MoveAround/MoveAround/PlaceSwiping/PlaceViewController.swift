@@ -53,9 +53,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
         
         let itineraryNavigationController = itineraryStoryboard.instantiateViewController(withIdentifier: "ItineraryNavigationController") as! UINavigationController
-        itineraryNavigationController.tabBarItem.title = "Itinerary"
-        //itineraryNavigationController.tabBarItem.image = UIImage(named: "itinerary")
-        
+        //itineraryNavigationController.tabBarItem.title = "Itinerary"
+        let window: UIWindow = UIApplication.shared.keyWindow!
+        window.rootViewController = itineraryNavigationController
+
+        /*
         self.navigationController?.tabBarItem.title = "Explore"
         //self.navigationController?.tabBarItem.image = UIImage(named: "itinerary")
 
@@ -68,6 +70,7 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         window.rootViewController = tabBarController
         tabBarController.viewControllers = [self.navigationController!, itineraryNavigationController]
         tabBarController.selectedViewController = itineraryNavigationController
+         */
         
     }
   

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ItineraryTableViewDelegate {
     func showSelectedPlaces(cell: UITableViewCell)
+    func placeSelected(placeItinerary: PlaceItinerary, cell: UITableViewCell)
 }
 
 class ItineraryTableViewCell: UITableViewCell {
@@ -22,7 +23,7 @@ class ItineraryTableViewCell: UITableViewCell {
     @IBOutlet weak var switchPlaceImage: UIImageView!
     @IBOutlet weak var bannerButton: UIButton!
     
-    var placeItinerary: PlaceItinerary = PlaceItinerary()
+    var placeItinerary: PlaceItinerary?
     
     var place: Place? {
         didSet {
@@ -32,7 +33,10 @@ class ItineraryTableViewCell: UITableViewCell {
             placeName.text = place?.name
             placeAddress.text = place?.address
             bannerButton.isHidden = true
-            placeItinerary.place = place!
+            if (placeItinerary == nil) {
+                placeItinerary = PlaceItinerary()
+            }
+            placeItinerary?.place = place!
         }
     }
     
@@ -57,6 +61,17 @@ class ItineraryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func resetCell() {
+        bannerButton.isHidden = false
+    }
+    
+    func setSelectedPlace(selectedPlace: Place) {
+        self.place = selectedPlace
+        if (delegate != nil) {
+            delegate?.placeSelected(placeItinerary: placeItinerary!, cell: self)
+        }
     }
 
     @IBAction func showPlaceSelector(_ sender: Any) {

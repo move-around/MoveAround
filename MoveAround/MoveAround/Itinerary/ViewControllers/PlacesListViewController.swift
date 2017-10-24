@@ -238,7 +238,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
                     if let index = Itinerary.currentItinerary.placesOfInterest.index(of: newPlaceForCell!) {
                         Itinerary.currentItinerary.placesOfInterest.remove(at: index)
                     }
-                    cell.place = newPlaceForCell
+                    cell.setSelectedPlace(selectedPlace: newPlaceForCell!)
                     self.navigationController?.popViewController(animated: true)
                 }
             }

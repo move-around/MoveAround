@@ -91,6 +91,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let itinerary = Itinerary.currentItinerary
         itinerary.destination = textField.text
         itinerary.startDate = datePicker.date
+        itinerary.endDate = Calendar.current.date(byAdding: .day, value: 3, to: datePicker.date)
+        itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: 4)
+
         vc.itinerary = itinerary
     }
 

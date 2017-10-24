@@ -16,7 +16,7 @@ class PlaceItinerary: NSObject {
 
 // Representation of itinerary for a day
 class DayItinerary: NSObject {
-    var placesItineraries: [PlaceItinerary] = [PlaceItinerary]()
+    var placesItineraries: [PlaceItinerary?] = [PlaceItinerary?](repeating: nil, count:10)
 }
 
 class Itinerary: NSObject {
@@ -27,7 +27,7 @@ class Itinerary: NSObject {
     var interests: [CategoryItem] = [CategoryItem]()
     var placesOfInterest: [Place] = [Place]() // Places the user wants to visit
     var plannedPlaces: [Place] = [Place]() // Places selected as part of itinerary
-    var dayItineraries: [DayItinerary] = [DayItinerary]()
+    var dayItineraries: [DayItinerary?] = [DayItinerary?]()
     
     override init() {
         super.init()
