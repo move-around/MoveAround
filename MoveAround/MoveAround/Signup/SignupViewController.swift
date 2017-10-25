@@ -13,7 +13,10 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var startingLabel: UILabel!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
+    @IBOutlet weak var horizontalLineTop: UIView!
     
     var tableData=[String]()
     var fetcher: GMSAutocompleteFetcher?
@@ -41,7 +44,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.isHidden = true
+        tableView.layer.borderColor = UIColor.lightGray.cgColor
+        tableView.layer.borderWidth = 1.0
+        
         
     }
 
@@ -60,12 +65,21 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableData.count != 0 {
+            self.view.sendSubview(toBack: horizontalLineTop)
+            startingLabel.isHidden = true
+            tableView.isHidden = false
+        } else {
+            self.view.bringSubview(toFront: horizontalLineTop)
+            startingLabel.isHidden = false
+            tableView.isHidden = true
+        }
         return tableData.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tableData[indexPath.row])
         textField.text = tableData[indexPath.row]
+        startingLabel.isHidden = false
         tableView.isHidden = true
         view.endEditing(true)
     }
@@ -77,7 +91,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.backgroundColor = UIColor.clear
         cell.contentView.backgroundColor = UIColor.clear
         cell.textLabel?.textAlignment = NSTextAlignment.left
-        cell.textLabel?.textColor = UIColor.black
+        cell.textLabel?.textColor = UIColor.gray
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14.0)
         
         cell.textLabel?.text = tableData[indexPath.row]
@@ -85,13 +99,16 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! InterestSelectionViewController
         let itinerary = Itinerary.currentItinerary
         itinerary.destination = textField.text
-        itinerary.startDate = datePicker.date
-        itinerary.endDate = Calendar.current.date(byAdding: .day, value: 3, to: datePicker.date)
+        itinerary.startDate = startDatePicker.date
+        itinerary.endDate = endDatePicker.date
         itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: 4)
 
         vc.itinerary = itinerary
