@@ -31,11 +31,17 @@ class InterestSelectionViewController: UIViewController, UITableViewDelegate {
         
         // Set zero height table footer to not show cells beyond those asked for
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

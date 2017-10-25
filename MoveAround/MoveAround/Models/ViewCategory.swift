@@ -18,12 +18,18 @@ class ViewCategory: NSObject {
         [Category(name: "Art Galleries", yelpCode: "galleries"),
          Category(name: "Bars", yelpCode: "bars"),
          Category(name: "Coffee & Tea Shops", yelpCode: "coffee"),
+         Category(name: "Dance Clubs", yelpCode: "danceclubs"),
          Category(name: "Gyms", yelpCode: "gyms"),
+         Category(name: "Hikes", yelpCode: "hiking"),
+         Category(name: "Juice Bars", yelpCode: "juicebars"),
          Category(name: "Landmarks", yelpCode: "landmarks"),
          Category(name: "Music Venues", yelpCode: "musicvenues"),
          Category(name: "Museums", yelpCode: "museums"),
+         Category(name: "Parks", yelpCode: "parks"),
          Category(name: "Restaurants", yelpCode: "restaurants"),
-         Category(name: "Shopping", yelpCode: "shoppingcenters") // Restrict to malls for now
+         Category(name: "Shopping", yelpCode: "shoppingcenters"), // Restrict to malls for now
+         Category(name: "Theaters", yelpCode: "theater")
+
     ]
 
     

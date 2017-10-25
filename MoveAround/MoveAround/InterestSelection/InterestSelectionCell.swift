@@ -27,7 +27,15 @@ class InterestSelectionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        accessoryType = selected ? .checkmark : .none
+        //accessoryType = selected ? .checkmark : .none
+        // Ideally we store the orange color globally to access somewhere
+        if selected {
+            self.categoryLabel.textColor = UIColor.init(red: 255/255, green: 113/255, blue: 18/255, alpha: 1)
+            self.categoryLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        } else {
+            self.categoryLabel.textColor = .black
+            self.categoryLabel.font = UIFont.systemFont(ofSize: 18)
+        }
     }
 
 }
