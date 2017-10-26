@@ -17,6 +17,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var horizontalLineTop: UIView!
+    @IBOutlet weak var nextButton: UIButton!
     
     var tableData=[String]()
     var fetcher: GMSAutocompleteFetcher?
@@ -35,7 +36,6 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Set up the autocomplete filter.
         let filter = GMSAutocompleteFilter()
         filter.type = .city
-        filter.country = "us"
         
         // Create the fetcher.
         fetcher = GMSAutocompleteFetcher(bounds: bounds, filter: filter)
@@ -47,7 +47,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.layer.borderColor = UIColor.lightGray.cgColor
         tableView.layer.borderWidth = 1.0
         
-        
+        nextButton.isEnabled = false
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +84,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         startingLabel.isHidden = false
         tableView.isHidden = true
         view.endEditing(true)
+        nextButton.isEnabled = true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

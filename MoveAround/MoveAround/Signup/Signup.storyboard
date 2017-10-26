@@ -141,6 +141,7 @@
                     <connections>
                         <outlet property="endDatePicker" destination="FHa-5o-GhS" id="Bsk-Nx-loB"/>
                         <outlet property="horizontalLineTop" destination="A0B-RC-EeT" id="OIc-yD-Jb6"/>
+                        <outlet property="nextButton" destination="FCM-Yc-qWK" id="91D-7W-MW4"/>
                         <outlet property="startDatePicker" destination="Aeq-dI-lUs" id="4sC-Lg-e9z"/>
                         <outlet property="startingLabel" destination="at4-p0-gwM" id="pas-4R-NpY"/>
                         <outlet property="tableView" destination="2Ap-oW-FaG" id="1I9-N2-oX7"/>

@@ -20,9 +20,8 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuD-Zj-Pfe" customClass="PlaceSwipeableSuperView" customModule="MoveAround" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you like these places?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-4M-gTD">
-                                        <rect key="frame" x="69" y="40" width="237" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you like these places?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-4M-gTD">
+                                        <rect key="frame" x="69" y="45" width="237" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -69,7 +68,9 @@
                                     <constraint firstItem="WEf-OZ-JCn" firstAttribute="centerY" secondItem="xfS-yg-qVO" secondAttribute="centerY" id="Bmb-MA-NnK"/>
                                     <constraint firstItem="Cih-J2-jbz" firstAttribute="leading" secondItem="WEf-OZ-JCn" secondAttribute="trailing" constant="30" id="RHZ-a0-23N"/>
                                     <constraint firstAttribute="bottom" secondItem="WEf-OZ-JCn" secondAttribute="bottom" constant="25" id="WKa-gI-LPP"/>
+                                    <constraint firstItem="OIt-4M-gTD" firstAttribute="centerX" secondItem="UuD-Zj-Pfe" secondAttribute="centerX" id="e4G-Kl-BiC"/>
                                     <constraint firstItem="Cih-J2-jbz" firstAttribute="centerY" secondItem="WEf-OZ-JCn" secondAttribute="centerY" id="eda-DR-ra9"/>
+                                    <constraint firstItem="OIt-4M-gTD" firstAttribute="top" secondItem="UuD-Zj-Pfe" secondAttribute="top" constant="45" id="v3y-tQ-7Sd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiS-WZ-M4Q">
