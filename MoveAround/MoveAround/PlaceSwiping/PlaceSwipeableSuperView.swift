@@ -32,9 +32,15 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func loadPlaceViews() {
         for (index, place) in places.enumerated() {
-            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: 0, y: 0, width: 300, height: 340))
+            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: (self.frame.width - 320)/2, y: (self.frame.height - 380)/2, width: 320, height: 380))
             newView.place = place
             newView.delegate = self
+            
+            // shadow
+            newView.layer.shadowColor = UIColor.black.cgColor
+            newView.layer.shadowOffset = CGSize(width: 3, height: 3)
+            newView.layer.shadowOpacity = 0.2
+            newView.layer.shadowRadius = 4
             
             loadedViews.append(newView)
             if index > 0 {
@@ -42,6 +48,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
             } else {
                 self.addSubview(loadedViews[index])
             }
+            
         }
     }
     
@@ -73,6 +80,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func clickedRight() {
         let topview = loadedViews.first!
+        Itinerary.currentItinerary.placesOfInterest.append(topview.place)
         topview.removeFromSuperview()
         swipeClear()
         // Store user preferences etc
@@ -95,18 +103,9 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
                 self.loadPlaceViews()
                 self.offset += self.limit
             }
+            
             MBProgressHUD.hide(for: self, animated: true)
-
         }
-        
-//        FoursquarePlace.search(query: "thai", near: "San Francisco,CA") { (places: [Place]?, error: Error?) in
-//            if let places = places {
-//                self.places = places
-//                self.loadPlaceViews()
-//                self.offset += self.limit
-//            }
-//        }
-        
         
     }
     

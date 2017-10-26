@@ -20,10 +20,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func onPlaceTapped(_ sender: UITapGestureRecognizer) {
+    @IBAction func onInfoTapped(_ sender: UITapGestureRecognizer) {
         let place = placeImageView.loadedViews.first?.place
         performSegue(withIdentifier: segueToDetail, sender: place)
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,9 +41,9 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
 
     }
 
+
     @IBAction func onYesTapped(_ sender: UITapGestureRecognizer) {
         placeImageView.clickedRight()
-        
     }
     
     @IBAction func onNoTapped(_ sender: UITapGestureRecognizer) {

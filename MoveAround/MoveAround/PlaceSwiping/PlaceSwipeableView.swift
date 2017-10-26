@@ -54,7 +54,16 @@ class PlaceSwipeableView: UIView {
         
         // Make the view stretch with the containing view
         contentView.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+        
+        // corner radius
+        placeImageView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 5
+        
+        // border
+        contentView.layer.borderWidth = 0.5
+        contentView.layer.borderColor = UIColor.darkGray.cgColor
 
+        
     }
     
     @IBAction func onPlaceSwiped(_ sender: UIPanGestureRecognizer) {
