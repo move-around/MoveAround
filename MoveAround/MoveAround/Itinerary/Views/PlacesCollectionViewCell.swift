@@ -69,6 +69,7 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             }
             placeSelectedImage.tintColor = UIColor.lightGray
         }
+        Itinerary.currentItinerary.storeInParse()
     }
 
     

@@ -38,6 +38,10 @@ class Itinerary: NSObject {
     }
     
     static var currentItinerary: Itinerary = Itinerary()
+
+    func storeInParse() {
+        // TODO
+    }
 }
 
 

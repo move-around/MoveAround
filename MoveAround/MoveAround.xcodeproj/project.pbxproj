@@ -36,6 +36,7 @@
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
 		784411C78D77B32379540EA6 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */; };
 		9206FF741FA2AE0D006F5DC0 /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9206FF731FA2AE0D006F5DC0 /* login.mp4 */; };
+		9206FF721FA161DD006F5DC0 /* ParseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206FF711FA161DD006F5DC0 /* ParseModels.swift */; };
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
@@ -84,6 +85,7 @@
 		64D8F85D1F929B780099F1F8 /* PlaceSwiping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceSwiping.storyboard; sourceTree = "<group>"; };
 		64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableSuperView.swift; sourceTree = "<group>"; };
 		9206FF731FA2AE0D006F5DC0 /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
+		9206FF711FA161DD006F5DC0 /* ParseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseModels.swift; sourceTree = "<group>"; };
 		92D466641F92C5F600ED2EAA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
 		DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +302,7 @@
 				E494182B1F9D1C8C00B5E8F1 /* Itinerary.swift */,
 				E494182A1F9D1C8C00B5E8F1 /* User.swift */,
 				E49418291F9D1C8C00B5E8F1 /* ViewCategory.swift */,
+				9206FF711FA161DD006F5DC0 /* ParseModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				64CA81141F9D7F4D00909603 /* ItineraryMapViewController.swift in Sources */,
 				64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */,
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
+				9206FF721FA161DD006F5DC0 /* ParseModels.swift in Sources */,
 				64CA91431F9482A10029C267 /* PreferencesViewController.swift in Sources */,
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
