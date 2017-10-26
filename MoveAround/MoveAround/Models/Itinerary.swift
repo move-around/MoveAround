@@ -6,6 +6,7 @@
 //  Copyright © 2017 Mohit Taneja. All rights reserved.
 //
 import UIKit
+import Parse
 
 // Representation of a single itinerary item
 class PlaceItinerary: NSObject {
@@ -40,7 +41,46 @@ class Itinerary: NSObject {
     static var currentItinerary: Itinerary = Itinerary()
 
     func storeInParse() {
-        // TODO
+        let pfObject = PItinerary()
+        pfObject.parseUser = PFUser.current()!
+        if let destination = self.destination {
+            pfObject.destination = destination as NSString
+        }
+        if let startDate = self.startDate {
+            pfObject.startDate = startDate as NSDate
+        }
+        if let endDate = self.endDate {
+            pfObject.endDate = endDate as NSDate
+        }
+        self.interests.forEach { (categoryItem) in
+            let pCategory = PCategory()
+            pCategory.name = categoryItem.name as NSString
+            pCategory.yelpCode = categoryItem.yelpCode as NSString
+            pCategory.saveEventually()
+        }
+        self.plannedPlaces.forEach { (place) in
+            let pplace = PPlace()
+
+            if let placeName = place.name {
+                pplace.name = placeName as NSString
+            }
+
+            if let address = place.address {
+                pplace.address = address as NSString
+            }
+
+            if let imageUrl = place.imageURL {
+                pplace.imageURL = imageUrl as NSURL
+            }
+
+            if let categories = place.categories {
+                pplace.categories = categories as NSString
+            }
+
+            if let distance = place.distance {
+                pplace.distance = distance as NSString
+            }
+        }
     }
 }
 

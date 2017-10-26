@@ -21,7 +21,7 @@ class PPlace: PFObject {
     @NSManaged var name: NSString
     @NSManaged var address: NSString
     @NSManaged var imageURL: NSURL
-    @NSManaged var categories: PFRelation<PCategory>
+    @NSManaged var categories: NSString
     @NSManaged var distance: NSString
     @NSManaged var hours: NSString
     @NSManaged var ratingImageURL: NSURL
@@ -44,7 +44,7 @@ class PPlaceItinerary: PFObject {
     @NSManaged var to: NSDate
 
     class func parseClassName() -> String {
-        return "PlaceIteinerary"
+        return "PlaceItinerary"
     }
 }
 
@@ -56,9 +56,19 @@ class PDayItinerary: PFObject {
     }
 }
 
+class MAUser: PFObject {
+    @NSManaged var id: String
+    @NSManaged var firstName: String
+    @NSManaged var lastName: String
+    @NSManaged var email: String
+    @NSManaged var destinationCity: String
+    @NSManaged var startDate: NSDate
+    @NSManaged var endDate: NSDate
+}
 
 class PItinerary: PFObject {
-    @NSManaged var user: PFUser
+    @NSManaged var parseUser: PFUser
+    @NSManaged var maUser: MAUser
     @NSManaged var destination: NSString
     @NSManaged var startDate: NSDate
     @NSManaged var endDate: NSDate
