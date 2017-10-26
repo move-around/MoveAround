@@ -52,8 +52,18 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             self.dayLabel.title = startDateStr
             self.prevDayButton.isEnabled = false
             self.prevDayButton.title = ""
-            let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
-            self.nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
+            self.nextDayButton.isEnabled = false
+            self.nextDayButton.title = ""
+            // Check if the itinarary is for more than a single day
+            if (currentItinerary.startDate! < currentItinerary.endDate!) {
+                let dateInterval = DateInterval.init(start: currentItinerary.startDate!, end: currentItinerary.endDate!)
+                let durationInDays = Int(round(dateInterval.duration/86400)) + 1
+                if (durationInDays > 1) {
+                    let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+                    self.nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
+                    nextDayButton.isEnabled = true
+                }
+            }
             currentDate = startDate
         }
         if (currentItinerary.dayItineraries[0] == nil) {
@@ -136,7 +146,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         // Reload the Day itinerary and reload table
         let currentItinerary = Itinerary.currentItinerary
         let dateInterval = DateInterval.init(start: currentItinerary.startDate!, end: currentDate!)
-        let dayIndex = Int(dateInterval.duration/86400)
+        let dayIndex = Int(round(dateInterval.duration/86400))
         if (currentItinerary.dayItineraries[dayIndex] == nil) {
             dayItinerary = DayItinerary()
             currentItinerary.dayItineraries[dayIndex] = dayItinerary

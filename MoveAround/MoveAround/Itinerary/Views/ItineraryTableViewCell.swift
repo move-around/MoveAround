@@ -27,16 +27,18 @@ class ItineraryTableViewCell: UITableViewCell {
     
     var place: Place? {
         didSet {
-            if let placeImageUrl: URL = place?.imageURL {
-                placeImage.setImageWith(placeImageUrl)
+            if (place != nil) {
+                if let placeImageUrl: URL = place?.imageURL {
+                    placeImage.setImageWith(placeImageUrl)
+                }
+                placeName.text = place?.name
+                placeAddress.text = place?.address
+                bannerButton.isHidden = true
+                if (placeItinerary == nil) {
+                    placeItinerary = PlaceItinerary()
+                }
+                placeItinerary?.place = place!
             }
-            placeName.text = place?.name
-            placeAddress.text = place?.address
-            bannerButton.isHidden = true
-            if (placeItinerary == nil) {
-                placeItinerary = PlaceItinerary()
-            }
-            placeItinerary?.place = place!
         }
     }
     
@@ -65,6 +67,7 @@ class ItineraryTableViewCell: UITableViewCell {
     
     func resetCell() {
         bannerButton.isHidden = false
+        place = nil
     }
     
     func setSelectedPlace(selectedPlace: Place) {

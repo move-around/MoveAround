@@ -109,7 +109,14 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itinerary.destination = textField.text
         itinerary.startDate = startDatePicker.date
         itinerary.endDate = endDatePicker.date
-        itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: 4)
+        
+        // Calculate number of days for the trip
+        var durationInDays = 1
+        if (itinerary.startDate! < itinerary.endDate!) {
+            let dateInterval = DateInterval.init(start: itinerary.startDate!, end: itinerary.endDate!)
+            durationInDays = Int(round(dateInterval.duration/86400)) + 1
+        }
+        itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: durationInDays)
 
         vc.itinerary = itinerary
     }
