@@ -41,7 +41,18 @@ class RItineraryTests: XCTestCase {
 
         let place = Place()
         place.name = "Home"
+        place.hours = "9 to 5"
         itinerary.placesOfInterest.append(place)
+        itinerary.plannedPlaces.append(place)
+
+        let placeItinerary = PlaceItinerary()
+        placeItinerary.place = place
+        placeItinerary.from = startDate
+        placeItinerary.to = endDate
+
+        let dayItinerary = DayItinerary()
+        dayItinerary.placesItineraries.append(placeItinerary)
+        itinerary.dayItineraries.append(dayItinerary)
 
         let rItinerary = ItineraryAdapter.createFromItinerary(itinerary: itinerary)
         XCTAssertEqual(rItinerary.id, itinerary.id)
@@ -52,6 +63,10 @@ class RItineraryTests: XCTestCase {
         XCTAssertEqual(rItinerary.interests[0].yelpCode, category.yelpCode)
         XCTAssertEqual(rItinerary.interests[0].selected, true)
         XCTAssertEqual(rItinerary.placesOfInterest[0].name, place.name)
+        XCTAssertEqual(rItinerary.plannedPlaces[0].hours, place.hours)
+        let firstDayItinerary = rItinerary.dayItineraries.first
+        let firstPlaceItinerary = firstDayItinerary!.placesItineraries.first
+        XCTAssertEqual(firstPlaceItinerary!.place!.name, place.name)
         XCTAssertEqual(rItinerary.endDate, endDate)
     }
 }
