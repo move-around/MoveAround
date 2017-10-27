@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     )
     PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
     GMSPlacesClient.provideAPIKey("AIzaSyCvt5DdJ64JGgx0W44CFynbK0EHcUUHq6c")
-    MARealm.realm() // Inits realm for later use
+    let _ = MARealm.realm() // Inits realm for later use
 
     // Override point for customization after application launch.
     return true

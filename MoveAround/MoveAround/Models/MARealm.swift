@@ -28,7 +28,7 @@ class MARealm: NSObject {
                     return
                 }
                 let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user!, realmURL: URL(string: "realm://\(ipAddress):9080/~/movearound")!)
+                    syncConfiguration: SyncConfiguration(user: user!, realmURL: URL(string: "realm://\(ipAddress):9080/movearound")!)
                 )
                 self._realm = try! Realm(configuration: configuration)
             }

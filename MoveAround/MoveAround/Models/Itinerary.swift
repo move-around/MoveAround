@@ -21,6 +21,7 @@ class DayItinerary: NSObject {
 }
 
 class Itinerary: NSObject {
+    var id: String?
     var user: User?
     var destination: String?
     var startDate: Date?
@@ -32,6 +33,7 @@ class Itinerary: NSObject {
     
     override init() {
         super.init()
+        id = UUID().uuidString
     }
     
     class func getCurrentItinerary()->Itinerary {
