@@ -43,6 +43,13 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
 
         let currentItinerary = Itinerary.currentItinerary
+        let rItinerary = ItineraryAdapter.createFromItinerary(itinerary: currentItinerary)
+        if let realm = MARealm.realm() {
+            try! realm.write {
+                realm.add(rItinerary)
+            }
+            print("stored in realm")
+        }
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd"
 
