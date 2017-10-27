@@ -27,7 +27,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5v-RU-4aE">
                                 <rect key="frame" x="56" y="487" width="93" height="30"/>
                                 <gestureRecognizers/>
-                                <state key="normal" title="Directions"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onDirectionsTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="teQ-yX-6gm"/>
                                 </connections>
@@ -58,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-HV-uRs" userLabel="horizontal top">
-                                <rect key="frame" x="11" y="340" width="352" height="1"/>
+                                <rect key="frame" x="15" y="340" width="352" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="tRj-da-y3K"/>
@@ -66,21 +68,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPe-ya-TEQ" userLabel="horizontal second">
-                                <rect key="frame" x="11" y="414" width="240" height="1"/>
+                                <rect key="frame" x="15" y="414" width="352" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="N43-nm-WM8"/>
+                                    <constraint firstAttribute="width" constant="352" id="N43-nm-WM8"/>
                                     <constraint firstAttribute="height" constant="1" id="wuX-Gh-Dh5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ska-if-pAp" userLabel="horizontal third">
-                                <rect key="frame" x="15" y="539" width="240" height="1"/>
+                                <rect key="frame" x="15" y="539" width="352" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="IaK-nV-SM1"/>
-                                    <constraint firstAttribute="width" constant="240" id="Tsv-c5-7YM"/>
+                                    <constraint firstAttribute="width" constant="352" id="Tsv-c5-7YM"/>
                                     <constraint firstAttribute="height" constant="1" id="dRw-aq-Fth"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="fdf-0f-4ev"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="2sd-3p-Jjs"/>
                             </view>
@@ -94,7 +95,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-I0-WUy">
                                 <rect key="frame" x="67" y="433" width="95" height="30"/>
-                                <state key="normal" title="Read Reviews"/>
+                                <state key="normal" title="Read Reviews">
+                                    <color key="titleColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onReviewsTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="bnG-2w-mUt"/>
                                 </connections>
@@ -157,6 +160,7 @@
                             <constraint firstItem="nwD-wE-t3f" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="19" id="9EP-P2-kbt"/>
                             <constraint firstItem="Afx-Ss-r28" firstAttribute="leading" secondItem="ggU-Wd-zYc" secondAttribute="trailing" constant="37" id="BiY-Ge-Ss5"/>
                             <constraint firstItem="vv2-jc-dyE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aUL-Bb-8VS" secondAttribute="trailing" constant="8" id="E8v-sp-fu2"/>
+                            <constraint firstItem="wWO-HV-uRs" firstAttribute="leading" secondItem="ynX-fe-Prl" secondAttribute="leading" constant="15" id="GFd-x9-1SV"/>
                             <constraint firstItem="nwD-wE-t3f" firstAttribute="top" secondItem="tPe-ya-TEQ" secondAttribute="bottom" constant="15" id="KqH-Kv-MmK"/>
                             <constraint firstItem="aUL-Bb-8VS" firstAttribute="top" secondItem="fgo-yS-a6W" secondAttribute="bottom" constant="8" id="Kv0-1n-8Vc"/>
                             <constraint firstItem="vv2-jc-dyE" firstAttribute="trailing" secondItem="fgo-yS-a6W" secondAttribute="trailing" id="NaP-9e-RTp"/>
@@ -175,7 +179,6 @@
                             <constraint firstItem="nwD-wE-t3f" firstAttribute="top" secondItem="tPe-ya-TEQ" secondAttribute="bottom" constant="15" id="ceE-ho-lGA"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="ciQ-ec-zxz"/>
                             <constraint firstItem="FYU-Ao-wd6" firstAttribute="top" secondItem="HQd-JD-ASn" secondAttribute="bottom" constant="10" id="cwi-Xb-bGk"/>
-                            <constraint firstItem="wWO-HV-uRs" firstAttribute="centerX" secondItem="ynX-fe-Prl" secondAttribute="centerX" id="dPA-xZ-Ryw"/>
                             <constraint firstItem="Yov-x7-jfX" firstAttribute="leading" secondItem="k5v-RU-4aE" secondAttribute="trailing" constant="26" id="dPw-PO-wiA"/>
                             <constraint firstItem="tVD-IW-5F7" firstAttribute="top" secondItem="nwD-wE-t3f" secondAttribute="bottom" constant="15" id="dTG-vi-g4N"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="top" secondItem="Ska-if-pAp" secondAttribute="bottom" constant="21" id="eGA-P3-SxM"/>
