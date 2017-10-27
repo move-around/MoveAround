@@ -11,8 +11,13 @@ import FacebookCore
 import FacebookLogin
 import Parse
 import ParseFacebookUtilsV4
+import AVFoundation
 
 class LoginViewController: UIViewController, LoginButtonDelegate {
+    var avPlayer: AVPlayer!
+    var avPlayerLayer: AVPlayerLayer!
+    var paused: Bool = false
+
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         switch result {
         case .success(grantedPermissions: _, declinedPermissions:  _, token: _):
@@ -69,11 +74,28 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let theURL = Bundle.main.url(forResource:"login", withExtension: "mp4")
+
+        avPlayer = AVPlayer(url: theURL!)
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        avPlayer.volume = 0
+        avPlayer.actionAtItemEnd = .none
+
+        avPlayerLayer.frame = view.layer.bounds
+        view.backgroundColor = .clear
+        view.layer.insertSublayer(avPlayerLayer, at: 0)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(playerItemDidReachEnd(notification:)),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: avPlayer.currentItem)
+
         if (User.currentUser != nil) {
             self.presentSignupVC()
         }
-
-        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: 125)
+        let loginButton = LoginButton(frame: rect, readPermissions: [ .publicProfile, .email ])
         loginButton.center = view.center
         loginButton.center.y += 20
         loginButton.delegate = self
@@ -84,6 +106,23 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @objc func playerItemDidReachEnd(notification: Notification) {
+        let p: AVPlayerItem = notification.object as! AVPlayerItem
+        p.seek(to: kCMTimeZero)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        avPlayer.play()
+        paused = false
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        avPlayer.pause()
+        paused = true
     }
 }
 
