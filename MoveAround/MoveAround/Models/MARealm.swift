@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+let REALM_READY = NSNotification.Name(rawValue: "REALM_READY")
 class MARealm: NSObject {
     private static var _realm: Realm?
     // TODO: Create class func to behave like a singleton
@@ -22,7 +23,7 @@ class MARealm: NSObject {
         let ipAddress = "192.241.204.143"
         let serverURL = URL(string: "http://\(ipAddress):9080")
         DispatchQueue.main.async {
-            SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: true), server: serverURL!) { (user, error) in
+            SyncUser.logIn(with: .usernamePassword(username: username, password: password), server: serverURL!) { (user, error) in
                 if (error != nil) {
                     print(error!)
                     return
@@ -31,8 +32,9 @@ class MARealm: NSObject {
                     syncConfiguration: SyncConfiguration(user: user!, realmURL: URL(string: "realm://\(ipAddress):9080/movearound")!)
                 )
                 self._realm = try! Realm(configuration: configuration)
+                NotificationCenter.default.post(name: REALM_READY, object: nil)
             }
         }
-        return self._realm
+        return nil
     }
 }

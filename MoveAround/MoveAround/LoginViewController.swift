@@ -64,10 +64,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
             let pfUser = PFUser.current()
             print(pfUser)
         }
+        let _ = MARealm.realm() // Inits realm for later use
 
-        let signupStoryBoard = UIStoryboard(name: "Signup", bundle: nil)
-        let signupVC = signupStoryBoard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
-        self.navigationController?.present(signupVC, animated: true, completion: nil)
     }
 
 
@@ -85,16 +83,17 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         avPlayerLayer.frame = view.layer.bounds
         view.backgroundColor = .clear
         view.layer.insertSublayer(avPlayerLayer, at: 0)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(prepItineraries(notification:)), name: REALM_READY, object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playerItemDidReachEnd(notification:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: avPlayer.currentItem)
-
         if (User.currentUser != nil) {
             self.presentSignupVC()
             return
         }
+
+
         let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: 28)
         let loginButton = LoginButton(frame: rect, readPermissions: [ .publicProfile, .email ])
         loginButton.center = view.center
@@ -102,6 +101,28 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         loginButton.delegate = self
 
         view.addSubview(loginButton)
+    }
+
+    @objc func prepItineraries(notification: Notification) {
+        print("preparing itineraries")
+        let currentUser = User.currentUser!
+        if let realm = MARealm.realm() {
+            let query = "userID = '\(currentUser.id!)'"
+            let itineraries = realm.objects(RItinerary.self).filter(query)
+            if (itineraries.count > 0) {
+                Itinerary.currentItinerary = ItineraryAdapter.createFrom(rItinerary: itineraries.last! as RItinerary, user: currentUser)
+                print("Found an itinerary")
+                let itineraryStoryBoard = UIStoryboard(name: "Itinerary", bundle: nil)
+                let itineraryVC = itineraryStoryBoard.instantiateViewController(withIdentifier: "ItineraryViewController") as! ItineraryViewController
+                self.navigationController?.present(itineraryVC, animated: true, completion: nil)
+                return
+            } else {
+                let signupStoryBoard = UIStoryboard(name: "Signup", bundle: nil)
+                let signupVC = signupStoryBoard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+                self.navigationController?.present(signupVC, animated: true, completion: nil)
+                return
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

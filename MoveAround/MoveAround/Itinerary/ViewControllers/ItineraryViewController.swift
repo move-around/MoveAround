@@ -34,24 +34,26 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
                                         ["7:30 PM", "9:00 PM"]]
     var dayItinerary: DayItinerary?
     var currentDate: Date?
-    
+
+    func syncItinerary() {
+        let currentItinerary = Itinerary.currentItinerary
+        print("syncing itinerary \(currentItinerary.id)")
+        let rItinerary = ItineraryAdapter.createFrom(itinerary: currentItinerary)
+        if let realm = MARealm.realm() {
+            try! realm.write {
+                realm.add(rItinerary, update: true)
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set Table View data source
         tableView.dataSource = self
         tableView.delegate = self
-
+        self.syncItinerary()
         let currentItinerary = Itinerary.currentItinerary
-/*
-        let rItinerary = ItineraryAdapter.createFromItinerary(itinerary: currentItinerary)
-        if let realm = MARealm.realm() {
-            try! realm.write {
-                realm.add(rItinerary)
-            }
-            print("stored in realm")
-        }
-*/
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd"
 
@@ -162,13 +164,8 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             dayItinerary = currentItinerary.dayItineraries[dayIndex]
         }
-        /*
-         let realm = MARealm.realm()
-         try! realm.write {
-            // realm.add(dayItinerary)
-         }
-        */
 
+        self.syncItinerary()
         tableView.reloadData()
     }
     
@@ -227,7 +224,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             let vc = segue.destination as! PlaceDetailViewController
             vc.place = cell.place
         }
-
+        self.syncItinerary()
     }
     
     // MARK: - TapGestureRecognizer

@@ -36,23 +36,15 @@
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
 		784411C78D77B32379540EA6 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */; };
 		9206FF741FA2AE0D006F5DC0 /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9206FF731FA2AE0D006F5DC0 /* login.mp4 */; };
-		923167791FA2E258006BE2CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182A1F9D1C8C00B5E8F1 /* User.swift */; };
-		9231677A1FA2E2B9006BE2CD /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F601F91D1BE00743DDA /* YelpPlace.swift */; };
-		9231677B1FA2E2B9006BE2CD /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
-		9231677C1FA2E2B9006BE2CD /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
-		9231677D1FA2E2B9006BE2CD /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182C1F9D1C8C00B5E8F1 /* CategoryItem.swift */; };
-		9231677E1FA2E2B9006BE2CD /* ViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49418291F9D1C8C00B5E8F1 /* ViewCategory.swift */; };
-		9231677F1FA2E2B9006BE2CD /* MARealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F51FA2CD2D003DD46B /* MARealm.swift */; };
 		923167801FA2E2D4006BE2CD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A791F99EC3D00713A3B /* Category.swift */; };
 		923167811FA2E2E8006BE2CD /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */; };
 		923167821FA2E327006BE2CD /* InterestSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A711F99DEEE00713A3B /* InterestSelectionCell.swift */; };
-		923167851FA39B35006BE2CD /* RCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923167831FA39B35006BE2CD /* RCategory.swift */; };
-		9231678B1FA39DF3006BE2CD /* RItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F71FA2DF45003DD46B /* RItinerary.swift */; };
-		9231678D1FA3A524006BE2CD /* RPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231678C1FA3A524006BE2CD /* RPlace.swift */; };
+		9231678E1FA3D915006BE2CD /* RItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F71FA2DF45003DD46B /* RItinerary.swift */; };
+		923167901FA3D915006BE2CD /* RCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923167831FA39B35006BE2CD /* RCategory.swift */; };
+		923167911FA3D915006BE2CD /* RPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9231678C1FA3A524006BE2CD /* RPlace.swift */; };
+		923167921FA3D91B006BE2CD /* RItineraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F91FA2DF5C003DD46B /* RItineraryTests.swift */; };
 		923D86F61FA2CD2D003DD46B /* MARealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F51FA2CD2D003DD46B /* MARealm.swift */; };
 		923D87021FA2DF91003DD46B /* MoveAroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D87011FA2DF91003DD46B /* MoveAroundTests.swift */; };
-		923D87091FA2DFA4003DD46B /* RItineraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F91FA2DF5C003DD46B /* RItineraryTests.swift */; };
-		923D870B1FA2DFB2003DD46B /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182B1F9D1C8C00B5E8F1 /* Itinerary.swift */; };
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
 		C553E1EF1593F12A22C7FA57 /* Pods_MoveAroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5318D6741D0C817E156C1EE5 /* Pods_MoveAroundTests.framework */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
@@ -627,21 +619,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9231677F1FA2E2B9006BE2CD /* MARealm.swift in Sources */,
-				9231677A1FA2E2B9006BE2CD /* YelpPlace.swift in Sources */,
-				923D87091FA2DFA4003DD46B /* RItineraryTests.swift in Sources */,
-				9231677C1FA2E2B9006BE2CD /* Place.swift in Sources */,
-				9231677D1FA2E2B9006BE2CD /* CategoryItem.swift in Sources */,
-				923167851FA39B35006BE2CD /* RCategory.swift in Sources */,
-				923D870B1FA2DFB2003DD46B /* Itinerary.swift in Sources */,
-				9231677B1FA2E2B9006BE2CD /* FoursquarePlace.swift in Sources */,
-				923167791FA2E258006BE2CD /* User.swift in Sources */,
-				9231677E1FA2E2B9006BE2CD /* ViewCategory.swift in Sources */,
-				9231678B1FA39DF3006BE2CD /* RItinerary.swift in Sources */,
+				923167921FA3D91B006BE2CD /* RItineraryTests.swift in Sources */,
 				923D87021FA2DF91003DD46B /* MoveAroundTests.swift in Sources */,
 				923167801FA2E2D4006BE2CD /* Category.swift in Sources */,
 				923167821FA2E327006BE2CD /* InterestSelectionCell.swift in Sources */,
-				9231678D1FA3A524006BE2CD /* RPlace.swift in Sources */,
 				923167811FA2E2E8006BE2CD /* YelpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,7 +640,10 @@
 				64AD1A721F99DEEE00713A3B /* InterestSelectionCell.swift in Sources */,
 				64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */,
 				64CA810E1F9D5F5000909603 /* MapView.swift in Sources */,
+				923167911FA3D915006BE2CD /* RPlace.swift in Sources */,
 				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
+				9231678E1FA3D915006BE2CD /* RItinerary.swift in Sources */,
+				923167901FA3D915006BE2CD /* RCategory.swift in Sources */,
 				E49418321F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift in Sources */,
 				E494182D1F9D1C8C00B5E8F1 /* ViewCategory.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,
