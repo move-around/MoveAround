@@ -5,6 +5,8 @@
 //  Created by Gonzalo Maldonado Martinez on 10/26/17.
 //  Copyright © 2017 Mohit Taneja. All rights reserved.
 //
+// NOTE: To run these tests, you will need to swap the TargetMemberships of RItinerary, RACategory and others to MoveAroundTests
+// You will also need to comment out any existing calls to RItinerary on MoveAround Target Members
 
 import XCTest
 class RItineraryTests: XCTestCase {
@@ -37,6 +39,10 @@ class RItineraryTests: XCTestCase {
         categoryItem.isSelected = true
         itinerary.interests.append(categoryItem)
 
+        let place = Place()
+        place.name = "Home"
+        itinerary.placesOfInterest.append(place)
+
         let rItinerary = ItineraryAdapter.createFromItinerary(itinerary: itinerary)
         XCTAssertEqual(rItinerary.id, itinerary.id)
         XCTAssertEqual(rItinerary.userID, user.id)
@@ -45,6 +51,7 @@ class RItineraryTests: XCTestCase {
         XCTAssertEqual(rItinerary.interests[0].name, category.name)
         XCTAssertEqual(rItinerary.interests[0].yelpCode, category.yelpCode)
         XCTAssertEqual(rItinerary.interests[0].selected, true)
+        XCTAssertEqual(rItinerary.placesOfInterest[0].name, place.name)
         XCTAssertEqual(rItinerary.endDate, endDate)
     }
 }
