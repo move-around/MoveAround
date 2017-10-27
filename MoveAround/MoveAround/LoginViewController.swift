@@ -93,8 +93,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
 
         if (User.currentUser != nil) {
             self.presentSignupVC()
+            return
         }
-        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: 125)
+        let rect = CGRect(x: 0, y: 0, width: view.bounds.width, height: 28)
         let loginButton = LoginButton(frame: rect, readPermissions: [ .publicProfile, .email ])
         loginButton.center = view.center
         loginButton.center.y += 20

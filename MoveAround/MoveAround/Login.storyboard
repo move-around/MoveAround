@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,19 +23,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MoveAroundLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-W8-77s">
-                                <rect key="frame" x="16" y="89" width="169" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MoveAroundLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-W8-77s">
+                                <rect key="frame" x="103" y="108" width="169" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="Gnh-J8-uwA"/>
+                                    <constraint firstAttribute="width" constant="169" id="xaW-19-2Og"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MoveAround" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-ZF-F6n">
-                                <rect key="frame" x="194" y="163" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MoveAround" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-ZF-F6n">
+                                <rect key="frame" x="107" y="79" width="159" height="21"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" red="0.26363068819046021" green="0.41471564769744873" blue="0.64299994707107544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rUb-W8-77s" firstAttribute="top" secondItem="N4U-QD-ebb" secondAttribute="topMargin" constant="44" id="IjW-Ac-oas"/>
+                            <constraint firstItem="tNv-ZF-F6n" firstAttribute="leading" secondItem="V8V-8n-Mk5" secondAttribute="leading" constant="107" id="KDl-6g-lCA"/>
+                            <constraint firstItem="tNv-ZF-F6n" firstAttribute="top" secondItem="V8V-8n-Mk5" secondAttribute="top" constant="15" id="dyd-3A-f8m"/>
+                            <constraint firstItem="rUb-W8-77s" firstAttribute="leading" secondItem="V8V-8n-Mk5" secondAttribute="leading" constant="103" id="kMa-VH-CMA"/>
+                            <constraint firstItem="rUb-W8-77s" firstAttribute="top" secondItem="tNv-ZF-F6n" secondAttribute="bottom" constant="8" id="z5P-30-V4F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V8V-8n-Mk5"/>
                     </view>
                     <navigationItem key="navigationItem" id="8La-ay-1Wa"/>
