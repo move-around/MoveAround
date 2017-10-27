@@ -36,6 +36,33 @@ class RItinerary: Object {
 }
 
 class ItineraryAdapter {
+    static func createFromRItinerary(rItinerary: RItinerary, user: User) -> Itinerary {
+        let itinerary = Itinerary()
+        itinerary.id = rItinerary.id
+        itinerary.user = user
+        itinerary.destination = rItinerary.destination
+        itinerary.startDate = rItinerary.startDate
+        itinerary.endDate = rItinerary.endDate
+        rItinerary.interests.forEach { (raCategory) in
+            let category = Category(name: raCategory.name!, yelpCode: raCategory.yelpCode!)
+            let categoryItem = CategoryItem(item: category)
+            categoryItem.isSelected = raCategory.selected
+            itinerary.interests.append(categoryItem)
+        }
+        rItinerary.placesOfInterest.forEach { (rplace) in
+            let place = self.createPlaceFrom(rPlace: rplace)
+            itinerary.placesOfInterest.append(place)
+        }
+        rItinerary.plannedPlaces.forEach { (rplace) in
+            let place = self.createPlaceFrom(rPlace: rplace)
+            itinerary.plannedPlaces.append(place)
+        }
+
+        return itinerary
+
+    }
+
+
     static func createFromItinerary(itinerary: Itinerary) -> RItinerary {
         let rItinerary = RItinerary()
         rItinerary.id = itinerary.id
@@ -51,11 +78,11 @@ class ItineraryAdapter {
             rItinerary.interests.append(raCategory)
         }
         itinerary.placesOfInterest.forEach { (place) in
-            let rPlace = self.createRPlaceFromPlace(place: place)
+            let rPlace = self.createRPlaceFrom(place: place)
             rItinerary.placesOfInterest.append(rPlace)
         }
         itinerary.plannedPlaces.forEach { (place) in
-            let rPlace = self.createRPlaceFromPlace(place: place)
+            let rPlace = self.createRPlaceFrom(place: place)
             rItinerary.plannedPlaces.append(rPlace)
         }
 
@@ -67,7 +94,7 @@ class ItineraryAdapter {
 
             filledItineraries?.forEach({ (placeItinerary) in
                 let rPlaceItinerary = RPlaceItinerary()
-                rPlaceItinerary.place = self.createRPlaceFromPlace(place: placeItinerary!.place!)
+                rPlaceItinerary.place = self.createRPlaceFrom(place: placeItinerary!.place!)
                 rPlaceItinerary.from = placeItinerary?.from
                 rPlaceItinerary.to = placeItinerary?.to
                 rDayItinerary.placesItineraries.append(rPlaceItinerary)
@@ -81,7 +108,7 @@ class ItineraryAdapter {
         return rItinerary
     }
 
-    class func createRPlaceFromPlace(place: Place) -> RPlace {
+    class func createRPlaceFrom(place: Place) -> RPlace {
         let rPlace = RPlace()
         rPlace.name = place.name
         rPlace.address = place.address
@@ -99,5 +126,27 @@ class ItineraryAdapter {
         rPlace.isSelected = place.isSelected ?? false
         return rPlace
     }
-
+    class func createPlaceFrom(rPlace: RPlace) -> Place {
+        let place = Place()
+        place.name = rPlace.name
+        place.name = rPlace.name
+        place.address = rPlace.address
+        if let imageUrl = rPlace.imageURL {
+            place.imageURL = URL(string: imageUrl)
+        }
+        place.categories = rPlace.categories
+        place.distance = rPlace.distance
+        place.hours = rPlace.hours
+        if let ratingImageUrl = rPlace.ratingImageURL {
+            place.ratingImageURL = URL(string: ratingImageUrl)
+        }
+        place.reviewCount = rPlace.reviewCount
+        place.itineraryTime = rPlace.itineraryTime
+        place.latitude = rPlace.latitude
+        place.longitude = rPlace.longitude
+        place.phoneNumber = rPlace.phoneNumber
+        place.id = rPlace.id
+        place.isSelected = rPlace.isSelected
+        return place
+    }
 }
