@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var dayLabel: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
@@ -154,6 +153,13 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             dayItinerary = currentItinerary.dayItineraries[dayIndex]
         }
+        /*
+         let realm = MARealm.realm()
+         try! realm.write {
+            // realm.add(dayItinerary)
+         }
+        */
+
         tableView.reloadData()
     }
     

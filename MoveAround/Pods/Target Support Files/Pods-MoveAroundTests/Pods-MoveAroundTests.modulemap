@@ -1,0 +1,6 @@
+framework module Pods_MoveAroundTests {
+  umbrella header "Pods-MoveAroundTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

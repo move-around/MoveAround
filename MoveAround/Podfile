@@ -10,9 +10,15 @@ target 'MoveAround' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'Parse'
+  pod 'Realm'
+  pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :submodules => true
   pod 'MBProgressHUD'
   pod 'ParseFacebookUtilsV4'
   pod 'GooglePlaces'
+
+  target 'MoveAroundTests' do
+    inherit! :search_paths
+  end
 end
 swift_32 = ['FacebookCore', 'FacebookShare']
 post_install do |installer|

@@ -36,7 +36,24 @@
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
 		784411C78D77B32379540EA6 /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */; };
 		9206FF741FA2AE0D006F5DC0 /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9206FF731FA2AE0D006F5DC0 /* login.mp4 */; };
+		923167791FA2E258006BE2CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182A1F9D1C8C00B5E8F1 /* User.swift */; };
+		9231677A1FA2E2B9006BE2CD /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F601F91D1BE00743DDA /* YelpPlace.swift */; };
+		9231677B1FA2E2B9006BE2CD /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
+		9231677C1FA2E2B9006BE2CD /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
+		9231677D1FA2E2B9006BE2CD /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182C1F9D1C8C00B5E8F1 /* CategoryItem.swift */; };
+		9231677E1FA2E2B9006BE2CD /* ViewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49418291F9D1C8C00B5E8F1 /* ViewCategory.swift */; };
+		9231677F1FA2E2B9006BE2CD /* MARealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F51FA2CD2D003DD46B /* MARealm.swift */; };
+		923167801FA2E2D4006BE2CD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A791F99EC3D00713A3B /* Category.swift */; };
+		923167811FA2E2E8006BE2CD /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */; };
+		923167821FA2E327006BE2CD /* InterestSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A711F99DEEE00713A3B /* InterestSelectionCell.swift */; };
+		923D86F61FA2CD2D003DD46B /* MARealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F51FA2CD2D003DD46B /* MARealm.swift */; };
+		923D86F81FA2DF45003DD46B /* RItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F71FA2DF45003DD46B /* RItinerary.swift */; };
+		923D87021FA2DF91003DD46B /* MoveAroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D87011FA2DF91003DD46B /* MoveAroundTests.swift */; };
+		923D87091FA2DFA4003DD46B /* RItineraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F91FA2DF5C003DD46B /* RItineraryTests.swift */; };
+		923D870B1FA2DFB2003DD46B /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494182B1F9D1C8C00B5E8F1 /* Itinerary.swift */; };
+		923D870C1FA2DFB6003DD46B /* RItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D86F71FA2DF45003DD46B /* RItinerary.swift */; };
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
+		C553E1EF1593F12A22C7FA57 /* Pods_MoveAroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5318D6741D0C817E156C1EE5 /* Pods_MoveAroundTests.framework */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
@@ -55,8 +72,21 @@
 		E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		923D87041FA2DF91003DD46B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4A04C051F8DDB0900E03A19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A04C0C1F8DDB0900E03A19;
+			remoteInfo = MoveAround;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0705ECB261E0D01932CF31E7 /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
+		103AFCD8D120934DCF5B010F /* Pods-MoveAroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAroundTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAroundTests/Pods-MoveAroundTests.release.xcconfig"; sourceTree = "<group>"; };
+		47EE1E0B97EB6842CA944C16 /* Pods-MoveAroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAroundTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAroundTests/Pods-MoveAroundTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5318D6741D0C817E156C1EE5 /* Pods_MoveAroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		647D6F631F92ABE800DCE0D9 /* PlaceSwipeableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceSwipeableView.xib; sourceTree = "<group>"; };
 		64920D271F92B26900A96D25 /* PlaceSwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableView.swift; sourceTree = "<group>"; };
 		64920D291F92B41E00A96D25 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +114,12 @@
 		64D8F85D1F929B780099F1F8 /* PlaceSwiping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceSwiping.storyboard; sourceTree = "<group>"; };
 		64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableSuperView.swift; sourceTree = "<group>"; };
 		9206FF731FA2AE0D006F5DC0 /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = login.mp4; sourceTree = "<group>"; };
+		923D86F51FA2CD2D003DD46B /* MARealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARealm.swift; sourceTree = "<group>"; };
+		923D86F71FA2DF45003DD46B /* RItinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RItinerary.swift; sourceTree = "<group>"; };
+		923D86F91FA2DF5C003DD46B /* RItineraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RItineraryTests.swift; sourceTree = "<group>"; };
+		923D86FF1FA2DF91003DD46B /* MoveAroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveAroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		923D87011FA2DF91003DD46B /* MoveAroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAroundTests.swift; sourceTree = "<group>"; };
+		923D87031FA2DF91003DD46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D466641F92C5F600ED2EAA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
 		DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +145,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		923D86FC1FA2DF91003DD46B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C553E1EF1593F12A22C7FA57 /* Pods_MoveAroundTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4A04C0A1F8DDB0900E03A19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,11 +263,22 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
+		923D87001FA2DF91003DD46B /* MoveAroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				923D87011FA2DF91003DD46B /* MoveAroundTests.swift */,
+				923D87031FA2DF91003DD46B /* Info.plist */,
+			);
+			path = MoveAroundTests;
+			sourceTree = "<group>";
+		};
 		984D4700F8D09C44F5B23EE3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				0705ECB261E0D01932CF31E7 /* Pods-MoveAround.debug.xcconfig */,
 				9EED0E77467F7BEFE61E20D5 /* Pods-MoveAround.release.xcconfig */,
+				47EE1E0B97EB6842CA944C16 /* Pods-MoveAroundTests.debug.xcconfig */,
+				103AFCD8D120934DCF5B010F /* Pods-MoveAroundTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -251,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A04C0F1F8DDB0900E03A19 /* MoveAround */,
+				923D87001FA2DF91003DD46B /* MoveAroundTests */,
 				E4A04C0E1F8DDB0900E03A19 /* Products */,
 				984D4700F8D09C44F5B23EE3 /* Pods */,
 				F4D67A7342BE48E42D90CC2D /* Frameworks */,
@@ -261,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A04C0D1F8DDB0900E03A19 /* MoveAround.app */,
+				923D86FF1FA2DF91003DD46B /* MoveAroundTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,6 +357,9 @@
 				E494182B1F9D1C8C00B5E8F1 /* Itinerary.swift */,
 				E494182A1F9D1C8C00B5E8F1 /* User.swift */,
 				E49418291F9D1C8C00B5E8F1 /* ViewCategory.swift */,
+				923D86F51FA2CD2D003DD46B /* MARealm.swift */,
+				923D86F71FA2DF45003DD46B /* RItinerary.swift */,
+				923D86F91FA2DF5C003DD46B /* RItineraryTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */,
+				5318D6741D0C817E156C1EE5 /* Pods_MoveAroundTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,6 +376,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		923D86FE1FA2DF91003DD46B /* MoveAroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923D87061FA2DF91003DD46B /* Build configuration list for PBXNativeTarget "MoveAroundTests" */;
+			buildPhases = (
+				E6D63601BE7AA11040AB2D52 /* [CP] Check Pods Manifest.lock */,
+				923D86FB1FA2DF91003DD46B /* Sources */,
+				923D86FC1FA2DF91003DD46B /* Frameworks */,
+				923D86FD1FA2DF91003DD46B /* Resources */,
+				2EBDFD8E4EE26449FEA771AD /* [CP] Embed Pods Frameworks */,
+				4B89C4718DA8ECBCF6F8F0C5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				923D87051FA2DF91003DD46B /* PBXTargetDependency */,
+			);
+			name = MoveAroundTests;
+			productName = MoveAroundTests;
+			productReference = 923D86FF1FA2DF91003DD46B /* MoveAroundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E4A04C0C1F8DDB0900E03A19 /* MoveAround */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4A04C1F1F8DDB0A00E03A19 /* Build configuration list for PBXNativeTarget "MoveAround" */;
@@ -345,6 +427,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Mohit Taneja";
 				TargetAttributes = {
+					923D86FE1FA2DF91003DD46B = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E4A04C0C1F8DDB0900E03A19;
+					};
 					E4A04C0C1F8DDB0900E03A19 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -365,11 +452,19 @@
 			projectRoot = "";
 			targets = (
 				E4A04C0C1F8DDB0900E03A19 /* MoveAround */,
+				923D86FE1FA2DF91003DD46B /* MoveAroundTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		923D86FD1FA2DF91003DD46B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4A04C0B1F8DDB0900E03A19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +487,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2EBDFD8E4EE26449FEA771AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAroundTests/Pods-MoveAroundTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B89C4718DA8ECBCF6F8F0C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAroundTests/Pods-MoveAroundTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6218E0C7780122C71650FC47 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +536,8 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -426,6 +553,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseFacebookUtilsV4.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -450,6 +579,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E6D63601BE7AA11040AB2D52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoveAroundTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F1A715FA9150CBBA98B0664D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +618,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		923D86FB1FA2DF91003DD46B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923D870C1FA2DFB6003DD46B /* RItinerary.swift in Sources */,
+				9231677F1FA2E2B9006BE2CD /* MARealm.swift in Sources */,
+				9231677A1FA2E2B9006BE2CD /* YelpPlace.swift in Sources */,
+				923D87091FA2DFA4003DD46B /* RItineraryTests.swift in Sources */,
+				9231677C1FA2E2B9006BE2CD /* Place.swift in Sources */,
+				9231677D1FA2E2B9006BE2CD /* CategoryItem.swift in Sources */,
+				923D870B1FA2DFB2003DD46B /* Itinerary.swift in Sources */,
+				9231677B1FA2E2B9006BE2CD /* FoursquarePlace.swift in Sources */,
+				923167791FA2E258006BE2CD /* User.swift in Sources */,
+				9231677E1FA2E2B9006BE2CD /* ViewCategory.swift in Sources */,
+				923D87021FA2DF91003DD46B /* MoveAroundTests.swift in Sources */,
+				923167801FA2E2D4006BE2CD /* Category.swift in Sources */,
+				923167821FA2E327006BE2CD /* InterestSelectionCell.swift in Sources */,
+				923167811FA2E2E8006BE2CD /* YelpClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4A04C091F8DDB0900E03A19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +653,7 @@
 				64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */,
 				64CA810E1F9D5F5000909603 /* MapView.swift in Sources */,
 				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
+				923D86F81FA2DF45003DD46B /* RItinerary.swift in Sources */,
 				E49418321F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift in Sources */,
 				E494182D1F9D1C8C00B5E8F1 /* ViewCategory.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,
@@ -502,6 +671,7 @@
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
 				64CA91431F9482A10029C267 /* PreferencesViewController.swift in Sources */,
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
+				923D86F61FA2CD2D003DD46B /* MARealm.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
 				E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */,
 				64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */,
@@ -512,6 +682,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		923D87051FA2DF91003DD46B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4A04C0C1F8DDB0900E03A19 /* MoveAround */;
+			targetProxy = 923D87041FA2DF91003DD46B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E494181C1F98879700B5E8F1 /* Itinerary.storyboard */ = {
@@ -533,6 +711,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		923D87071FA2DF91003DD46B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47EE1E0B97EB6842CA944C16 /* Pods-MoveAroundTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				INFOPLIST_FILE = MoveAroundTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wandertap.MoveAroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveAround.app/MoveAround";
+			};
+			name = Debug;
+		};
+		923D87081FA2DF91003DD46B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 103AFCD8D120934DCF5B010F /* Pods-MoveAroundTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				INFOPLIST_FILE = MoveAroundTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wandertap.MoveAroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveAround.app/MoveAround";
+			};
+			name = Release;
+		};
 		E4A04C1D1F8DDB0A00E03A19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -680,6 +892,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		923D87061FA2DF91003DD46B /* Build configuration list for PBXNativeTarget "MoveAroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923D87071FA2DF91003DD46B /* Debug */,
+				923D87081FA2DF91003DD46B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E4A04C081F8DDB0900E03A19 /* Build configuration list for PBXProject "MoveAround" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

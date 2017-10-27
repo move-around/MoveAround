@@ -6,6 +6,7 @@
 //  Copyright © 2017 Mohit Taneja. All rights reserved.
 //
 import UIKit
+import RealmSwift
 
 // Representation of a single itinerary item
 class PlaceItinerary: NSObject {
