@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 
 class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startingLabel: UILabel!
@@ -26,6 +26,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let currentUser = User.currentUser {
+            greeting.text = "Hi \(currentUser.firstName!)!"
+        }
         let neBoundsCorner = CLLocationCoordinate2D(latitude: -33.843366,
                                                     longitude: 151.134002)
         let swBoundsCorner = CLLocationCoordinate2D(latitude: -33.875725,

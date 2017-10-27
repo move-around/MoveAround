@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -140,6 +140,7 @@
                     </view>
                     <connections>
                         <outlet property="endDatePicker" destination="FHa-5o-GhS" id="Bsk-Nx-loB"/>
+                        <outlet property="greeting" destination="ulB-Sh-Aqy" id="iGZ-hF-S7C"/>
                         <outlet property="horizontalLineTop" destination="A0B-RC-EeT" id="OIc-yD-Jb6"/>
                         <outlet property="nextButton" destination="FCM-Yc-qWK" id="91D-7W-MW4"/>
                         <outlet property="startDatePicker" destination="Aeq-dI-lUs" id="4sC-Lg-e9z"/>
