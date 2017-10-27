@@ -58,8 +58,21 @@ class ItineraryAdapter {
             itinerary.plannedPlaces.append(place)
         }
 
-        return itinerary
+        rItinerary.dayItineraries.forEach { (rdayItinerary) in
+            let dayItinerary = DayItinerary()
+            rdayItinerary.placesItineraries.forEach({ (rPlaceItinerary) in
+                let placeItinerary = PlaceItinerary()
+                if let rPlace = rPlaceItinerary.place {
+                    placeItinerary.place = self.createPlaceFrom(rPlace: rPlace)
+                }
+                placeItinerary.from = rPlaceItinerary.from
+                placeItinerary.to = rPlaceItinerary.to
+                dayItinerary.placesItineraries.append(placeItinerary)
+            })
+            itinerary.dayItineraries.append(dayItinerary)
+        }
 
+        return itinerary
     }
 
 

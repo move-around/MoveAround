@@ -44,6 +44,15 @@ class RItineraryTests: XCTestCase {
         rItinerary.placesOfInterest.append(rPlace)
         rItinerary.plannedPlaces.append(rPlace)
 
+        let rPlaceItinerary = RPlaceItinerary()
+        rPlaceItinerary.place = rPlace
+        rPlaceItinerary.from = startDate
+        rPlaceItinerary.to = endDate
+
+        let rDayItineary = RDayItinerary()
+        rDayItineary.placesItineraries.append(rPlaceItinerary)
+        rItinerary.dayItineraries.append(rDayItineary)
+
         let user = User(dictionary: NSDictionary())
         user.id = "Blah"
         let itinerary = ItineraryAdapter.createFrom(rItinerary: rItinerary, user: user)
@@ -58,6 +67,10 @@ class RItineraryTests: XCTestCase {
         XCTAssertEqual(rItinerary.placesOfInterest[0].name, itinerary.placesOfInterest.first!.name)
         XCTAssertEqual(rItinerary.placesOfInterest[0].hours, itinerary.placesOfInterest.first!.hours)
         XCTAssertEqual(rItinerary.plannedPlaces[0].name, itinerary.plannedPlaces.first!.name)
+
+        let firstDayItinerary = rItinerary.dayItineraries.first
+        let firstPlaceItinerary = firstDayItinerary!.placesItineraries.first
+        XCTAssertEqual(firstPlaceItinerary!.place!.name, rPlace.name)
     }
     
     func testCreateFromItinerary() {
