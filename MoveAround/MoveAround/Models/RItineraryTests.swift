@@ -46,7 +46,7 @@ class RItineraryTests: XCTestCase {
 
         let user = User(dictionary: NSDictionary())
         user.id = "Blah"
-        let itinerary = ItineraryAdapter.createFromRItinerary(rItinerary: rItinerary, user: user)
+        let itinerary = ItineraryAdapter.createFrom(rItinerary: rItinerary, user: user)
         XCTAssertEqual(rItinerary.id, itinerary.id)
         XCTAssertEqual(rItinerary.userID, user.id)
         XCTAssertEqual(rItinerary.destination, itinerary.destination)
@@ -95,7 +95,7 @@ class RItineraryTests: XCTestCase {
         dayItinerary.placesItineraries.append(placeItinerary)
         itinerary.dayItineraries.append(dayItinerary)
 
-        let rItinerary = ItineraryAdapter.createFromItinerary(itinerary: itinerary)
+        let rItinerary = ItineraryAdapter.createFrom(itinerary: itinerary)
         XCTAssertEqual(rItinerary.id, itinerary.id)
         XCTAssertEqual(rItinerary.userID, user.id)
         XCTAssertEqual(rItinerary.destination, destination)

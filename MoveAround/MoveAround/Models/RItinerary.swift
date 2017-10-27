@@ -36,7 +36,7 @@ class RItinerary: Object {
 }
 
 class ItineraryAdapter {
-    static func createFromRItinerary(rItinerary: RItinerary, user: User) -> Itinerary {
+    static func createFrom(rItinerary: RItinerary, user: User) -> Itinerary {
         let itinerary = Itinerary()
         itinerary.id = rItinerary.id
         itinerary.user = user
@@ -63,7 +63,7 @@ class ItineraryAdapter {
     }
 
 
-    static func createFromItinerary(itinerary: Itinerary) -> RItinerary {
+    static func createFrom(itinerary: Itinerary) -> RItinerary {
         let rItinerary = RItinerary()
         rItinerary.id = itinerary.id
         rItinerary.userID = itinerary.user?.id ?? nil
