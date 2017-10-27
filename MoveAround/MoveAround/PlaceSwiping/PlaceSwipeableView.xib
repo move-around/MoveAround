@@ -28,7 +28,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="civiccenter" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="290" id="9r0-mR-wF8"/>
@@ -40,17 +40,10 @@
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vkD-Sj-6Su">
-                    <rect key="frame" x="141" y="242" width="39" height="37"/>
-                    <color key="pageIndicatorTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="currentPageIndicatorTintColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                </pageControl>
             </subviews>
             <color key="backgroundColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="vkD-Sj-6Su" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Ls-kU-ubn"/>
-                <constraint firstItem="vkD-Sj-6Su" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="242" id="3ME-eU-ZDV"/>
                 <constraint firstItem="ZLl-zO-ftU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" identifier="constraint3" id="8fk-gi-NjW"/>
                 <constraint firstItem="heg-Kh-hYQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="GFt-rL-aX9"/>
                 <constraint firstItem="heg-Kh-hYQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" identifier="constraint5" id="GPF-rN-YF4"/>
@@ -77,6 +70,6 @@
         </panGestureRecognizer>
     </objects>
     <resources>
-        <image name="civiccenter" width="292" height="270"/>
+        <image name="default" width="1000" height="750"/>
     </resources>
 </document>

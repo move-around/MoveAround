@@ -35,6 +35,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
             let vc = segue.destination as! PlaceDetailViewController
             vc.transitioningDelegate = self
             vc.place = sender as! Place
+            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+            backItem.tintColor = UIColor.init(red: 255/255, green: 113/255, blue: 18/255, alpha: 1)
         } else if segue.identifier == segueToItinerary {
             // Do something special here if required
         }

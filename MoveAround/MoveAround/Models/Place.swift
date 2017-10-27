@@ -21,6 +21,8 @@ class Place: NSObject {
     var longitude: Double?
     var phoneNumber: String?
     var id: String?
+    var url: String?
+    var reservationURL: String?
     
     var isSelected: Bool?  = false
     

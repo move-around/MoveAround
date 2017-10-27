@@ -10,15 +10,16 @@ import MapKit
 
 class PlaceDetailViewController: UIViewController  {
 
+    @IBOutlet weak var reviewsCountLabel: UILabel!
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var hoursLabel: UILabel!
-    @IBOutlet weak var categoriesLabel: UILabel!
-    @IBOutlet weak var itineraryTime: UILabel!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var reservationButton: UIButton!
     
     var place: Place!
     
@@ -34,17 +35,40 @@ class PlaceDetailViewController: UIViewController  {
             ratingImageView.setImageWith(url)
         }
         addressLabel.text = place.address
-        hoursLabel.text = place.hours
         categoriesLabel.text = place.categories
-        itineraryTime.text = place.itineraryTime
+        let reviewCount = String(describing: place.reviewCount!)
+        reviewsCountLabel.text = "\(reviewCount) ratings"
         
         if (place.phoneNumber ?? "").isEmpty {
             callButton.isHidden = true
         }
-        
+
+        if (place.reservationURL ?? "").isEmpty {
+            reservationButton.isHidden = true
+        }
         mapView.places = [place]
         
 
+    }
+    
+    @IBAction func onMakeReservationsTap(_ sender: UIButton) {
+        if let url = URL(string: place.reservationURL!) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                    print("Resrvation url : \(success)")
+                })
+            }
+        }
+        
+    }
+    @IBAction func onReviewsTap(_ sender: UIButton) {
+        if let url = URL(string: place.url!) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                    print("Yelp open url : \(success)")
+                })
+            }
+        }
     }
     
     @IBAction func onCallTap(_ sender: UIButton) {

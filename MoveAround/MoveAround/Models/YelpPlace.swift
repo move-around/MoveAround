@@ -74,6 +74,16 @@ class YelpPlace: Place {
             ratingImageURL = nil
         }
         
+        let resUrl = dictionary["reservation_url"] as? String
+        if resUrl != nil {
+            reservationURL = resUrl
+        }
+        
+        let mobileUrl = dictionary["mobile_url"] as? String
+        if mobileUrl != nil {
+            url = mobileUrl
+        }
+        
         reviewCount = dictionary["review_count"] as? NSNumber
         
         id = dictionary["id"] as? String
@@ -87,6 +97,11 @@ class YelpPlace: Place {
         }
         return places
     }
+    
+//    class func searchWithId(id: String, completion: @escaping ([Place]?, Error?) -> Void) {
+//        _ = YelpClient.sharedInstance.searchWithId(id, completion: completion)
+//    }
+//    
     
   class func searchWithTerm(term: String, offset: Int, completion: @escaping ([Place]?, Error?) -> Void) {
     _ = YelpClient.sharedInstance.searchWithTerm(term, offset: offset, completion: completion)
