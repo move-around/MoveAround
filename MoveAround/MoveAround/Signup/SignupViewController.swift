@@ -125,6 +125,13 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: durationInDays)
 
+        print("syncing itinerary \(itinerary.id!)")
+        let rItinerary = ItineraryAdapter.createFrom(itinerary: itinerary)
+        if let realm = MARealm.realm() {
+            try! realm.write {
+                realm.add(rItinerary, update: true)
+            }
+        }
         vc.itinerary = itinerary
     }
 

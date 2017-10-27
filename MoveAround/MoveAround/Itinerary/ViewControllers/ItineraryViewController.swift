@@ -39,6 +39,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         let currentItinerary = Itinerary.currentItinerary
         print("syncing itinerary \(currentItinerary.id)")
         let rItinerary = ItineraryAdapter.createFrom(itinerary: currentItinerary)
+
         if let realm = MARealm.realm() {
             try! realm.write {
                 realm.add(rItinerary, update: true)

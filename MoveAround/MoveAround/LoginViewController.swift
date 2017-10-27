@@ -109,12 +109,19 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         if let realm = MARealm.realm() {
             let query = "userID = '\(currentUser.id!)'"
             let itineraries = realm.objects(RItinerary.self).filter(query)
+
             if (itineraries.count > 0) {
+                // To force creating a new Realm Itinerary, uncomment next line
+            // }; if (false) {
                 Itinerary.currentItinerary = ItineraryAdapter.createFrom(rItinerary: itineraries.last! as RItinerary, user: currentUser)
                 print("Found an itinerary")
-                let itineraryStoryBoard = UIStoryboard(name: "Itinerary", bundle: nil)
-                let itineraryVC = itineraryStoryBoard.instantiateViewController(withIdentifier: "ItineraryViewController") as! ItineraryViewController
-                self.navigationController?.present(itineraryVC, animated: true, completion: nil)
+                print(Itinerary.currentItinerary)
+                let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
+
+                let itineraryNavigationController = itineraryStoryboard.instantiateViewController(withIdentifier: "ItineraryNavigationController") as! UINavigationController
+                //itineraryNavigationController.tabBarItem.title = "Itinerary"
+                let window: UIWindow = UIApplication.shared.keyWindow!
+                window.rootViewController = itineraryNavigationController
                 return
             } else {
                 let signupStoryBoard = UIStoryboard(name: "Signup", bundle: nil)

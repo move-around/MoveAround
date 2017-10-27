@@ -69,6 +69,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
         // Store user preferences etc
         place.isSelected = true
         Itinerary.currentItinerary.placesOfInterest.append(place)
+        syncItinerary()
     }
     
     func clickedLeft() {
@@ -81,9 +82,20 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     func clickedRight() {
         let topview = loadedViews.first!
         Itinerary.currentItinerary.placesOfInterest.append(topview.place)
+        syncItinerary()
         topview.removeFromSuperview()
         swipeClear()
         // Store user preferences etc
+    }
+
+    func syncItinerary() {
+        print("syncing itinerary \(Itinerary.currentItinerary.id!)")
+        let rItinerary = ItineraryAdapter.createFrom(itinerary: Itinerary.currentItinerary)
+        if let realm = MARealm.realm() {
+            try! realm.write {
+                realm.add(rItinerary, update: true)
+            }
+        }
     }
     
     func populatePlaces() {
