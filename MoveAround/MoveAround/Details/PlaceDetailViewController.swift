@@ -8,6 +8,8 @@
 import UIKit
 import MapKit
 
+
+let UBER_CLIENT_ID = "ELWHEjVhHS85M0PHckqt8KVCtzMwSoJz"
 class PlaceDetailViewController: UIViewController  {
 
     @IBOutlet weak var reviewsCountLabel: UILabel!
@@ -19,7 +21,7 @@ class PlaceDetailViewController: UIViewController  {
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var reservationButton: UIButton!
+    @IBOutlet weak var uberButton: UIButton!
     
     var place: Place!
     
@@ -43,24 +45,26 @@ class PlaceDetailViewController: UIViewController  {
             callButton.isHidden = true
         }
 
-        if (place.reservationURL ?? "").isEmpty {
-            reservationButton.isHidden = true
-        }
         mapView.places = [place]
-        
-
     }
     
-    @IBAction func onMakeReservationsTap(_ sender: UIButton) {
-        if let url = URL(string: place.reservationURL!) {
+    @IBAction func onUberTap(_ sender: UIButton) {
+        let destinationLatitude = String(describing: place.latitude!)
+        let destinationLongitude = String(describing: place.longitude!)
+        let address = place.address!
+        let name = place.name!
+        
+        let uberUrl = "uber://?client_id=\(UBER_CLIENT_ID)&action=setPickup&pickup=my_location&dropoff[latitude]=\(destinationLatitude)&dropoff[longitude]=\(destinationLongitude)&dropoff[nickname]=\(name)&dropoff[formatted_address]=\(address)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
+        if let url = URL(string: uberUrl!) {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
-                    print("Resrvation url : \(success)")
+                    print("Uber url : \(success)")
                 })
             }
         }
-        
     }
+
     @IBAction func onReviewsTap(_ sender: UIButton) {
         if let url = URL(string: place.url!) {
             if UIApplication.shared.canOpenURL(url) {

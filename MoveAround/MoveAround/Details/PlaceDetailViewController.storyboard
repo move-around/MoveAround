@@ -109,11 +109,11 @@
                                     <constraint firstAttribute="width" constant="150" id="LBH-uI-ud8"/>
                                     <constraint firstAttribute="height" constant="40" id="TxL-ar-9UX"/>
                                 </constraints>
-                                <state key="normal" title="Make Reservation">
+                                <state key="normal" title="Uber">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onMakeReservationsTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="oxa-3A-TAf"/>
+                                    <action selector="onUberTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="hhL-r8-VaK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="245 reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYU-Ao-wd6">
@@ -203,8 +203,8 @@
                         <outlet property="nameLabel" destination="aUL-Bb-8VS" id="qQw-o7-1sI"/>
                         <outlet property="placeImageView" destination="fgo-yS-a6W" id="03r-sP-8Lo"/>
                         <outlet property="ratingImageView" destination="HQd-JD-ASn" id="zlD-vT-fWl"/>
-                        <outlet property="reservationButton" destination="Afx-Ss-r28" id="kov-Qa-a9p"/>
                         <outlet property="reviewsCountLabel" destination="FYU-Ao-wd6" id="XmN-u8-NJV"/>
+                        <outlet property="uberButton" destination="Afx-Ss-r28" id="0gC-OY-C5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aK4-ij-4Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
