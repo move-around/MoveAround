@@ -56,6 +56,8 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     @IBAction func onDonePressed(_ sender: Any) {
+        Itinerary.currentItinerary.generateItinerary()
+
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
         
         let itineraryNavigationController = itineraryStoryboard.instantiateViewController(withIdentifier: "ItineraryNavigationController") as! UINavigationController

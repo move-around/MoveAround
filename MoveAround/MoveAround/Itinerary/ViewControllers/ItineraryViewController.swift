@@ -132,7 +132,8 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         dayLabel.title = dateFormatterPrint.string(from: currentDate!)
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
-        if (tomorrow! > currentItinerary.endDate!) {
+        let itineraryEndDateForComparison = Calendar.current.date(byAdding: .hour, value: 1, to: currentItinerary.endDate!)
+        if (tomorrow! > itineraryEndDateForComparison!) {
             nextDayButton.isEnabled = false
             nextDayButton.title = ""
         }
@@ -203,7 +204,11 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             vc.cellRowForItineraryView = indexPath?.row
         } else if segue.identifier == "showItineraryMap" {
             let vc = segue.destination as! ItineraryMapViewController
-            vc.places = Itinerary.currentItinerary.plannedPlaces
+            var plannedPlacesForDay: [Place] = [Place]()
+            for pItinerary in (dayItinerary?.placesItineraries)! {
+                plannedPlacesForDay.append(pItinerary!.place!)
+            }
+            vc.places = plannedPlacesForDay
             
         }
         else if segue.identifier == "showDetail" {

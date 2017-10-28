@@ -23,6 +23,7 @@ class Place: NSObject {
     var id: String?
     var url: String?
     var reservationURL: String?
+    var positionVector: Vector?
     
     var isSelected: Bool?  = false
     
