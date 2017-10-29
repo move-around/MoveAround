@@ -58,8 +58,7 @@ class MapView: UIView, MKMapViewDelegate {
     }
     
     func goToLocation(location: CLLocation) {
-        let span = MKCoordinateSpanMake(0.01, 0.1)
-        let region = MKCoordinateRegionMake(location.coordinate, span)
+        let region = regionForAnnotations(annotations: annotations)
         mapView.setRegion(region, animated: false)
     }
     
@@ -197,4 +196,36 @@ class MapView: UIView, MKMapViewDelegate {
         }
         annotations.append(annotation)
     }
+    
+    func regionForAnnotations(annotations : [MKAnnotation]) ->MKCoordinateRegion {
+        
+        var minLat: CLLocationDegrees = 90.0
+        var maxLat: CLLocationDegrees = -90.0
+        var minLon: CLLocationDegrees = 180.0
+        var maxLon: CLLocationDegrees = -180.0
+        
+        for annotation in annotations as [MKAnnotation] {
+            let lat = Double(annotation.coordinate.latitude)
+            let long = Double(annotation.coordinate.longitude)
+            if (lat < minLat) {
+                minLat = lat
+            }
+            if (long < minLon) {
+                minLon = long
+            }
+            if (lat > maxLat) {
+                maxLat = lat
+            }
+            if (long > maxLon) {
+                maxLon = long
+            }
+        }
+        let spanPadding = 0.05
+        let span = MKCoordinateSpanMake(maxLat - minLat + spanPadding, maxLon - minLon + spanPadding)
+        
+        let center = CLLocationCoordinate2DMake(minLat + (maxLat - minLat)/2, minLon +  (maxLon - minLon)/2)
+        
+        return MKCoordinateRegionMake(center, span)
+    }
+
 }
