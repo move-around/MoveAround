@@ -43,6 +43,7 @@
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
 		E422E9561FA3C82F00B61025 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9551FA3C7EC00B61025 /* Vector.swift */; };
 		E422E9571FA3C83400B61025 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9541FA3C7EB00B61025 /* KMeans.swift */; };
+		E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
@@ -99,6 +100,7 @@
 		DDDE1E4D13D22514E4E0F8BD /* Pods_MoveAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E422E9541FA3C7EB00B61025 /* KMeans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KMeans.swift; path = MoveAround/Itinerary/ItineraryCreation/KMeans.swift; sourceTree = SOURCE_ROOT; };
 		E422E9551FA3C7EC00B61025 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = MoveAround/Itinerary/ItineraryCreation/Vector.swift; sourceTree = SOURCE_ROOT; };
+		E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategoryMatcher.swift; sourceTree = "<group>"; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */,
 				E49418311F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift */,
+				E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */,
 				64CA810E1F9D5F5000909603 /* MapView.swift in Sources */,
 				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
+				E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */,
 				E49418321F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift in Sources */,
 				E494182D1F9D1C8C00B5E8F1 /* ViewCategory.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,

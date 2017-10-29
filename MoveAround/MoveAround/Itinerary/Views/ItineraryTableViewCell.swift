@@ -38,6 +38,7 @@ class ItineraryTableViewCell: UITableViewCell {
                     placeItinerary = PlaceItinerary()
                 }
                 placeItinerary?.place = place!
+                travelTimeLabel.text = place?.travelTimeFromPrevPlace
             }
         }
     }
@@ -54,7 +55,7 @@ class ItineraryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         switchPlaceImage.tintColor = UIColor.darkGray
         // Add Tap gesture recognizers
-        let gestureRecornizerForSelectingPlaces = UITapGestureRecognizer(target: self, action: #selector(showPlaceSelector(_:)))
+        let gestureRecornizerForSelectingPlaces = UITapGestureRecognizer(target: self, action: #selector(userClearedCell))
         switchPlaceImage.addGestureRecognizer(gestureRecornizerForSelectingPlaces)
         gestureRecornizerForSelectingPlaces.delegate = self
     }
@@ -65,6 +66,13 @@ class ItineraryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @objc func userClearedCell() {
+        Itinerary.currentItinerary.placesOfInterest.append(place!)
+        Itinerary.currentItinerary.plannedPlaces.remove(at: Itinerary.currentItinerary.plannedPlaces.index(of: place!)!)
+        placeItinerary?.place = nil
+        delegate?.placeSelected(placeItinerary: placeItinerary!, cell: self)
+        resetCell()
+    }
     func resetCell() {
         bannerButton.isHidden = false
         place = nil

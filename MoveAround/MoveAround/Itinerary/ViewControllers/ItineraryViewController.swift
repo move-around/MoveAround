@@ -169,7 +169,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItineraryTableViewCell", for: indexPath) as! ItineraryTableViewCell
         // TODO (mohit) : Set the place itinerary data structure here properly
         cell.timePeriodLabel.text = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
-        if (dayItinerary?.placesItineraries[indexPath.row] != nil) {
+        if (dayItinerary?.placesItineraries[indexPath.row] != nil && dayItinerary?.placesItineraries[indexPath.row]?.place != nil) {
             cell.place = dayItinerary?.placesItineraries[indexPath.row]?.place
         } else {
             cell.resetCell()

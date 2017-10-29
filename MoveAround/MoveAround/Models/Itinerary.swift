@@ -29,6 +29,22 @@ class Itinerary: NSObject {
     var placesOfInterest: [Place] = [Place]() // Places the user wants to visit
     var plannedPlaces: [Place] = [Place]() // Places selected as part of itinerary
     var dayItineraries: [DayItinerary?] = [DayItinerary?]()
+    var initialTimeSlots: [[String]] = [["9:00 AM", "10:00 AM"],
+                                        ["10:30 AM", "1:00 PM"],
+                                        ["1:30 PM", "2:30 PM"],
+                                        ["3:00 PM", "4:30 PM"],
+                                        ["5:00 PM", "7:00 PM"],
+                                        ["7:30 PM", "9:00 PM"]]
+    
+    let placePreferencesForTimeSlots: [[String]] = [["breakfast_brunch", "coffee", "cafes"],
+                                        ["not_restaurant"],
+                                        ["restaurant"],
+                                        ["not_restaurant"],
+                                        ["coffee", "cafes"],
+                                        ["restaurant"]]
+
+    
+    
     
     override init() {
         super.init()
@@ -78,20 +94,56 @@ class Itinerary: NSObject {
     }
     
     func createDayItinerary(dayItinerary: DayItinerary) {
-        let numOfPlacesToVisit: Int = min(dayItinerary.placesItineraries.count, dayItinerary.potentialPlacesToVisit.count)
-        for i in 0..<numOfPlacesToVisit {
+        for i in 0..<dayItinerary.placesItineraries.count {
             if dayItinerary.placesItineraries[i] == nil {
                 dayItinerary.placesItineraries[i] = PlaceItinerary()
             }
             // Do more fancy stuff here regarding how to select a place
-            let placeToVisit = dayItinerary.potentialPlacesToVisit[i]
-            dayItinerary.placesItineraries[i]?.place = placeToVisit
+            let placeToVisit = placeToVisitBasedOnPreferences(preferences: placePreferencesForTimeSlots[i], dayItinerary: dayItinerary)
             
-            // Also every time we add a place to itinerary,
-            // add it to plannedPlaces and remove it from placesOfInterest
-            plannedPlaces.append(placeToVisit)
-            placesOfInterest.remove(at: placesOfInterest.index(of: placeToVisit)!)
+            if placeToVisit != nil {
+                dayItinerary.placesItineraries[i]?.place = placeToVisit
+            
+                // Also every time we add a place to itinerary,
+                // add it to plannedPlaces and remove it from placesOfInterest
+                plannedPlaces.append(placeToVisit!)
+                placesOfInterest.remove(at: placesOfInterest.index(of: placeToVisit!)!)
+            }
         }
+    }
+    
+    // Select only one place to be visited for a particular placeItinerary
+    // based on preferences array for categories for places
+    func placeToVisitBasedOnPreferences(preferences: [String], dayItinerary: DayItinerary)->Place? {
+        var selectedPlace: Place? = nil
+        
+        // Go through each place in the potential places to visit
+        for place in dayItinerary.potentialPlacesToVisit {
+            let categoriesForPlace = place.internalCategories!.split(separator: ",")
+            
+            // Check if even one of their category belongs to the preferred category for that time slot
+            for preferredCategory in preferences {
+                let isPlaceRestaurant = YelpCategoryMatcher.isCategoryRestaurant(categories: categoriesForPlace)
+                if preferredCategory == "restaurant" && isPlaceRestaurant {
+                    selectedPlace = place
+                    dayItinerary.potentialPlacesToVisit.remove(at: dayItinerary.potentialPlacesToVisit.index(of: selectedPlace!)!)
+                    return selectedPlace
+                }
+                else if preferredCategory == "not_restaurant" && !isPlaceRestaurant {
+                    selectedPlace = place
+                    dayItinerary.potentialPlacesToVisit.remove(at: dayItinerary.potentialPlacesToVisit.index(of: selectedPlace!)!)
+                    return selectedPlace
+                }
+                else if categoriesForPlace.contains(preferredCategory.split(separator: ",")[0]) {
+                    selectedPlace = place
+                    dayItinerary.potentialPlacesToVisit.remove(at: dayItinerary.potentialPlacesToVisit.index(of: selectedPlace!)!)
+                    return selectedPlace
+                }
+            }
+        }
+        
+        // If we are reaching here, this means that we weren't able to find any suitable place for this time slot
+        return selectedPlace
     }
 }
 

@@ -12,6 +12,7 @@ class Place: NSObject {
     var address: String?
     var imageURL: URL?
     var categories: String?
+    var internalCategories: String?
     var distance: String?
     var hours: String?
     var ratingImageURL: URL?
@@ -24,6 +25,7 @@ class Place: NSObject {
     var url: String?
     var reservationURL: String?
     var positionVector: Vector?
+    var travelTimeFromPrevPlace: String = ""
     
     var isSelected: Bool?  = false
     

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -149,6 +150,12 @@
                                                         <constraint firstAttribute="height" constant="160" id="e6f-zW-bme"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="tyE-gm-iLO">
+                                                    <rect key="frame" x="8" y="8" width="359" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="160" id="OEL-6f-lpd"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast at Tartine Bakery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPK-M8-AQr">
                                                     <rect key="frame" x="8" y="101" width="222" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -167,9 +174,9 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-Ab-std">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-Ab-std">
                                                     <rect key="frame" x="337" y="137.5" width="30" height="30"/>
-                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="5ox-7e-GWu"/>
                                                         <constraint firstAttribute="height" constant="30" id="o4a-4D-Mqn"/>
@@ -203,6 +210,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="jiZ-uD-tpU" secondAttribute="trailing" constant="8" id="968-wI-dXK"/>
                                                 <constraint firstItem="rPK-M8-AQr" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leadingMargin" id="L9O-Ik-Aj4"/>
                                                 <constraint firstItem="jiZ-uD-tpU" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leading" constant="8" id="MRV-PW-BTE"/>
+                                                <constraint firstAttribute="bottom" secondItem="tyE-gm-iLO" secondAttribute="bottom" constant="8" id="OEH-AF-PE2"/>
                                                 <constraint firstItem="GRx-Ab-std" firstAttribute="trailing" secondItem="KgN-f6-K6d" secondAttribute="trailingMargin" id="Oex-YW-70t"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="aTg-8J-Wva" secondAttribute="bottom" constant="2" id="P8H-Qw-jum"/>
                                                 <constraint firstAttribute="bottom" secondItem="OPO-Dw-Ih2" secondAttribute="bottom" constant="8" id="QIT-wO-30J"/>
@@ -210,12 +218,14 @@
                                                 <constraint firstItem="2Ox-GV-tHR" firstAttribute="top" secondItem="Jpf-Ey-a3r" secondAttribute="bottom" constant="1" id="Sg5-cc-9n3"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GRx-Ab-std" secondAttribute="bottom" id="T4V-XW-BcW"/>
                                                 <constraint firstItem="2Ox-GV-tHR" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leadingMargin" id="aFw-EO-6zk"/>
+                                                <constraint firstAttribute="trailing" secondItem="tyE-gm-iLO" secondAttribute="trailing" constant="8" id="b2w-AB-KSy"/>
                                                 <constraint firstAttribute="bottom" secondItem="jiZ-uD-tpU" secondAttribute="bottom" constant="8" id="dDE-m5-eVm"/>
                                                 <constraint firstItem="Jpf-Ey-a3r" firstAttribute="top" secondItem="rPK-M8-AQr" secondAttribute="bottom" constant="1" id="gDY-Ud-Mrc"/>
                                                 <constraint firstItem="Jpf-Ey-a3r" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leadingMargin" id="hUU-Bw-MzB"/>
                                                 <constraint firstItem="jiZ-uD-tpU" firstAttribute="top" secondItem="KgN-f6-K6d" secondAttribute="top" constant="8" id="iLe-kq-7Jf"/>
                                                 <constraint firstItem="OPO-Dw-Ih2" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leading" constant="8" id="qCa-gu-BXB"/>
                                                 <constraint firstItem="GRx-Ab-std" firstAttribute="leading" secondItem="aTg-8J-Wva" secondAttribute="trailing" constant="5" id="sio-YI-cZD"/>
+                                                <constraint firstItem="tyE-gm-iLO" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leading" constant="8" id="xeD-Yl-TpD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -336,9 +346,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gradient" width="500" height="100"/>
         <image name="map_icon" width="80" height="80"/>
+        <image name="no" width="700" height="700"/>
         <image name="round_tick" width="168" height="168"/>
-        <image name="switch" width="200" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cnw-2V-Mrj"/>

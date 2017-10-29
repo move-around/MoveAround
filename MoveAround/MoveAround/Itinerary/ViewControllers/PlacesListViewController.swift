@@ -39,7 +39,6 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
             searchBar.tintColor = UIColor.white
             searchBar.placeholder = "Landmarks"
             
-            
             // Add Scroll Loading view for infinite scrolling
             let frame = CGRect(x: 0, y: collectionView.contentSize.height, width: collectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
             loadingMoreView = InfiniteScrollActivityView(frame: frame)
@@ -174,7 +173,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK:- Scroll view functions
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (!isMoreDataLoading) {
+        if (!isMoreDataLoading && !isShowingSelectedPlaces) {
             // Calculate the position of one screen length before the bottom of the results
             let scrollViewContentHeight = collectionView.contentSize.height
             let scrollOffsetThreshold = scrollViewContentHeight - 2*collectionView.bounds.size.height

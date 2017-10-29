@@ -51,11 +51,17 @@ class YelpPlace: Place {
         let categoriesArray = dictionary["categories"] as? [[String]]
         if categoriesArray != nil {
             var categoryNames = [String]()
+            var internalCategoryNames = [String]()
             for category in categoriesArray! {
                 let categoryName = category[0]
+                let internalCategoryName = category[1]
                 categoryNames.append(categoryName)
+                internalCategoryNames.append(internalCategoryName)
             }
             categories = categoryNames.joined(separator: ", ")
+            internalCategories = internalCategoryNames.joined(separator: ",")
+            print("Categories for \(name!) = \(categories!)")
+            print("Internal Categories for \(name!) = \(internalCategories!)")
         } else {
             categories = nil
         }
