@@ -12,7 +12,7 @@ import MBProgressHUD
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
     var places: [Place]! = [Place]()
-    let limit = 15
+    let limit = 30
     var offset = 0
     
     required init?(coder aDecoder: NSCoder) {

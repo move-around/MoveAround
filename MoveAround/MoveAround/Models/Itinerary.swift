@@ -16,7 +16,7 @@ class PlaceItinerary: NSObject {
 
 // Representation of itinerary for a day
 class DayItinerary: NSObject {
-    var placesItineraries: [PlaceItinerary?] = [PlaceItinerary?](repeating: nil, count:7)
+    var placesItineraries: [PlaceItinerary?] = [PlaceItinerary?](repeating: nil, count:6)
     var potentialPlacesToVisit: [Place] = []
 }
 

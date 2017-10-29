@@ -25,6 +25,10 @@
 		64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F5A1F91CF4A00743DDA /* PlaceDetailViewController.swift */; };
 		64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */; };
 		64BB8F661F91D9B200743DDA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F651F91D9B200743DDA /* Place.swift */; };
+		64C9DC7C1FA4620400C75069 /* PhotoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9DC7B1FA4620400C75069 /* PhotoAnnotation.swift */; };
+		64C9DC7E1FA4E96F00C75069 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9DC7D1FA4E96F00C75069 /* LocationsViewController.swift */; };
+		64C9DC801FA4EA9900C75069 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9DC7F1FA4EA9900C75069 /* FullImageViewController.swift */; };
+		64C9DC821FA4EDFC00C75069 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9DC811FA4EDFC00C75069 /* LocationCell.swift */; };
 		64CA810E1F9D5F5000909603 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA810D1F9D5F5000909603 /* MapView.swift */; };
 		64CA81101F9D607400909603 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CA810F1F9D607400909603 /* MapView.xib */; };
 		64CA81141F9D7F4D00909603 /* ItineraryMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA81131F9D7F4D00909603 /* ItineraryMapViewController.swift */; };
@@ -76,6 +80,10 @@
 		64BB8F601F91D1BE00743DDA /* YelpPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YelpPlace.swift; path = MoveAround/Models/YelpPlace.swift; sourceTree = SOURCE_ROOT; };
 		64BB8F621F91D1DD00743DDA /* FoursquarePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoursquarePlace.swift; path = MoveAround/Models/FoursquarePlace.swift; sourceTree = SOURCE_ROOT; };
 		64BB8F651F91D9B200743DDA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = MoveAround/Models/Place.swift; sourceTree = SOURCE_ROOT; };
+		64C9DC7B1FA4620400C75069 /* PhotoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAnnotation.swift; sourceTree = "<group>"; };
+		64C9DC7D1FA4E96F00C75069 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		64C9DC7F1FA4EA9900C75069 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
+		64C9DC811FA4EDFC00C75069 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		64CA810D1F9D5F5000909603 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		64CA810F1F9D607400909603 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		64CA81131F9D7F4D00909603 /* ItineraryMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +186,9 @@
 				64CA810F1F9D607400909603 /* MapView.xib */,
 				64CA81131F9D7F4D00909603 /* ItineraryMapViewController.swift */,
 				64CA81151F9D7FDE00909603 /* ItineraryMap.storyboard */,
+				64C9DC7D1FA4E96F00C75069 /* LocationsViewController.swift */,
+				64C9DC7F1FA4EA9900C75069 /* FullImageViewController.swift */,
+				64C9DC811FA4EDFC00C75069 /* LocationCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 				E494182B1F9D1C8C00B5E8F1 /* Itinerary.swift */,
 				E494182A1F9D1C8C00B5E8F1 /* User.swift */,
 				E49418291F9D1C8C00B5E8F1 /* ViewCategory.swift */,
+				64C9DC7B1FA4620400C75069 /* PhotoAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -495,16 +507,20 @@
 				E49418221F988D9200B5E8F1 /* InfiniteScrollActivityView.swift in Sources */,
 				E49418281F99C57000B5E8F1 /* ItineraryViewController.swift in Sources */,
 				E422E9571FA3C83400B61025 /* KMeans.swift in Sources */,
+				64C9DC7C1FA4620400C75069 /* PhotoAnnotation.swift in Sources */,
 				64920D301F92EB1E00A96D25 /* FloatingPoint.swift in Sources */,
+				64C9DC7E1FA4E96F00C75069 /* LocationsViewController.swift in Sources */,
 				E494182E1F9D1C8C00B5E8F1 /* User.swift in Sources */,
 				E422E9561FA3C82F00B61025 /* Vector.swift in Sources */,
 				64AD1A721F99DEEE00713A3B /* InterestSelectionCell.swift in Sources */,
+				64C9DC801FA4EA9900C75069 /* FullImageViewController.swift in Sources */,
 				64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */,
 				64CA810E1F9D5F5000909603 /* MapView.swift in Sources */,
 				64BB8F631F91D1DD00743DDA /* FoursquarePlace.swift in Sources */,
 				E49418321F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift in Sources */,
 				E494182D1F9D1C8C00B5E8F1 /* ViewCategory.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,
+				64C9DC821FA4EDFC00C75069 /* LocationCell.swift in Sources */,
 				E49418201F98887700B5E8F1 /* PlacesListViewController.swift in Sources */,
 				64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */,
 				64BB8F661F91D9B200743DDA /* Place.swift in Sources */,
