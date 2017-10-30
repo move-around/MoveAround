@@ -45,7 +45,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fine Sushi Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB9-qT-owF">
                                                     <rect key="frame" x="0.0" y="159" width="116.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.6476481541450777" green="0.39369282363341979" blue="0.11532550847909466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pabu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDM-4p-6VQ">
@@ -54,14 +54,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About $70 per person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-WA-YfF">
-                                                    <rect key="frame" x="0.0" y="209" width="141.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-WA-YfF">
+                                                    <rect key="frame" x="0.0" y="209" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="round_tick" translatesAutoresizingMaskIntoConstraints="NO" id="J37-ec-ZMu">
                                                     <rect key="frame" x="137" y="0.0" width="30" height="30"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Ljg-Ul-DTs"/>
@@ -175,15 +176,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-Ab-std">
-                                                    <rect key="frame" x="337" y="137.5" width="30" height="30"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="327" y="127.5" width="40" height="40"/>
+                                                    <color key="tintColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="5ox-7e-GWu"/>
-                                                        <constraint firstAttribute="height" constant="30" id="o4a-4D-Mqn"/>
+                                                        <constraint firstAttribute="width" constant="40" id="5ox-7e-GWu"/>
+                                                        <constraint firstAttribute="height" constant="40" id="o4a-4D-Mqn"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="258" text="19 minute Walk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-8J-Wva">
-                                                    <rect key="frame" x="216" y="144.5" width="116" height="21"/>
+                                                    <rect key="frame" x="206" y="144.5" width="116" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.91965418779999997" green="0.91965418779999997" blue="0.91965418779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -195,7 +196,7 @@
                                                         <constraint firstAttribute="height" constant="160" id="lNv-tE-BY2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <state key="normal" title="Tap to add a Location">
+                                                    <state key="normal" title="Tap to add a location">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" red="0.94021211140000005" green="0.94021211140000005" blue="0.94021211140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -217,12 +218,14 @@
                                                 <constraint firstItem="OPO-Dw-Ih2" firstAttribute="top" secondItem="KgN-f6-K6d" secondAttribute="top" constant="8" id="QlD-fu-4Vv"/>
                                                 <constraint firstItem="2Ox-GV-tHR" firstAttribute="top" secondItem="Jpf-Ey-a3r" secondAttribute="bottom" constant="1" id="Sg5-cc-9n3"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GRx-Ab-std" secondAttribute="bottom" id="T4V-XW-BcW"/>
+                                                <constraint firstItem="GRx-Ab-std" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jpf-Ey-a3r" secondAttribute="trailing" id="TwK-3b-aL6"/>
                                                 <constraint firstItem="2Ox-GV-tHR" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leadingMargin" id="aFw-EO-6zk"/>
                                                 <constraint firstAttribute="trailing" secondItem="tyE-gm-iLO" secondAttribute="trailing" constant="8" id="b2w-AB-KSy"/>
                                                 <constraint firstAttribute="bottom" secondItem="jiZ-uD-tpU" secondAttribute="bottom" constant="8" id="dDE-m5-eVm"/>
                                                 <constraint firstItem="Jpf-Ey-a3r" firstAttribute="top" secondItem="rPK-M8-AQr" secondAttribute="bottom" constant="1" id="gDY-Ud-Mrc"/>
                                                 <constraint firstItem="Jpf-Ey-a3r" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leadingMargin" id="hUU-Bw-MzB"/>
                                                 <constraint firstItem="jiZ-uD-tpU" firstAttribute="top" secondItem="KgN-f6-K6d" secondAttribute="top" constant="8" id="iLe-kq-7Jf"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rPK-M8-AQr" secondAttribute="trailing" id="oTY-vu-Je8"/>
                                                 <constraint firstItem="OPO-Dw-Ih2" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leading" constant="8" id="qCa-gu-BXB"/>
                                                 <constraint firstItem="GRx-Ab-std" firstAttribute="leading" secondItem="aTg-8J-Wva" secondAttribute="trailing" constant="5" id="sio-YI-cZD"/>
                                                 <constraint firstItem="tyE-gm-iLO" firstAttribute="leading" secondItem="KgN-f6-K6d" secondAttribute="leading" constant="8" id="xeD-Yl-TpD"/>
@@ -265,13 +268,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Friday" id="OLb-sa-yRj">
                         <barButtonItem key="leftBarButtonItem" title="&lt;-Thursday" id="g2w-WK-afN">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="loadPreviousDayItinerary:" destination="BYZ-38-t0r" id="cj1-8S-qoT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Saturday-&gt;" id="TDU-qo-DGx">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="loadNextDayItinerary:" destination="BYZ-38-t0r" id="oDr-xk-9S7"/>
                             </connections>
@@ -314,6 +317,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d4i-Yf-nrf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

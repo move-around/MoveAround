@@ -46,9 +46,12 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         let currentItinerary = Itinerary.currentItinerary
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd"
+        let dateFormatterPrintForCurrentDate = DateFormatter()
+        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
+
 
         if let startDate = currentItinerary.startDate {
-            let startDateStr = dateFormatterPrint.string(from: startDate)
+            let startDateStr = dateFormatterPrintForCurrentDate.string(from: startDate)
             self.dayLabel.title = startDateStr
             self.prevDayButton.isEnabled = false
             self.prevDayButton.title = ""
@@ -98,13 +101,15 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         let currentItinerary = Itinerary.currentItinerary
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd"
-        
+        let dateFormatterPrintForCurrentDate = DateFormatter()
+        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
+
         let tomorrow = currentDate
         nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
         nextDayButton.isEnabled = true
         
         currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
-        dayLabel.title = dateFormatterPrint.string(from: currentDate!)
+        dayLabel.title = dateFormatterPrintForCurrentDate.string(from: currentDate!)
         
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
         if (yesterday! < currentItinerary.startDate!) {
@@ -123,13 +128,16 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         let currentItinerary = Itinerary.currentItinerary
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd"
+        let dateFormatterPrintForCurrentDate = DateFormatter()
+        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
+
         
         let yesterday = currentDate
         prevDayButton.title = dateFormatterPrint.string(from: yesterday!)
         prevDayButton.isEnabled = true
         
         currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
-        dayLabel.title = dateFormatterPrint.string(from: currentDate!)
+        dayLabel.title = dateFormatterPrintForCurrentDate.string(from: currentDate!)
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
         let itineraryEndDateForComparison = Calendar.current.date(byAdding: .hour, value: 1, to: currentItinerary.endDate!)
@@ -206,7 +214,9 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             let vc = segue.destination as! ItineraryMapViewController
             var plannedPlacesForDay: [Place] = [Place]()
             for pItinerary in (dayItinerary?.placesItineraries)! {
-                plannedPlacesForDay.append(pItinerary!.place!)
+                if (pItinerary != nil) && (pItinerary!.place != nil) {
+                    plannedPlacesForDay.append(pItinerary!.place!)
+                }
             }
             vc.places = plannedPlacesForDay
             

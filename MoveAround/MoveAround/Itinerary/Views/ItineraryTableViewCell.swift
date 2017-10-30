@@ -53,11 +53,11 @@ class ItineraryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        switchPlaceImage.tintColor = UIColor.darkGray
         // Add Tap gesture recognizers
         let gestureRecornizerForSelectingPlaces = UITapGestureRecognizer(target: self, action: #selector(userClearedCell))
         switchPlaceImage.addGestureRecognizer(gestureRecornizerForSelectingPlaces)
         gestureRecornizerForSelectingPlaces.delegate = self
+        switchPlaceImage.tintColor = UIColor(hex: "FF7112")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

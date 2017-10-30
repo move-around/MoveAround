@@ -44,6 +44,7 @@
 		E422E9561FA3C82F00B61025 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9551FA3C7EC00B61025 /* Vector.swift */; };
 		E422E9571FA3C83400B61025 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9541FA3C7EB00B61025 /* KMeans.swift */; };
 		E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */; };
+		E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9731FA6BB1F00B61025 /* UIColor.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
@@ -101,6 +102,7 @@
 		E422E9541FA3C7EB00B61025 /* KMeans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KMeans.swift; path = MoveAround/Itinerary/ItineraryCreation/KMeans.swift; sourceTree = SOURCE_ROOT; };
 		E422E9551FA3C7EC00B61025 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = MoveAround/Itinerary/ItineraryCreation/Vector.swift; sourceTree = SOURCE_ROOT; };
 		E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategoryMatcher.swift; sourceTree = "<group>"; };
+		E422E9731FA6BB1F00B61025 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				64920D2F1F92EB1E00A96D25 /* FloatingPoint.swift */,
 				64AD1A6B1F99CB6D00713A3B /* String.swift */,
 				E44C11361F9FB691000E1686 /* UIImageView.swift */,
+				E422E9731FA6BB1F00B61025 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				64EC699D1FA6907700082A24 /* InterestSelectionCell.swift in Sources */,
 				644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */,
 				64920D2E1F92EA9300A96D25 /* Int.swift in Sources */,
+				E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */,
 				64CA81141F9D7F4D00909603 /* ItineraryMapViewController.swift in Sources */,
 				64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */,
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,

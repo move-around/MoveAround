@@ -62,27 +62,36 @@ class Itinerary: NSObject {
         placesOfInterest.append(contentsOf: plannedPlaces);
         plannedPlaces.removeAll()
         
-        // Create an array of vectors from the planned places
-        var placesVector: [Vector] = []
-        for place in placesOfInterest {
-            placesVector.append(place.positionVector!)
+        // If number of places selected is less that number of days in itinerary just return
+        if placesOfInterest.count < dayItineraries.count {
+            return
         }
-        
-        // Create clusters using K-Means
-        let convergenceDistance = 0.0001
-        let labels: [Int] = Array(0...dayItineraries.count-1)
-        let kmm = KMeans<Int>(labels: labels)
-        kmm.trainCenters(placesVector, convergeDistance: convergenceDistance)
-        
-        var labelArrayForPlacesVector = kmm.fit(placesVector)
-        
-        for i in 0..<labelArrayForPlacesVector.count {
-            let label = labelArrayForPlacesVector[i]
-            print("\(label): \(placesVector[i])")
-            if (dayItineraries[label] == nil) {
-                dayItineraries[label] = DayItinerary()
+        // If num of days for itinerary is 1 or less, add all places to that day itself
+        if dayItineraries.count == 1 {
+            dayItineraries[0]?.potentialPlacesToVisit.append(contentsOf: placesOfInterest)
+        } else {
+            // Create an array of vectors from the planned places
+            var placesVector: [Vector] = []
+            for place in placesOfInterest {
+                placesVector.append(place.positionVector!)
             }
-            dayItineraries[label]?.potentialPlacesToVisit.append(placesOfInterest[i])
+            
+            // Create clusters using K-Means
+            let convergenceDistance = 0.0001
+            let labels: [Int] = Array(0...dayItineraries.count-1)
+            let kmm = KMeans<Int>(labels: labels)
+            kmm.trainCenters(placesVector, convergeDistance: convergenceDistance)
+            
+            var labelArrayForPlacesVector = kmm.fit(placesVector)
+            
+            for i in 0..<labelArrayForPlacesVector.count {
+                let label = labelArrayForPlacesVector[i]
+                print("\(label): \(placesVector[i])")
+                if (dayItineraries[label] == nil) {
+                    dayItineraries[label] = DayItinerary()
+                }
+                dayItineraries[label]?.potentialPlacesToVisit.append(placesOfInterest[i])
+            }
         }
         
         // Now create itinerary for each day based upon potentialPlaces to visit

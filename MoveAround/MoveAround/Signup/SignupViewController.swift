@@ -49,6 +49,8 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.layer.borderColor = UIColor.lightGray.cgColor
         tableView.layer.borderWidth = 1.0
+        tableView.tableFooterView = UIView()
+
         
         nextButton.isEnabled = false
 
