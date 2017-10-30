@@ -14,6 +14,8 @@ target 'MoveAround' do
   pod 'ParseFacebookUtilsV4'
   pod 'GooglePlaces'
   pod 'DotsLoading'
+  #pod 'JBDatePicker'
+  pod 'CalendarDateRangePickerViewController'
 end
 swift_32 = ['FacebookCore', 'FacebookShare']
 post_install do |installer|

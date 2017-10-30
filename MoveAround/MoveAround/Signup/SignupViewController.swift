@@ -8,20 +8,23 @@
 
 import UIKit
 import GooglePlaces
+import CalendarDateRangePickerViewController
 
 class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var startingLabel: UILabel!
-    @IBOutlet weak var startDatePicker: UIDatePicker!
-    @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var horizontalLineTop: UIView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var dateButton: UIButton!
+    
+    @IBOutlet weak var label: UILabel!
     
     var tableData=[String]()
     var fetcher: GMSAutocompleteFetcher?
-    
+    var startDate: Date!
+    var endDate: Date!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +54,22 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.layer.borderWidth = 1.0
         tableView.tableFooterView = UIView()
 
-        
+
         nextButton.isEnabled = false
-
-
     }
+
+    
+    @IBAction func didTapButton(_ sender: UIButton) {
+        let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        dateRangePickerViewController.delegate = self
+        dateRangePickerViewController.minimumDate = Date()
+        dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
+        dateRangePickerViewController.selectedStartDate = Date()
+        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
+        let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,11 +88,11 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableData.count != 0 {
             self.view.sendSubview(toBack: horizontalLineTop)
-            startingLabel.isHidden = true
+            dateButton.isHidden = true
             tableView.isHidden = false
         } else {
             self.view.bringSubview(toFront: horizontalLineTop)
-            startingLabel.isHidden = false
+            dateButton.isHidden = false
             tableView.isHidden = true
         }
         return tableData.count
@@ -86,7 +100,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         textField.text = tableData[indexPath.row]
-        startingLabel.isHidden = false
+        dateButton.isHidden = false
         tableView.isHidden = true
         view.endEditing(true)
         nextButton.isEnabled = true
@@ -115,8 +129,8 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = segue.destination as! InterestSelectionViewController
         let itinerary = Itinerary.currentItinerary
         itinerary.destination = textField.text
-        itinerary.startDate = startDatePicker.date
-        itinerary.endDate = endDatePicker.date
+        itinerary.startDate = startDate
+        itinerary.endDate = endDate
         
         // Calculate number of days for the trip
         var durationInDays = 1
@@ -127,6 +141,24 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: durationInDays)
 
         vc.itinerary = itinerary
+    }
+
+}
+
+extension SignupViewController : CalendarDateRangePickerViewControllerDelegate {
+    func didTapCancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
+        self.startDate = startDate
+        self.endDate = endDate
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        label.text = dateFormatter.string(from: startDate) + " - " + dateFormatter.string(from: endDate)
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
