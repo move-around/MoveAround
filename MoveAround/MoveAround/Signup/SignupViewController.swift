@@ -64,8 +64,8 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         dateRangePickerViewController.delegate = self
         dateRangePickerViewController.minimumDate = Date()
         dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
-        dateRangePickerViewController.selectedStartDate = Date()
-        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
+//        dateRangePickerViewController.selectedStartDate = Date()
+//        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
         let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
         self.present(navigationController, animated: true, completion: nil)
     }
