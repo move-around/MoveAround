@@ -308,6 +308,48 @@
             </objects>
             <point key="canvasLocation" x="1643" y="155"/>
         </scene>
+        <!--Loading Screen View Controller-->
+        <scene sceneID="40U-nN-C8g">
+            <objects>
+                <viewController storyboardIdentifier="loadingScreenViewController" id="F2R-XH-Trb" customClass="LoadingScreenViewController" customModule="MoveAround" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajD-oG-KtE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang tight, we are making those electrons run really fast to create your perfect trip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-B2-dNQ">
+                                <rect key="frame" x="8" y="120" width="359" height="75.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T40-Qt-PVI">
+                                <rect key="frame" x="42" y="294" width="290" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="AHM-IX-W82"/>
+                                    <constraint firstAttribute="height" constant="78" id="R65-o5-22I"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T40-Qt-PVI" firstAttribute="centerY" secondItem="ajD-oG-KtE" secondAttribute="centerY" id="0yK-gB-5CD"/>
+                            <constraint firstItem="wDe-B2-dNQ" firstAttribute="top" secondItem="6s6-NP-bvy" secondAttribute="top" constant="100" id="RPq-ur-Z63"/>
+                            <constraint firstItem="6s6-NP-bvy" firstAttribute="trailing" secondItem="wDe-B2-dNQ" secondAttribute="trailing" constant="8" id="Xzh-kc-a0r"/>
+                            <constraint firstItem="T40-Qt-PVI" firstAttribute="centerX" secondItem="ajD-oG-KtE" secondAttribute="centerX" id="faY-KF-0Cn"/>
+                            <constraint firstItem="wDe-B2-dNQ" firstAttribute="leading" secondItem="6s6-NP-bvy" secondAttribute="leading" constant="8" id="koz-kQ-v3J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6s6-NP-bvy"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="T40-Qt-PVI" id="l97-Qh-6wX"/>
+                        <segue destination="kk2-uw-b2L" kind="show" identifier="loadingFinishedSegue" id="TtY-P5-V9H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Uk-xm-xHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1032.8" y="-168.6656671664168"/>
+        </scene>
         <!--ItineraryNavigationController-->
         <scene sceneID="PeQ-8Y-PI5">
             <objects>

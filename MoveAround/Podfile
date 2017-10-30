@@ -13,6 +13,7 @@ target 'MoveAround' do
   pod 'MBProgressHUD'
   pod 'ParseFacebookUtilsV4'
   pod 'GooglePlaces'
+  pod 'DotsLoading'
 end
 swift_32 = ['FacebookCore', 'FacebookShare']
 post_install do |installer|

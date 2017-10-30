@@ -46,6 +46,7 @@
 		E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */; };
 		E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9731FA6BB1F00B61025 /* UIColor.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
+		E46EC24B1FA6E5230069621E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
 		E49418201F98887700B5E8F1 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */; };
@@ -104,6 +105,7 @@
 		E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategoryMatcher.swift; sourceTree = "<group>"; };
 		E422E9731FA6BB1F00B61025 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E494181D1F98879700B5E8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Itinerary.storyboard; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		E49418251F99C50F00B5E8F1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */,
 				E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */,
 				E49418271F99C57000B5E8F1 /* ItineraryViewController.swift */,
 			);
@@ -435,6 +438,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/DotsLoading/DotsLoading.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -450,6 +454,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DotsLoading.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -537,6 +542,7 @@
 				64EC699D1FA6907700082A24 /* InterestSelectionCell.swift in Sources */,
 				644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */,
 				64920D2E1F92EA9300A96D25 /* Int.swift in Sources */,
+				E46EC24B1FA6E5230069621E /* LoadingScreenViewController.swift in Sources */,
 				E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */,
 				64CA81141F9D7F4D00909603 /* ItineraryMapViewController.swift in Sources */,
 				64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */,
@@ -687,7 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBWHW3V2R2;
+				DEVELOPMENT_TEAM = R737QPTNBS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -709,7 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBWHW3V2R2;
+				DEVELOPMENT_TEAM = R737QPTNBS;
 				INFOPLIST_FILE = MoveAround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

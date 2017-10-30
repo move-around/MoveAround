@@ -60,10 +60,10 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
 
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
         
-        let itineraryNavigationController = itineraryStoryboard.instantiateViewController(withIdentifier: "ItineraryNavigationController") as! UINavigationController
+        let itineraryLoadingView = itineraryStoryboard.instantiateViewController(withIdentifier: "loadingScreenViewController")
         //itineraryNavigationController.tabBarItem.title = "Itinerary"
         let window: UIWindow = UIApplication.shared.keyWindow!
-        window.rootViewController = itineraryNavigationController
+        window.rootViewController = itineraryLoadingView
 
         /*
         self.navigationController?.tabBarItem.title = "Explore"
