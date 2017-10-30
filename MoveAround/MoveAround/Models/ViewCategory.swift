@@ -15,21 +15,21 @@ class ViewCategory: NSObject {
     }
     
     let categoryArray =
-        [Category(name: "Art Galleries", yelpCode: "galleries"),
-         Category(name: "Bars", yelpCode: "bars"),
-         Category(name: "Coffee & Tea Shops", yelpCode: "coffee"),
-         Category(name: "Dance Clubs", yelpCode: "danceclubs"),
-         Category(name: "Gyms", yelpCode: "gyms"),
-         Category(name: "Hikes", yelpCode: "hiking"),
-         Category(name: "Juice Bars", yelpCode: "juicebars"),
-         Category(name: "Landmarks", yelpCode: "landmarks"),
-         Category(name: "Music Venues", yelpCode: "musicvenues"),
-         Category(name: "Museums", yelpCode: "museums"),
-         Category(name: "Parks", yelpCode: "parks"),
-         Category(name: "Restaurants", yelpCode: "restaurants"),
-         Category(name: "Shopping", yelpCode: "shoppingcenters"), // Restrict to malls for now
-         Category(name: "Theaters", yelpCode: "theater")
-
+        [Category(name: "Art Galleries", yelpCode: "galleries", imageName: "artgalleries"),
+         Category(name: "Bars", yelpCode: "bars", imageName: "bars"),
+         Category(name: "Coffee & Tea", yelpCode: "coffee", imageName: "coffeeteashops"),
+         Category(name: "Dance Clubs", yelpCode: "danceclubs", imageName: "danceclubs"),
+         Category(name: "Desserts", yelpCode: "desserts", imageName: "dessert"),
+         Category(name: "Gyms", yelpCode: "gyms", imageName: "gyms"),
+         Category(name: "Hikes", yelpCode: "hiking", imageName: "hikes"),
+         Category(name: "Landmarks", yelpCode: "landmarks", imageName: "landmarks"),
+         Category(name: "Music", yelpCode: "musicvenues", imageName: "musicvenues"),
+         Category(name: "Museums", yelpCode: "museums", imageName: "museums"),
+         Category(name: "Parks", yelpCode: "parks", imageName: "parks"),
+         Category(name: "Restaurants", yelpCode: "restaurants", imageName: "restaurants"),
+         Category(name: "Shopping", yelpCode: "shoppingcenters", imageName: "shopping"), // Restrict to malls for now
+         Category(name: "Spas", yelpCode: "spas", imageName: "spas"),
+         Category(name: "Theaters", yelpCode: "theater", imageName: "theaters")
     ]
 
     
@@ -38,22 +38,23 @@ class ViewCategory: NSObject {
     }
 }
 
-extension ViewCategory: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewCategory: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "InterestSelectionCell", for: indexPath) as? InterestSelectionCell {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestSelectionCell", for: indexPath) as? InterestSelectionCell {
             cell.item = items[indexPath.row]
             
             // select/deselect the cell
             if items[indexPath.row].isSelected {
-                tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
             } else {
-                tableView.deselectRow(at: indexPath, animated: false)
+                collectionView.deselectItem(at: indexPath, animated: true)
             }
             return cell
         }
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
 }

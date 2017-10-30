@@ -18,6 +18,10 @@ class CategoryItem {
         return item.yelpCode
     }
     
+    var imageName: String {
+        return item.imageName
+    }
+    
     init(item: Category) {
         self.item = item
     }

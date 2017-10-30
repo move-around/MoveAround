@@ -8,9 +8,9 @@
 
 import UIKit
 
-class InterestSelectionViewController: UIViewController, UITableViewDelegate {
+class InterestSelectionViewController: UIViewController, UICollectionViewDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nextButton: UIButton!
     let segueToSwipping = "showPlaceSwiping"
     var viewCategory = ViewCategory()
@@ -20,42 +20,30 @@ class InterestSelectionViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView?.allowsMultipleSelection = true
-        tableView?.dataSource = viewCategory
-        tableView?.delegate = self
+        collectionView.allowsMultipleSelection = true
+        collectionView.dataSource = viewCategory
+        collectionView.delegate = self
         
         nextButton?.isEnabled = !viewCategory.selectedItems.isEmpty
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120
-        
-        // Set zero height table footer to not show cells beyond those asked for
-        tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .none
- 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
-    }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewCategory.items[indexPath.row].isSelected = true
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewCategory.items[indexPath.item].isSelected = true
         nextButton?.isEnabled = !viewCategory.selectedItems.isEmpty
-
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        viewCategory.items[indexPath.row].isSelected = false
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        viewCategory.items[indexPath.item].isSelected = false
         nextButton?.isEnabled = !viewCategory.selectedItems.isEmpty
-
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueToSwipping {
             print(viewCategory.selectedItems.map{$0.name})

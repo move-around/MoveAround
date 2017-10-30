@@ -8,4 +8,5 @@
 struct Category {
     var name: String
     var yelpCode: String
+    var imageName: String
 }
