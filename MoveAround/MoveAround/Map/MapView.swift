@@ -123,7 +123,7 @@ class MapView: UIView, MKMapViewDelegate {
         let directionRequest = MKDirectionsRequest()
         directionRequest.source = startMapItem
         directionRequest.destination = endMapItem
-        directionRequest.transportType = .automobile
+        directionRequest.transportType = .walking
         
         // Calculate the direction
         let directions = MKDirections(request: directionRequest)
