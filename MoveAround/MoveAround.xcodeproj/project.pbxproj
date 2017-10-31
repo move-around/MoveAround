@@ -16,6 +16,7 @@
 		64920D301F92EB1E00A96D25 /* FloatingPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64920D2F1F92EB1E00A96D25 /* FloatingPoint.swift */; };
 		64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64920D311F92F6EB00A96D25 /* BaseTransition.swift */; };
 		64920D351F92FFB400A96D25 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64920D321F92F6F200A96D25 /* FadeTransition.swift */; };
+		64A9727D1FA85A0A00DBEBD1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9727C1FA85A0900DBEBD1 /* Date.swift */; };
 		64AD1A6C1F99CB6D00713A3B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A6B1F99CB6D00713A3B /* String.swift */; };
 		64AD1A6E1F99DD3700713A3B /* InterestSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AD1A6D1F99DD3700713A3B /* InterestSelection.storyboard */; };
 		64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A6F1F99DE4600713A3B /* InterestSelectionViewController.swift */; };
@@ -70,6 +71,7 @@
 		64920D2F1F92EB1E00A96D25 /* FloatingPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPoint.swift; sourceTree = "<group>"; };
 		64920D311F92F6EB00A96D25 /* BaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		64920D321F92F6F200A96D25 /* FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		64A9727C1FA85A0900DBEBD1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		64AD1A6B1F99CB6D00713A3B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		64AD1A6D1F99DD3700713A3B /* InterestSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterestSelection.storyboard; sourceTree = "<group>"; };
 		64AD1A6F1F99DE4600713A3B /* InterestSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestSelectionViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		64920D2C1F92EA4800A96D25 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				64A9727C1FA85A0900DBEBD1 /* Date.swift */,
 				64920D2D1F92EA9300A96D25 /* Int.swift */,
 				64920D2F1F92EB1E00A96D25 /* FloatingPoint.swift */,
 				64AD1A6B1F99CB6D00713A3B /* String.swift */,
@@ -545,6 +548,7 @@
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
 				E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */,
+				64A9727D1FA85A0A00DBEBD1 /* Date.swift in Sources */,
 				64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */,
 				64920D351F92FFB400A96D25 /* FadeTransition.swift in Sources */,
 				E49418301F9D1C8C00B5E8F1 /* CategoryItem.swift in Sources */,

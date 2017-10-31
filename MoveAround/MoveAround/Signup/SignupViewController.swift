@@ -154,9 +154,7 @@ extension SignupViewController : CalendarDateRangePickerViewControllerDelegate {
         self.startDate = startDate
         self.endDate = endDate
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        label.text = dateFormatter.string(from: startDate) + " - " + dateFormatter.string(from: endDate)
+        label.text = startDate.toString() + " - " + endDate.toStringWithYear()
         
         self.dismiss(animated: true, completion: nil)
     }

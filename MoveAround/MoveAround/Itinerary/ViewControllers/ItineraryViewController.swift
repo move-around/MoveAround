@@ -44,14 +44,9 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
 
         let currentItinerary = Itinerary.currentItinerary
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd"
-        let dateFormatterPrintForCurrentDate = DateFormatter()
-        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
-
 
         if let startDate = currentItinerary.startDate {
-            let startDateStr = dateFormatterPrintForCurrentDate.string(from: startDate)
+            let startDateStr = startDate.toStringWithYear()
             self.dayLabel.title = startDateStr
             self.prevDayButton.isEnabled = false
             self.prevDayButton.title = ""
@@ -62,8 +57,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
                 let dateInterval = DateInterval.init(start: currentItinerary.startDate!, end: currentItinerary.endDate!)
                 let durationInDays = Int(round(dateInterval.duration/86400)) + 1
                 if (durationInDays > 1) {
-                    let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
-                    self.nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
+                    self.nextDayButton.title = ">"
                     nextDayButton.isEnabled = true
                 }
             }
@@ -99,17 +93,12 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func loadPreviousDayItinerary(_ sender: UIBarButtonItem) {
         // Fix the date for current date label and previous/next buttons
         let currentItinerary = Itinerary.currentItinerary
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd"
-        let dateFormatterPrintForCurrentDate = DateFormatter()
-        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
 
-        let tomorrow = currentDate
-        nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
+        nextDayButton.title = ">"
         nextDayButton.isEnabled = true
         
         currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
-        dayLabel.title = dateFormatterPrintForCurrentDate.string(from: currentDate!)
+        dayLabel.title = currentDate?.toStringWithYear()
         
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
         if (yesterday! < currentItinerary.startDate!) {
@@ -117,7 +106,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             prevDayButton.title = ""
         }
         else {
-            prevDayButton.title = dateFormatterPrint.string(from: yesterday!)
+            prevDayButton.title = "<"
         }
         reloadDayItinerary()
     }
@@ -126,18 +115,12 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func loadNextDayItinerary(_ sender: UIBarButtonItem) {
         // Fix the date for current date label and previous/next buttons
         let currentItinerary = Itinerary.currentItinerary
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd"
-        let dateFormatterPrintForCurrentDate = DateFormatter()
-        dateFormatterPrintForCurrentDate.dateFormat = "MMM dd EEEE"
 
-        
-        let yesterday = currentDate
-        prevDayButton.title = dateFormatterPrint.string(from: yesterday!)
+        prevDayButton.title = "<"
         prevDayButton.isEnabled = true
         
         currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
-        dayLabel.title = dateFormatterPrintForCurrentDate.string(from: currentDate!)
+        dayLabel.title = currentDate?.toStringWithYear()
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
         let itineraryEndDateForComparison = Calendar.current.date(byAdding: .hour, value: 1, to: currentItinerary.endDate!)
@@ -146,7 +129,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
             nextDayButton.title = ""
         }
         else {
-            nextDayButton.title = dateFormatterPrint.string(from: tomorrow!)
+            nextDayButton.title = ">"
         }
         reloadDayItinerary()
     }
