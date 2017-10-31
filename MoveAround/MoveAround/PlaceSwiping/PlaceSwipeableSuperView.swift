@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import KRProgressHUD
 
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
@@ -94,7 +94,11 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
         let location = TempCache.sharedInstance.itinerary?.destination
         
         // Display HUD right before the request is made
-        MBProgressHUD.showAdded(to: self, animated: true)
+        KRProgressHUD
+            .set(style: .white)
+            .set(maskType: .white)
+            .set(activityIndicatorViewStyle: .gradationColor(head: .orange, tail: .orange))
+            .show()
         
         // Perform request to Yelp API to get the list of places
         YelpPlace.searchWithTerm(term: nil, location: location, sort: sort, categories: categories, deals: false, radius: nil, limit:  limit, offset: offset) { (places: [Place]?, error: Error?) in
@@ -104,7 +108,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
                 self.offset += self.limit
             }
             
-            MBProgressHUD.hide(for: self, animated: true)
+            KRProgressHUD.dismiss()
         }
         
     }

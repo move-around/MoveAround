@@ -10,7 +10,7 @@ target 'MoveAround' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'Parse'
-  pod 'MBProgressHUD'
+  pod "KRProgressHUD"
   pod 'ParseFacebookUtilsV4'
   pod 'GooglePlaces'
   pod 'DotsLoading'
