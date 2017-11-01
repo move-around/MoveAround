@@ -39,7 +39,6 @@
 		64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */; };
 		64EC699D1FA6907700082A24 /* InterestSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC699C1FA6907700082A24 /* InterestSelectionCell.swift */; };
 		92D466651F92C5F600ED2EAA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D466641F92C5F600ED2EAA /* Login.storyboard */; };
-		92E15E881FA969920096C61F /* login.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 92E15E871FA969920096C61F /* login.mp4 */; };
 		E3A093B5A9E469A1282E901F /* Pods_MoveAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DF9A3B3FD04FA3A7BE3301 /* Pods_MoveAround.framework */; };
 		E422E9561FA3C82F00B61025 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9551FA3C7EC00B61025 /* Vector.swift */; };
 		E422E9571FA3C83400B61025 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9541FA3C7EB00B61025 /* KMeans.swift */; };
@@ -96,7 +95,6 @@
 		64EB2C621F9347E300BF7A33 /* PlaceSwipeableSuperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSwipeableSuperView.swift; sourceTree = "<group>"; };
 		64EC699C1FA6907700082A24 /* InterestSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestSelectionCell.swift; sourceTree = "<group>"; };
 		92D466641F92C5F600ED2EAA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		92E15E871FA969920096C61F /* login.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = login.mp4; path = ../../../../Desktop/MoveAround/login.mp4; sourceTree = "<group>"; };
 		A2ED90BE1A2150E1121EA120 /* Pods-MoveAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.debug.xcconfig"; sourceTree = "<group>"; };
 		D19868B4BF93055496C6CA66 /* Pods-MoveAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround.release.xcconfig"; sourceTree = "<group>"; };
 		E422E9541FA3C7EB00B61025 /* KMeans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KMeans.swift; path = MoveAround/Itinerary/ItineraryCreation/KMeans.swift; sourceTree = SOURCE_ROOT; };
@@ -324,7 +322,6 @@
 				64D8F85F1F929DE40099F1F8 /* Transitions */,
 				E4A04C101F8DDB0900E03A19 /* AppDelegate.swift */,
 				E4A04C121F8DDB0900E03A19 /* LoginViewController.swift */,
-				92E15E871FA969920096C61F /* login.mp4 */,
 				92D466641F92C5F600ED2EAA /* Login.storyboard */,
 				E4A04C171F8DDB0A00E03A19 /* Assets.xcassets */,
 				E4A04C191F8DDB0A00E03A19 /* LaunchScreen.storyboard */,
@@ -411,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A04C1B1F8DDB0A00E03A19 /* LaunchScreen.storyboard in Resources */,
-				92E15E881FA969920096C61F /* login.mp4 in Resources */,
 				64D8F85E1F929B780099F1F8 /* PlaceSwiping.storyboard in Resources */,
 				E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */,
 				E4A04C181F8DDB0A00E03A19 /* Assets.xcassets in Resources */,
@@ -697,7 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				DEVELOPMENT_TEAM = ZBWHW3V2R2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -720,7 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KH6T9A5WW;
+				DEVELOPMENT_TEAM = ZBWHW3V2R2;
 				INFOPLIST_FILE = MoveAround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
