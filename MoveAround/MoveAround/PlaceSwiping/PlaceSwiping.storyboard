@@ -4,7 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,12 +21,6 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuD-Zj-Pfe" customClass="PlaceSwipeableSuperView" customModule="MoveAround" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you like these places?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIt-4M-gTD">
-                                        <rect key="frame" x="69" y="45" width="237" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="WEf-OZ-JCn">
                                         <rect key="frame" x="167.5" y="488" width="40" height="40"/>
                                         <gestureRecognizers/>
@@ -68,9 +63,7 @@
                                     <constraint firstItem="WEf-OZ-JCn" firstAttribute="centerY" secondItem="xfS-yg-qVO" secondAttribute="centerY" id="Bmb-MA-NnK"/>
                                     <constraint firstItem="Cih-J2-jbz" firstAttribute="leading" secondItem="WEf-OZ-JCn" secondAttribute="trailing" constant="30" id="RHZ-a0-23N"/>
                                     <constraint firstAttribute="bottom" secondItem="WEf-OZ-JCn" secondAttribute="bottom" constant="25" id="WKa-gI-LPP"/>
-                                    <constraint firstItem="OIt-4M-gTD" firstAttribute="centerX" secondItem="UuD-Zj-Pfe" secondAttribute="centerX" id="e4G-Kl-BiC"/>
                                     <constraint firstItem="Cih-J2-jbz" firstAttribute="centerY" secondItem="WEf-OZ-JCn" secondAttribute="centerY" id="eda-DR-ra9"/>
-                                    <constraint firstItem="OIt-4M-gTD" firstAttribute="top" secondItem="UuD-Zj-Pfe" secondAttribute="top" constant="45" id="v3y-tQ-7Sd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiS-WZ-M4Q">
@@ -84,7 +77,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onDonePressed:" destination="eTa-Zm-uaY" eventType="touchUpInside" id="Q4k-V7-IGg"/>
+                                    <action selector="onDonePressed:" destination="eTa-Zm-uaY" eventType="touchUpInside" id="h7j-HV-WuP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,7 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JEg-EA-czB"/>
                     <connections>
-                        <outlet property="doneButton" destination="eiS-WZ-M4Q" id="eIE-LC-dC0"/>
+                        <outlet property="doneButton" destination="eiS-WZ-M4Q" id="y81-au-hP5"/>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
                         <segue destination="Ux9-cy-FX8" kind="presentation" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
                         <segue destination="tde-iE-43e" kind="show" identifier="showDetailPage" id="L1x-IJ-6sq"/>

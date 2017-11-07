@@ -4,7 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,20 +23,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="Gtm-3d-CjW">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Civic Center" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="heg-Kh-hYQ">
-                    <rect key="frame" x="102" y="305" width="116" height="24"/>
+                    <rect key="frame" x="15" y="305" width="116" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-zO-ftU">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="290" id="9r0-mR-wF8"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address goes here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9y-Wa-51f">
-                    <rect key="frame" x="92" y="331" width="136" height="19.5"/>
+                    <rect key="frame" x="15" y="334" width="136" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -44,24 +45,27 @@
             <color key="backgroundColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="ZLl-zO-ftU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" identifier="constraint3" id="8fk-gi-NjW"/>
-                <constraint firstItem="heg-Kh-hYQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="GFt-rL-aX9"/>
-                <constraint firstItem="heg-Kh-hYQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" identifier="constraint5" id="GPF-rN-YF4"/>
-                <constraint firstItem="heg-Kh-hYQ" firstAttribute="top" secondItem="ZLl-zO-ftU" secondAttribute="bottom" constant="15" identifier="constraint6" id="IKw-NC-GIe"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZLl-zO-ftU" secondAttribute="trailing" id="LaI-LY-FBW"/>
-                <constraint firstItem="ZLl-zO-ftU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cyP-zK-rpu"/>
-                <constraint firstItem="P9y-Wa-51f" firstAttribute="top" secondItem="heg-Kh-hYQ" secondAttribute="bottom" constant="2" id="e77-9B-PRD"/>
-                <constraint firstItem="P9y-Wa-51f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mfE-TI-NUI"/>
-                <constraint firstItem="P9y-Wa-51f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qUW-aa-UXm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P9y-Wa-51f" secondAttribute="trailing" constant="15" id="reW-rd-ybb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="heg-Kh-hYQ" secondAttribute="trailing" constant="15" id="rlb-0F-zGM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="heg-Kh-hYQ" secondAttribute="trailing" constant="15" id="5Jf-xv-HyR"/>
+                <constraint firstItem="P9y-Wa-51f" firstAttribute="top" secondItem="heg-Kh-hYQ" secondAttribute="bottom" constant="5" id="ENI-AO-AVV"/>
+                <constraint firstItem="heg-Kh-hYQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="GFt-rL-aX9"/>
+                <constraint firstItem="ZLl-zO-ftU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IE8-VQ-tFw"/>
+                <constraint firstItem="ZLl-zO-ftU" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="QBq-3z-cf8"/>
+                <constraint firstItem="Gtm-3d-CjW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fY4-dF-PNR"/>
+                <constraint firstItem="Gtm-3d-CjW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gqS-h6-buM"/>
+                <constraint firstItem="Gtm-3d-CjW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hZz-Fr-1kY"/>
+                <constraint firstItem="P9y-Wa-51f" firstAttribute="top" secondItem="heg-Kh-hYQ" secondAttribute="bottom" constant="5" id="jDt-6L-xek"/>
+                <constraint firstItem="P9y-Wa-51f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mfE-TI-NUI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="P9y-Wa-51f" secondAttribute="bottom" constant="26.5" id="pX1-tq-lha"/>
+                <constraint firstItem="ZLl-zO-ftU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tcV-MB-vkd"/>
+                <constraint firstItem="ZLl-zO-ftU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="w9a-pf-laC"/>
+                <constraint firstItem="Gtm-3d-CjW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="wWx-lV-NWP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="Heb-ut-Stu" appends="YES" id="uNg-zz-3dv"/>
             </connections>
-            <point key="canvasLocation" x="-34" y="-127.5"/>
+            <point key="canvasLocation" x="-34" y="-128"/>
         </view>
         <panGestureRecognizer minimumNumberOfTouches="1" id="Heb-ut-Stu">
             <connections>
@@ -71,5 +75,6 @@
     </objects>
     <resources>
         <image name="default" width="1000" height="750"/>
+        <image name="gradient" width="500" height="100"/>
     </resources>
 </document>

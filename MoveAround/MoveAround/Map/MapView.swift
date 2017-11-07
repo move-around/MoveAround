@@ -184,7 +184,7 @@ class MapView: UIView, MKMapViewDelegate {
     
         annotation.coordinate = coordinate
         if places.count > 1 {
-            annotation.pinTitle = "#\(position + 1) - \(name)"
+            annotation.pinTitle = "\(name)"
         }
         annotation.index = position+1
 

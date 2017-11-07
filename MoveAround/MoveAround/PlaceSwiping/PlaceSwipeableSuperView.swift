@@ -32,16 +32,16 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func loadPlaceViews() {
         for (index, place) in places.enumerated() {
-            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: (self.frame.width - 320)/2, y: (self.frame.height - 380)/2, width: 320, height: 380))
+            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: (self.frame.width - 350)/2, y: 15, width: 350, height: 450))
             newView.place = place
             newView.delegate = self
             
             // shadow
-            newView.layer.shadowColor = UIColor.black.cgColor
-            newView.layer.shadowOffset = CGSize(width: 3, height: 3)
-            newView.layer.shadowOpacity = 0.2
-            newView.layer.shadowRadius = 4
-            
+//            newView.layer.shadowColor = UIColor.black.cgColor
+//            newView.layer.shadowOffset = CGSize(width: 3, height: 3)
+//            newView.layer.shadowOpacity = 0.2
+//            newView.layer.shadowRadius = 4
+
             loadedViews.append(newView)
             if index > 0 {
                 self.insertSubview(loadedViews[index], belowSubview: loadedViews[index-1])
