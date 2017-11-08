@@ -97,7 +97,6 @@
                     <connections>
                         <outlet property="doneButton" destination="eiS-WZ-M4Q" id="y81-au-hP5"/>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
-                        <segue destination="Ux9-cy-FX8" kind="presentation" identifier="showListOfPlaces" id="nFY-XV-iDV"/>
                         <segue destination="tde-iE-43e" kind="show" identifier="showDetailPage" id="L1x-IJ-6sq"/>
                     </connections>
                 </viewController>

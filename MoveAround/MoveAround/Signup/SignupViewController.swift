@@ -8,7 +8,6 @@
 
 import UIKit
 import GooglePlaces
-import CalendarDateRangePickerViewController
 
 class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var greeting: UILabel!
@@ -16,14 +15,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var horizontalLineTop: UIView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var dateButton: UIButton!
-    
-    @IBOutlet weak var label: UILabel!
     
     var tableData=[String]()
     var fetcher: GMSAutocompleteFetcher?
-    var startDate: Date!
-    var endDate: Date!
 
     
     override func viewDidLoad() {
@@ -58,18 +52,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         nextButton.isEnabled = false
     }
 
-    
-    @IBAction func didTapButton(_ sender: UIButton) {
-        let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        dateRangePickerViewController.delegate = self
-        dateRangePickerViewController.minimumDate = Date()
-        dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
-//        dateRangePickerViewController.selectedStartDate = Date()
-//        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
-        let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
-        self.present(navigationController, animated: true, completion: nil)
-    }
-    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,11 +71,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableData.count != 0 {
             self.view.sendSubview(toBack: horizontalLineTop)
-            dateButton.isHidden = true
             tableView.isHidden = false
         } else {
             self.view.bringSubview(toFront: horizontalLineTop)
-            dateButton.isHidden = false
             tableView.isHidden = true
         }
         return tableData.count
@@ -100,7 +81,6 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         textField.text = tableData[indexPath.row]
-        dateButton.isHidden = false
         tableView.isHidden = true
         view.endEditing(true)
         nextButton.isEnabled = true
@@ -129,37 +109,12 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = segue.destination as! InterestSelectionViewController
         let itinerary = Itinerary.currentItinerary
         itinerary.destination = textField.text
-        itinerary.startDate = startDate
-        itinerary.endDate = endDate
-        
-        // Calculate number of days for the trip
-        var durationInDays = 1
-        if (itinerary.startDate! < itinerary.endDate!) {
-            let dateInterval = DateInterval.init(start: itinerary.startDate!, end: itinerary.endDate!)
-            durationInDays = Int(round(dateInterval.duration/86400)) + 1
-        }
-        itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: durationInDays)
 
         vc.itinerary = itinerary
     }
 
 }
 
-extension SignupViewController : CalendarDateRangePickerViewControllerDelegate {
-    func didTapCancel() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
-        self.startDate = startDate
-        self.endDate = endDate
-        
-        label.text = startDate.toString() + " - " + endDate.toStringWithYear()
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-
-}
 
 extension SignupViewController: GMSAutocompleteFetcherDelegate {
     func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
