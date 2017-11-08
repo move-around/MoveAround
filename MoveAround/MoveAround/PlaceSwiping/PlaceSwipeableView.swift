@@ -19,6 +19,10 @@ class PlaceSwipeableView: UIView {
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBOutlet weak var noImageView: UIImageView!
+    @IBOutlet weak var yesImageView: UIImageView!
+    
     let panXLimit:CGFloat = 50
     let offScreenX: CGFloat = 800
     let rotationAngle:CGFloat = 10
@@ -62,8 +66,36 @@ class PlaceSwipeableView: UIView {
         // border
         contentView.layer.borderWidth = 0.5
         contentView.layer.borderColor = UIColor.darkGray.cgColor
+        
+        noImageView.alpha = 0
+        yesImageView.alpha = 0
 
         
+    }
+    
+    func moveRight() {
+        let newCenter: CGPoint = CGPoint.init(x: 600, y: self.center.y)
+        self.yesImageView.alpha = 1
+        UIView.animate(withDuration: 0.3, delay: 0.3, options: [], animations: {
+            self.center = newCenter
+            self.transform = CGAffineTransform(rotationAngle: 1)
+        }, completion: {
+            (value: Bool) in
+            self.removeFromSuperview()
+        })
+    }
+    
+    
+    func moveLeft() {
+        let newCenter: CGPoint = CGPoint.init(x: -600, y: self.center.y)
+        self.noImageView.alpha = 1
+        UIView.animate(withDuration: 0.3, delay: 0.3, options: [], animations: {
+            self.center = newCenter
+            self.transform = CGAffineTransform(rotationAngle: 1)
+        }, completion: {
+            (value: Bool) in
+            self.removeFromSuperview()
+        })
     }
     
     @IBAction func onPlaceSwiped(_ sender: UIPanGestureRecognizer) {
@@ -80,6 +112,18 @@ class PlaceSwipeableView: UIView {
             } else {
                 angle = -translation.x / rotationAngle
             }
+            
+            if location.x == originalViewCenter.x {
+                yesImageView.alpha = 0
+                noImageView.alpha = 0
+            } else if location.x < originalViewCenter.x  {
+                yesImageView.alpha = 0
+                noImageView.alpha = 1
+            } else {
+                yesImageView.alpha = 1
+                noImageView.alpha = 0
+            }
+            
             contentView.transform = CGAffineTransform(rotationAngle: angle.degreesToRadians)
             contentView.center = CGPoint(x: originalViewCenter.x + translation.x, y: originalViewCenter.y)
             break
@@ -88,15 +132,19 @@ class PlaceSwipeableView: UIView {
             if translation.x > panXLimit { // Move off to right
                 newCenter.x = offScreenX
                 self.removeFromSuperview()
+                self.yesImageView.alpha = 1
                 delegate.swipedRight(place: place)
             } else if translation.x < -panXLimit { // Move off to left
                 newCenter.x = -offScreenX
                 self.removeFromSuperview()
+                self.noImageView.alpha = 1
                 delegate.swipedLeft(place: place)
             } else {
                 contentView.transform = CGAffineTransform.identity
+                yesImageView.alpha = 0
+                noImageView.alpha = 0
             }
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.contentView.center = newCenter
             })
         default:

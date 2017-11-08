@@ -73,7 +73,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func clickedLeft() {
         let topview = loadedViews.first!
-        topview.removeFromSuperview()
+        topview.moveLeft()
         swipeClear()
         // Store user preferences etc
     }
@@ -81,7 +81,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     func clickedRight() {
         let topview = loadedViews.first!
         Itinerary.currentItinerary.placesOfInterest.append(topview.place)
-        topview.removeFromSuperview()
+        topview.moveRight()
         swipeClear()
         // Store user preferences etc
     }
