@@ -10,7 +10,8 @@ import UIKit
 import CalendarDateRangePickerViewController
 
 
-class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate {
+
+class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate, PlaceSwipeableSuperViewDelegate {
     @IBOutlet weak var placeImageView: PlaceSwipeableSuperView!
     @IBOutlet weak var doneButton: UIButton!
     var startDate: Date!
@@ -23,6 +24,7 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        placeImageView.delegate = self
     }
 
     @IBAction func onInfoTapped(_ sender: UITapGestureRecognizer) {
@@ -49,6 +51,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
             // Do something special here if required
         }
 
+    }
+    
+    func clickedImage() {
+        let place = placeImageView.loadedViews.first?.place
+        performSegue(withIdentifier: segueToDetail, sender: place)
     }
 
 

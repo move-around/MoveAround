@@ -9,11 +9,16 @@
 import UIKit
 import KRProgressHUD
 
+protocol PlaceSwipeableSuperViewDelegate {
+    func clickedImage()
+}
+
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
     var places: [Place]! = [Place]()
     let limit = 30
     var offset = 0
+    var delegate: PlaceSwipeableSuperViewDelegate!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -57,6 +62,10 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
         if loadedViews.count == 0 {
             populatePlaces()
         }
+    }
+    
+    func clickedImage() {
+        delegate.clickedImage()
     }
     
     func swipedLeft(place: Place) {

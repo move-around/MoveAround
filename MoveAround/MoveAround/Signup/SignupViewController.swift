@@ -13,7 +13,6 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var greeting: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var horizontalLineTop: UIView!
     @IBOutlet weak var nextButton: UIButton!
     
     var tableData=[String]()
@@ -70,10 +69,8 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableData.count != 0 {
-            self.view.sendSubview(toBack: horizontalLineTop)
             tableView.isHidden = false
         } else {
-            self.view.bringSubview(toFront: horizontalLineTop)
             tableView.isHidden = true
         }
         return tableData.count

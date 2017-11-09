@@ -168,7 +168,6 @@
                             <constraint firstItem="HQd-JD-ASn" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="40" id="QrM-D9-C1R"/>
                             <constraint firstItem="fgo-yS-a6W" firstAttribute="top" secondItem="vv2-jc-dyE" secondAttribute="top" id="QsI-mf-enn"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="Qxn-cW-1HS"/>
-                            <constraint firstItem="Yov-x7-jfX" firstAttribute="leading" secondItem="NJC-I0-WUy" secondAttribute="trailing" constant="13" id="Rx9-RY-lMe"/>
                             <constraint firstItem="k5v-RU-4aE" firstAttribute="top" secondItem="NJC-I0-WUy" secondAttribute="bottom" constant="24" id="WVV-tr-uIx"/>
                             <constraint firstItem="NJC-I0-WUy" firstAttribute="leading" secondItem="nwD-wE-t3f" secondAttribute="trailing" constant="8" id="WWR-gw-qO5"/>
                             <constraint firstItem="HFm-wB-cd2" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="XQv-LY-VKx"/>
@@ -188,7 +187,6 @@
                             <constraint firstItem="bsa-cE-tJb" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="l85-H8-nmL"/>
                             <constraint firstItem="Afx-Ss-r28" firstAttribute="top" secondItem="Ska-if-pAp" secondAttribute="bottom" constant="21" id="llv-Jt-ZeF"/>
                             <constraint firstItem="Ska-if-pAp" firstAttribute="top" secondItem="tVD-IW-5F7" secondAttribute="bottom" constant="14" id="rbd-XN-RmY"/>
-                            <constraint firstItem="Yov-x7-jfX" firstAttribute="leading" secondItem="HQd-JD-ASn" secondAttribute="trailing" constant="50" id="ruE-N0-0Oi"/>
                             <constraint firstItem="FYU-Ao-wd6" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="45" id="xKw-qL-LOs"/>
                             <constraint firstItem="Ska-if-pAp" firstAttribute="leading" secondItem="ynX-fe-Prl" secondAttribute="leading" constant="15" id="xyq-7p-6xe"/>
                             <constraint firstItem="fgo-yS-a6W" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" id="yNU-Ep-lms"/>

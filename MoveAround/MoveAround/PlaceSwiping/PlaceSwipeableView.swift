@@ -11,6 +11,7 @@ import UIKit
 protocol PlaceSwipeableViewDelegate {
     func swipedRight(place:Place)
     func swipedLeft(place:Place)
+    func clickedImage()
 }
 
 class PlaceSwipeableView: UIView {
@@ -48,6 +49,11 @@ class PlaceSwipeableView: UIView {
         super.init(frame: frame)
         initSubviews()
     }
+    
+    @IBAction func onImageTap(_ sender: UITapGestureRecognizer) {
+        delegate.clickedImage()
+    }
+    
     
     func initSubviews() {
         // standard initialization logic
