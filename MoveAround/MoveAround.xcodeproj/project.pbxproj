@@ -51,6 +51,8 @@
 		E422E9571FA3C83400B61025 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9541FA3C7EB00B61025 /* KMeans.swift */; };
 		E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */; };
 		E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9731FA6BB1F00B61025 /* UIColor.swift */; };
+		E42BE5961FB6CE3200C54F73 /* UltraVisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BE5951FB6CE3200C54F73 /* UltraVisualLayout.swift */; };
+		E42BE5981FB6E52000C54F73 /* ItineraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BE5971FB6E52000C54F73 /* ItineraryCollectionViewCell.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E44C1BE01FB2A5AD003589CA /* ItineraryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */; };
 		E46EC24B1FA6E5230069621E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */; };
@@ -116,6 +118,8 @@
 		E422E9551FA3C7EC00B61025 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = MoveAround/Itinerary/ItineraryCreation/Vector.swift; sourceTree = SOURCE_ROOT; };
 		E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategoryMatcher.swift; sourceTree = "<group>"; };
 		E422E9731FA6BB1F00B61025 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E42BE5951FB6CE3200C54F73 /* UltraVisualLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraVisualLayout.swift; sourceTree = "<group>"; };
+		E42BE5971FB6E52000C54F73 /* ItineraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryCreator.swift; path = MoveAround/Itinerary/ItineraryCreation/ItineraryCreator.swift; sourceTree = SOURCE_ROOT; };
 		E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 		64CA91481F94855E0029C267 /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				E42BE5941FB6CDC300C54F73 /* Layout */,
 				E422E9531FA3C7CA00B61025 /* ItineraryCreation */,
 				E49418261F99C52700B5E8F1 /* Views */,
 				E49418251F99C50F00B5E8F1 /* ViewControllers */,
@@ -292,6 +297,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		E42BE5941FB6CDC300C54F73 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E42BE5951FB6CE3200C54F73 /* UltraVisualLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		E49418251F99C50F00B5E8F1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +321,7 @@
 				E49418211F988D9200B5E8F1 /* InfiniteScrollActivityView.swift */,
 				E49418231F99AAE500B5E8F1 /* ItineraryTableViewCell.swift */,
 				E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */,
+				E42BE5971FB6E52000C54F73 /* ItineraryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,6 +557,7 @@
 			files = (
 				64ABC0251FB57C9E00F7E8F4 /* QuickViewController.swift in Sources */,
 				E49418241F99AAE500B5E8F1 /* ItineraryTableViewCell.swift in Sources */,
+				E42BE5981FB6E52000C54F73 /* ItineraryCollectionViewCell.swift in Sources */,
 				E494182F1F9D1C8C00B5E8F1 /* Itinerary.swift in Sources */,
 				E49418221F988D9200B5E8F1 /* InfiniteScrollActivityView.swift in Sources */,
 				E49418281F99C57000B5E8F1 /* ItineraryViewController.swift in Sources */,
@@ -580,6 +595,7 @@
 				64CA81141F9D7F4D00909603 /* ItineraryMapViewController.swift in Sources */,
 				64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */,
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
+				E42BE5961FB6CE3200C54F73 /* UltraVisualLayout.swift in Sources */,
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
 				64ABC0291FB57CC100F7E8F4 /* DiscoverViewController.swift in Sources */,

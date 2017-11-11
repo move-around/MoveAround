@@ -220,7 +220,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
                     // This view was shown through itinerary view
                     let i = navigationController?.viewControllers.index(of: self)
                     let previousViewController = navigationController?.viewControllers[i!-1] as! ItineraryViewController
-                    let cell = previousViewController.tableView.cellForRow(at: IndexPath(row: cellRowForItineraryView!, section: 0)) as! ItineraryTableViewCell
+                    let cell = previousViewController.collectionView.cellForItem(at: IndexPath(row: cellRowForItineraryView!, section: 0)) as! ItineraryCollectionViewCell
                     let newPlaceForCell = listOfPlaces?[tapIndexPath.section*NUM_PLACES_PER_ROW + tapIndexPath.row]
                     // Remove the place from placesOfInterest and add it to plannedPlaces list for itinerary
                     if let oldPlaceForCell = cell.place {

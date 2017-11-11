@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ItineraryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ItineraryTableViewDelegate, UIGestureRecognizerDelegate {
+class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, ItineraryCollectionViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var dayLabel: UINavigationItem!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var prevDayButton: UIBarButtonItem!
     @IBOutlet weak var nextDayButton: UIBarButtonItem!
     @IBOutlet weak var mapImageView: UIImageView!
@@ -30,9 +30,9 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set Table View data source
-        tableView.dataSource = self
-        tableView.delegate = self
+        // Set Collection View data source
+        collectionView.dataSource = self
+        collectionView.delegate = self
 
         let currentItinerary = Itinerary.currentItinerary
 
@@ -69,10 +69,10 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         
         // Add tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapEdit(recognizer:)))
-        tableView.addGestureRecognizer(tapGesture)
+        collectionView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
 
-        tableView.reloadSections(IndexSet(integer: 0) , with: UITableViewRowAnimation.fade)
+        collectionView.reloadData()
 
         mapImageView.makeCircular()
     }
@@ -153,19 +153,20 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             dayItinerary = currentItinerary.dayItineraries[dayIndex]
         }
-        //tableView.reloadData()
-        tableView.reloadSections(IndexSet(integer: 0) , with: UITableViewRowAnimation.fade)
+        collectionView.reloadData()
     }
     
-    
-    
-    // MARK: - Table view data source
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK:- Collection view data source
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return initialTimeSlots.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItineraryTableViewCell", for: indexPath) as! ItineraryTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItineraryCollectionViewCell", for: indexPath) as! ItineraryCollectionViewCell
         // TODO (mohit) : Set the place itinerary data structure here properly
         cell.timePeriodLabel.text = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
         if (dayItinerary?.placesItineraries[indexPath.row] != nil && dayItinerary?.placesItineraries[indexPath.row]?.place != nil) {
@@ -176,19 +177,30 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         cell.delegate = self
         
         return cell
+
     }
     
-    func showSelectedPlaces(cell: UITableViewCell) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let layout = collectionView.collectionViewLayout as! UltravisualLayout
+        let offset = layout.dragOffset * CGFloat(indexPath.item)
+        if collectionView.contentOffset.y != offset {
+            collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+        }
+
+    }
+    
+    func showSelectedPlaces(cell: UICollectionViewCell) {
         performSegue(withIdentifier: "showPlaces", sender: cell)
     }
     
-    func placeSelected(placeItinerary: PlaceItinerary, cell: UITableViewCell) {
-        let indexPath = tableView.indexPath(for: cell)
+    func placeSelected(placeItinerary: PlaceItinerary, cell: UICollectionViewCell) {
+        let indexPath = collectionView.indexPath(for: cell)
         if (dayItinerary?.placesItineraries[(indexPath?.row)!] == nil) {
             dayItinerary?.placesItineraries[(indexPath?.row)!] = PlaceItinerary()
         }
         dayItinerary?.placesItineraries[(indexPath?.row)!]?.place = placeItinerary.place
     }
+
     
     // MARK: - Navigation
 
@@ -199,7 +211,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         if segue.identifier == "showPlaces" {
             let vc = segue.destination as! PlacesListViewController
             vc.isShowingSelectedPlaces = true
-            let indexPath = tableView.indexPath(for: sender as! UITableViewCell)
+            let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell)
             vc.cellRowForItineraryView = indexPath?.row
         } else if segue.identifier == "showItineraryMap" {
             let vc = segue.destination as! ItineraryMapViewController
@@ -214,7 +226,7 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         }
         else if segue.identifier == "showDetail" {
             let indexPath = sender as! IndexPath
-            let cell = tableView.cellForRow(at: indexPath) as! ItineraryTableViewCell
+            let cell = collectionView.cellForItem(at: indexPath) as! ItineraryCollectionViewCell
             let vc = segue.destination as! PlaceDetailViewController
             vc.place = cell.place
         }
@@ -224,8 +236,8 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - TapGestureRecognizer
     @objc func tapEdit(recognizer: UITapGestureRecognizer)  {
         if recognizer.state == UIGestureRecognizerState.ended {
-            let tapLocation = recognizer.location(in: self.tableView)
-            if let tapIndexPath = self.tableView.indexPathForRow(at: tapLocation) {
+            let tapLocation = recognizer.location(in: self.collectionView)
+            if let tapIndexPath = self.collectionView.indexPathForItem(at: tapLocation) {
                 performSegue(withIdentifier: "showDetail", sender: tapIndexPath)
             }
         }
