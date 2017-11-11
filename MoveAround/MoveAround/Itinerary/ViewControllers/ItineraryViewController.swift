@@ -83,11 +83,19 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        prevDayButton.isEnabled = true
-        prevDayButton.title = "<"
+        let currentItinerary = Itinerary.currentItinerary
+
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
+        if (yesterday! >= currentItinerary.startDate!) {
+            prevDayButton.isEnabled = true
+            prevDayButton.title = "<"
+        }
         
-        nextDayButton.isEnabled = true
-        nextDayButton.title = ">"
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
+        if (tomorrow! <= currentItinerary.endDate!) {
+            nextDayButton.isEnabled = true
+            nextDayButton.title = ">"
+        }
         
         dayLabel.title = currentDate?.toStringWithYear()
     }

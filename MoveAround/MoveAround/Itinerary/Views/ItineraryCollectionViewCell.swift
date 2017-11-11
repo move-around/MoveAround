@@ -22,6 +22,8 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var switchPlaceImage: UIImageView!
     @IBOutlet weak var bannerButton: UIButton!
     @IBOutlet weak var imageCoverView: UIView!
+    @IBOutlet weak var circularGradientImage: UIImageView!
+    @IBOutlet weak var circularGradientImageWidthConstraint: NSLayoutConstraint!
     
     var placeItinerary: PlaceItinerary?
     
@@ -32,6 +34,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
                     placeImage.setImageWith(placeImageUrl)
                 }
                 placeName.text = place?.name
+                circularGradientImageWidthConstraint.constant = placeName.frame.width
                 placeAddress.text = place?.address
                 bannerButton.isHidden = true
                 if (placeItinerary == nil) {
@@ -84,12 +87,13 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - frame.height) / (featuredHeight - standardHeight))
         
         // Update the subviews based upon movement of the cell
-        let minAlpha: CGFloat = 0.3
-        let maxAlpha: CGFloat = 0.75
+        let minAlpha: CGFloat = 0.01
+        let maxAlpha: CGFloat = 0.50
         imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         timePeriodLabel.alpha = delta
         switchPlaceImage.alpha = delta
         placeAddress.alpha = delta
+        circularGradientImage.alpha = maxAlpha*delta
     }
 
 }
