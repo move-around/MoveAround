@@ -49,6 +49,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 
         nextButton.isEnabled = false
+        
     }
 
 
@@ -103,11 +104,9 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! InterestSelectionViewController
         let itinerary = Itinerary.currentItinerary
         itinerary.destination = textField.text
-
-        vc.itinerary = itinerary
+        Itinerary.currentItinerary = itinerary
     }
 
 }

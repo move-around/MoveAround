@@ -17,6 +17,11 @@
 		64920D341F92FFB100A96D25 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64920D311F92F6EB00A96D25 /* BaseTransition.swift */; };
 		64920D351F92FFB400A96D25 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64920D321F92F6F200A96D25 /* FadeTransition.swift */; };
 		64A9727D1FA85A0A00DBEBD1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9727C1FA85A0900DBEBD1 /* Date.swift */; };
+		64ABC01F1FB567A500F7E8F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABC01E1FB567A500F7E8F4 /* PageViewController.swift */; };
+		64ABC0211FB57C4A00F7E8F4 /* WanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABC0201FB57C4A00F7E8F4 /* WanderViewController.swift */; };
+		64ABC0251FB57C9E00F7E8F4 /* QuickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABC0241FB57C9E00F7E8F4 /* QuickViewController.swift */; };
+		64ABC0291FB57CC100F7E8F4 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABC0281FB57CC100F7E8F4 /* DiscoverViewController.swift */; };
+		64ABC02D1FB57CE100F7E8F4 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ABC02C1FB57CE100F7E8F4 /* ManualViewController.swift */; };
 		64AD1A6C1F99CB6D00713A3B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A6B1F99CB6D00713A3B /* String.swift */; };
 		64AD1A6E1F99DD3700713A3B /* InterestSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64AD1A6D1F99DD3700713A3B /* InterestSelection.storyboard */; };
 		64AD1A701F99DE4600713A3B /* InterestSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD1A6F1F99DE4600713A3B /* InterestSelectionViewController.swift */; };
@@ -72,6 +77,11 @@
 		64920D311F92F6EB00A96D25 /* BaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		64920D321F92F6F200A96D25 /* FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		64A9727C1FA85A0900DBEBD1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		64ABC01E1FB567A500F7E8F4 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		64ABC0201FB57C4A00F7E8F4 /* WanderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WanderViewController.swift; sourceTree = "<group>"; };
+		64ABC0241FB57C9E00F7E8F4 /* QuickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickViewController.swift; sourceTree = "<group>"; };
+		64ABC0281FB57CC100F7E8F4 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		64ABC02C1FB57CE100F7E8F4 /* ManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
 		64AD1A6B1F99CB6D00713A3B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		64AD1A6D1F99DD3700713A3B /* InterestSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InterestSelection.storyboard; sourceTree = "<group>"; };
 		64AD1A6F1F99DE4600713A3B /* InterestSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestSelectionViewController.swift; sourceTree = "<group>"; };
@@ -203,8 +213,13 @@
 		64CA913D1F94759D0029C267 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				64ABC02C1FB57CE100F7E8F4 /* ManualViewController.swift */,
+				64ABC0281FB57CC100F7E8F4 /* DiscoverViewController.swift */,
+				64ABC0241FB57C9E00F7E8F4 /* QuickViewController.swift */,
 				64CA913E1F9475B60029C267 /* Signup.storyboard */,
 				64CA91401F9475DB0029C267 /* SignupViewController.swift */,
+				64ABC01E1FB567A500F7E8F4 /* PageViewController.swift */,
+				64ABC0201FB57C4A00F7E8F4 /* WanderViewController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -452,6 +467,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CHPulseButton/CHPulseButton.framework",
 				"${BUILT_PRODUCTS_DIR}/CalendarDateRangePickerViewController/CalendarDateRangePickerViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/DotsLoading/DotsLoading.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -462,6 +478,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/LikeAnimation/LikeAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework",
 			);
@@ -470,6 +487,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHPulseButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalendarDateRangePickerViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DotsLoading.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
@@ -480,6 +498,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LikeAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseFacebookUtilsV4.framework",
 			);
@@ -513,11 +532,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64ABC0251FB57C9E00F7E8F4 /* QuickViewController.swift in Sources */,
 				E49418241F99AAE500B5E8F1 /* ItineraryTableViewCell.swift in Sources */,
 				E494182F1F9D1C8C00B5E8F1 /* Itinerary.swift in Sources */,
 				E49418221F988D9200B5E8F1 /* InfiniteScrollActivityView.swift in Sources */,
 				E49418281F99C57000B5E8F1 /* ItineraryViewController.swift in Sources */,
 				E422E9571FA3C83400B61025 /* KMeans.swift in Sources */,
+				64ABC0211FB57C4A00F7E8F4 /* WanderViewController.swift in Sources */,
 				64C9DC7C1FA4620400C75069 /* PhotoAnnotation.swift in Sources */,
 				64920D301F92EB1E00A96D25 /* FloatingPoint.swift in Sources */,
 				64C9DC7E1FA4E96F00C75069 /* LocationsViewController.swift in Sources */,
@@ -539,6 +560,7 @@
 				E4A04C131F8DDB0900E03A19 /* LoginViewController.swift in Sources */,
 				644ACFB01F91E424003C5B97 /* YelpClient.swift in Sources */,
 				64AD1A6C1F99CB6D00713A3B /* String.swift in Sources */,
+				64ABC01F1FB567A500F7E8F4 /* PageViewController.swift in Sources */,
 				64EC699D1FA6907700082A24 /* InterestSelectionCell.swift in Sources */,
 				644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */,
 				64920D2E1F92EA9300A96D25 /* Int.swift in Sources */,
@@ -549,7 +571,9 @@
 				E4A04C111F8DDB0900E03A19 /* AppDelegate.swift in Sources */,
 				64EB2C631F9347E300BF7A33 /* PlaceSwipeableSuperView.swift in Sources */,
 				64AD1A7A1F99EC3D00713A3B /* Category.swift in Sources */,
+				64ABC0291FB57CC100F7E8F4 /* DiscoverViewController.swift in Sources */,
 				E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */,
+				64ABC02D1FB57CE100F7E8F4 /* ManualViewController.swift in Sources */,
 				64A9727D1FA85A0A00DBEBD1 /* Date.swift in Sources */,
 				64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */,
 				64920D351F92FFB400A96D25 /* FadeTransition.swift in Sources */,
