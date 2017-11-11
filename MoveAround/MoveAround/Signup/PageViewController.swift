@@ -19,7 +19,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                 ]
     }()
     var pageControl = UIPageControl()
-
+    var currentIndex: Int!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,10 +44,24 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         pageControl = UIPageControl(frame: CGRect(x: 0,y: 40,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 2
+        currentIndex = self.pageControl.currentPage
         self.pageControl.pageIndicatorTintColor = UIColor.lightGray
-        self.pageControl.tintColor = UIColor.orange
-        self.pageControl.currentPageIndicatorTintColor = UIColor.orange
+        setPageControlColors()
         self.view.addSubview(pageControl)
+        
+        self.pageControl.addTarget(self, action: #selector(onPageChanged(_:)), for: UIControlEvents.valueChanged)
+
+        
+    }
+
+    @objc func onPageChanged(_ pageControl: UIPageControl) {
+        let viewController = orderedViewControllers[pageControl.currentPage]
+        setViewControllers([viewController],
+                           direction: (currentIndex < pageControl.currentPage) ? .forward : .reverse,
+                           animated: true,
+                           completion: nil)
+        currentIndex = pageControl.currentPage
+        setPageControlColors()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,17 +78,22 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         // make sure the page control indicator changes to the correct page as you scroll through
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
-        
+        currentIndex = self.pageControl.currentPage
+        setPageControlColors()
+
+    }
+  
+    private func setPageControlColors() {
         if (self.pageControl.currentPage == 0 || self.pageControl.currentPage == 2) {
             self.pageControl.tintColor = UIColor.orange
             self.pageControl.currentPageIndicatorTintColor = UIColor.orange
         } else {
             self.pageControl.tintColor = UIColor.white
             self.pageControl.currentPageIndicatorTintColor = UIColor.white
-
         }
     }
-
+    
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
