@@ -12,6 +12,7 @@ import LikeAnimation
 class ManualViewController: UIViewController  {
     @IBOutlet var totalView: UIView!
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var discoverImage: UIImageView!
     
     @IBOutlet weak var goButton: UIButton!
     
@@ -42,6 +43,7 @@ class ManualViewController: UIViewController  {
         cardView.layer.shadowRadius = 4
         
         goButton.layer.cornerRadius = 22
+        discoverImage.tintColorDidChange()
         
     }
     

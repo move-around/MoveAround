@@ -10,6 +10,8 @@ import UIKit
 
 class DiscoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var manualImage: UIImageView!
+    @IBOutlet weak var quickImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     let archetypeArray =
         [Archetype(name: "Foodie", imageName: "foodie", description: "Interested in food and beverages.  Seeks new food experiences as a hobby."),
@@ -27,7 +29,9 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
+        manualImage.tintColorDidChange()
+        quickImage.tintColorDidChange()
+
     }
 
     override func didReceiveMemoryWarning() {

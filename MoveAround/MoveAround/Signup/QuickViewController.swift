@@ -12,6 +12,8 @@ import CHPulseButton
 class QuickViewController: UIViewController {
 
     @IBOutlet weak var roundButton: CHPulseButton!
+    @IBOutlet weak var discoverImage: UIImageView!
+    @IBOutlet weak var wanderImage: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         roundButton.animate(start: true)
@@ -21,6 +23,9 @@ class QuickViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        discoverImage.tintColorDidChange()
+        wanderImage.tintColorDidChange()
+
     }
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
 //        Itinerary.currentItinerary.generateItinerary()

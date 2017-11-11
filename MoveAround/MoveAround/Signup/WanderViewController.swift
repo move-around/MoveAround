@@ -10,10 +10,13 @@ import UIKit
 
 class WanderViewController: UIViewController {
 
+    @IBOutlet weak var quickImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        quickImage.tintColorDidChange()
+
     }
 
     override func didReceiveMemoryWarning() {
