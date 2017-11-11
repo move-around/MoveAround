@@ -16,7 +16,7 @@ protocol PlaceSwipeableSuperViewDelegate {
 class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     var loadedViews: [PlaceSwipeableView]! = [PlaceSwipeableView]()
     var places: [Place]! = [Place]()
-    let limit = 30
+    let limit = 40
     var offset = 0
     var delegate: PlaceSwipeableSuperViewDelegate!
     

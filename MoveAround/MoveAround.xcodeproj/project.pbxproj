@@ -50,6 +50,7 @@
 		E422E9591FA534D500B61025 /* YelpCategoryMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */; };
 		E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9731FA6BB1F00B61025 /* UIColor.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
+		E44C1BE01FB2A5AD003589CA /* ItineraryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */; };
 		E46EC24B1FA6E5230069621E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */; };
 		E494181E1F98886B00B5E8F1 /* Itinerary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E494181C1F98879700B5E8F1 /* Itinerary.storyboard */; };
 		E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */; };
@@ -112,6 +113,7 @@
 		E422E9581FA534D500B61025 /* YelpCategoryMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCategoryMatcher.swift; sourceTree = "<group>"; };
 		E422E9731FA6BB1F00B61025 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryCreator.swift; path = MoveAround/Itinerary/ItineraryCreation/ItineraryCreator.swift; sourceTree = SOURCE_ROOT; };
 		E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		E494181A1F98876B00B5E8F1 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
 		E494181B1F98876B00B5E8F1 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				E422E9541FA3C7EB00B61025 /* KMeans.swift */,
 				E422E9551FA3C7EC00B61025 /* Vector.swift */,
+				E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */,
 			);
 			name = ItineraryCreation;
 			path = "New Group";
@@ -552,6 +555,7 @@
 				E49418321F9DBF5600B5E8F1 /* GoogleDirectionMatrixClient.swift in Sources */,
 				E494182D1F9D1C8C00B5E8F1 /* ViewCategory.swift in Sources */,
 				E494181F1F98887400B5E8F1 /* PlacesCollectionViewCell.swift in Sources */,
+				E44C1BE01FB2A5AD003589CA /* ItineraryCreator.swift in Sources */,
 				64C9DC821FA4EDFC00C75069 /* LocationCell.swift in Sources */,
 				E49418201F98887700B5E8F1 /* PlacesListViewController.swift in Sources */,
 				64BB8F5B1F91CF4A00743DDA /* PlaceDetailViewController.swift in Sources */,
@@ -717,16 +721,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBWHW3V2R2;
+				DEVELOPMENT_TEAM = WYPMYKCHC9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = MoveAround/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.movearound1.MoveAround;
+				PRODUCT_BUNDLE_IDENTIFIER = com.traveller.MoveAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -740,11 +744,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBWHW3V2R2;
+				DEVELOPMENT_TEAM = WYPMYKCHC9;
 				INFOPLIST_FILE = MoveAround/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.movearound1.MoveAround;
+				PRODUCT_BUNDLE_IDENTIFIER = com.traveller.MoveAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;

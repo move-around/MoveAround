@@ -13,17 +13,6 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var prevDayButton: UIBarButtonItem!
     @IBOutlet weak var nextDayButton: UIBarButtonItem!
-    
-    //TODO: Gonzalo
-    @IBAction func onSaveTap(_ sender: UIBarButtonItem) {
-        // Adding the "save" alert code here here temporarily until the
-        // other stuff is ready. The persistance code needs to know about this.
-        
-        let alert = UIAlertController(title: "Awesome!", message: "Your itinerary has been saved.", preferredStyle: UIAlertControllerStyle.alert)
-        self.present(alert, animated: true, completion: nil)
-
-    }
-    
     @IBOutlet weak var mapImageView: UIImageView!
     
     
@@ -32,7 +21,9 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
                                         ["1:30 PM", "2:30 PM"],
                                         ["3:00 PM", "4:30 PM"],
                                         ["5:00 PM", "7:00 PM"],
-                                        ["7:30 PM", "9:00 PM"]]
+                                        ["7:30 PM", "9:00 PM"],
+                                        ["9:30 PM", "11:00 PM"]]
+    
     var dayItinerary: DayItinerary?
     var currentDate: Date?
     
@@ -81,12 +72,28 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
 
+        tableView.reloadSections(IndexSet(integer: 0) , with: UITableViewRowAnimation.fade)
+
         mapImageView.makeCircular()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        prevDayButton.isEnabled = true
+        prevDayButton.title = "<"
+        
+        nextDayButton.isEnabled = true
+        nextDayButton.title = ">"
+        
+        dayLabel.title = currentDate?.toStringWithYear()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.dayLabel.title = ""
     }
     
 
@@ -146,7 +153,8 @@ class ItineraryViewController: UIViewController, UITableViewDataSource, UITableV
         else {
             dayItinerary = currentItinerary.dayItineraries[dayIndex]
         }
-        tableView.reloadData()
+        //tableView.reloadData()
+        tableView.reloadSections(IndexSet(integer: 0) , with: UITableViewRowAnimation.fade)
     }
     
     

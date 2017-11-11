@@ -68,6 +68,11 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
     }
     
     @IBAction func onDonePressed(_ sender: Any) {
+        // Add the non swiped but interesting places to the itinerary
+        let currentPlace = placeImageView.loadedViews.first?.place
+        let listOfRemainingPlaces = placeImageView.places[placeImageView.places.index(of: currentPlace!)!...]
+        Itinerary.currentItinerary.unswipedInterestingPlaces.append(contentsOf: listOfRemainingPlaces)
+
         let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
         dateRangePickerViewController.delegate = self
         dateRangePickerViewController.minimumDate = Date()
@@ -122,7 +127,9 @@ extension PlaceViewController : CalendarDateRangePickerViewControllerDelegate {
         
         Itinerary.currentItinerary = itinerary
         
-        Itinerary.currentItinerary.generateItinerary()
+        
+        ItineraryCreator.generateItinerary(itinerary: Itinerary.currentItinerary)
+
         
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
         

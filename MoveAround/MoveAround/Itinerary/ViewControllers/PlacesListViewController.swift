@@ -28,44 +28,32 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        if !isShowingSelectedPlaces {
-            // Initialize the UISearchBar
-            searchBar = UISearchBar()
-            searchBar.delegate = self
-            
-            // Add SearchBar to the NavigationBar
-            searchBar.sizeToFit()
-            navigationItem.titleView = searchBar
-            searchBar.tintColor = UIColor.white
-            searchBar.placeholder = "Landmarks"
-            
-            // Add Scroll Loading view for infinite scrolling
-            let frame = CGRect(x: 0, y: collectionView.contentSize.height, width: collectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
-            loadingMoreView = InfiniteScrollActivityView(frame: frame)
-            loadingMoreView!.isHidden = true
-            collectionView.addSubview(loadingMoreView!)
-            
-            var insets = collectionView.contentInset
-            insets.bottom += InfiniteScrollActivityView.defaultHeight
-            collectionView.contentInset = insets
-            
-            // Perform the first search when the view controller first loads
-            doSearch(searchString: "Landmarks", useOffset: false)
-            
-            // Set Tab bar item title
-            self.navigationController?.tabBarItem.title = "Explore"
-
-        }
-        else {
-            listOfPlaces = Itinerary.currentItinerary.placesOfInterest
-            collectionView.reloadData()
-        }
+        // Initialize the UISearchBar
+        searchBar = UISearchBar()
+        searchBar.delegate = self
         
+        // Add SearchBar to the NavigationBar
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+        searchBar.placeholder = "Landmarks"
+        
+        // Add Scroll Loading view for infinite scrolling
+        let frame = CGRect(x: 0, y: collectionView.contentSize.height, width: collectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        collectionView.addSubview(loadingMoreView!)
+        
+        var insets = collectionView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        collectionView.contentInset = insets
+        
+        listOfPlaces = Itinerary.currentItinerary.placesOfInterest
+        collectionView.reloadData()
+
         // Add tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapEdit(recognizer:)))
         collectionView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
-        
     }
     
     func doSearch(searchString: String, useOffset: Bool) {
@@ -100,6 +88,14 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.init(hex: "FF7112")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
     // MARK:- Collection View functions
