@@ -16,15 +16,16 @@ class PlaceDetailViewController: UIViewController  {
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
-    @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var mapView: MapView!
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var uberButton: UIButton!
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     var place: Place!
-    
+    var wasShook: Bool = false // Whether coming from a shake
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,11 @@ class PlaceDetailViewController: UIViewController  {
         }
 
         mapView.places = [place]
+        
+        uberButton.layer.cornerRadius = 22
+        callButton.layer.cornerRadius = 22
+
+//        shakeButton.isHidden = wasShook ? false : true
     }
     
     @IBAction func onUberTap(_ sender: UIButton) {
@@ -89,7 +95,11 @@ class PlaceDetailViewController: UIViewController  {
         mapItem.name = place.name
         mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
-    
+
+    @IBAction func onBackTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+
     static func storyboardInstance() -> PlaceDetailViewController? {
         let storyboard = UIStoryboard(name: String(describing: type(of: self)), bundle: nil)
         return storyboard.instantiateInitialViewController() as? PlaceDetailViewController

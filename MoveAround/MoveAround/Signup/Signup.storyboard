@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzG-Yq-tGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320.80000000000001" y="1135.6821589205399"/>
+            <point key="canvasLocation" x="660" y="1135.6821589205399"/>
         </scene>
         <!--Quick View Controller-->
         <scene sceneID="HAk-3q-lz8">
@@ -382,7 +382,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-631.20000000000005" y="1135.6821589205399"/>
+            <point key="canvasLocation" x="-292" y="1135.6821589205399"/>
         </scene>
         <!--Wander View Controller-->
         <scene sceneID="8KJ-v9-FGO">
@@ -443,6 +443,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="rpS-Dg-eWZ" firstAttribute="centerX" secondItem="1al-zW-s6K" secondAttribute="centerX" id="0PU-bn-rtf"/>
                             <constraint firstItem="76y-0y-TCP" firstAttribute="top" secondItem="BaN-zF-Etb" secondAttribute="top" constant="15" id="0zF-8Z-PSY"/>
@@ -462,15 +463,33 @@
                             <constraint firstItem="qiR-pz-jWG" firstAttribute="top" secondItem="BxX-UJ-wPD" secondAttribute="bottom" constant="32" id="qiJ-Zg-sBb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BaN-zF-Etb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uUC-WV-0ve" appends="YES" id="wSG-eZ-9UK"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="yRJ-sP-rti"/>
                     <connections>
                         <outlet property="quickImage" destination="76y-0y-TCP" id="YS8-iI-FGa"/>
+                        <segue destination="eLM-kN-bT5" kind="presentation" identifier="showDetailPage" id="nJW-k5-wa8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bug-V7-AI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gzY-Kh-cHG"/>
+                <tapGestureRecognizer id="uUC-WV-0ve">
+                    <connections>
+                        <action selector="onScreenTap:" destination="Brd-LY-Gax" id="IO2-jC-48R"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1610" y="1136"/>
+            <point key="canvasLocation" x="-1271.2" y="1135.6821589205399"/>
+        </scene>
+        <!--PlaceDetailViewController-->
+        <scene sceneID="W3l-cb-Msw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlaceDetailViewController" referencedIdentifier="PlaceDetailViewController" id="eLM-kN-bT5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0F-gd-7rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1271" y="1635"/>
         </scene>
         <!--Manual View Controller-->
         <scene sceneID="TIS-JV-sFC">
@@ -581,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHf-uB-mh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.8" y="1135.6821589205399"/>
+            <point key="canvasLocation" x="1652" y="1135.6821589205399"/>
         </scene>
         <!--InterestSelection-->
         <scene sceneID="U4d-Lv-nZU">
@@ -589,7 +608,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="InterestSelection" storyboardName="InterestSelection" id="boO-9b-wyb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYR-TJ-hIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="1135"/>
+            <point key="canvasLocation" x="2487.1999999999998" y="1134.3328335832084"/>
         </scene>
         <!--InterestSelection-->
         <scene sceneID="WzB-Fi-8xF">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hDv-Cy-THl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eTa-Zm-uaY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuD-Zj-Pfe" customClass="PlaceSwipeableSuperView" customModule="MoveAround" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="WEf-OZ-JCn">
-                                        <rect key="frame" x="167" y="491" width="40" height="40"/>
+                                        <rect key="frame" x="167" y="555" width="40" height="40"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ETO-2N-sVd"/>
@@ -32,7 +32,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="xfS-yg-qVO">
-                                        <rect key="frame" x="97" y="486" width="50" height="50"/>
+                                        <rect key="frame" x="97" y="550" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="38W-oe-vde"/>
@@ -47,7 +47,7 @@
                                         </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiS-WZ-M4Q">
-                                        <rect key="frame" x="0.0" y="556" width="375" height="47"/>
+                                        <rect key="frame" x="0.0" y="620" width="375" height="47"/>
                                         <color key="backgroundColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="cbB-rv-kBH"/>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-J2-jbz">
-                                        <rect key="frame" x="227" y="486" width="50" height="50"/>
+                                        <rect key="frame" x="227" y="550" width="50" height="50"/>
                                         <color key="tintColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -74,6 +74,12 @@
                                             <outletCollection property="gestureRecognizers" destination="qdh-Ik-y3c" appends="YES" id="CTi-NI-Nk0"/>
                                         </connections>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which places do you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkC-fe-ZSy">
+                                        <rect key="frame" x="75.5" y="45" width="224" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -86,15 +92,17 @@
                                     <constraint firstAttribute="bottom" secondItem="eiS-WZ-M4Q" secondAttribute="bottom" id="Z3E-sQ-cln"/>
                                     <constraint firstItem="eiS-WZ-M4Q" firstAttribute="top" secondItem="WEf-OZ-JCn" secondAttribute="bottom" constant="25" id="aT2-dU-49I"/>
                                     <constraint firstItem="WEf-OZ-JCn" firstAttribute="leading" secondItem="xfS-yg-qVO" secondAttribute="trailing" constant="20" id="b5n-h6-Tit"/>
+                                    <constraint firstItem="pkC-fe-ZSy" firstAttribute="top" secondItem="UuD-Zj-Pfe" secondAttribute="top" constant="45" id="o06-jo-NfX"/>
                                     <constraint firstItem="eiS-WZ-M4Q" firstAttribute="centerX" secondItem="UuD-Zj-Pfe" secondAttribute="centerX" id="oQr-9b-ELE"/>
+                                    <constraint firstItem="pkC-fe-ZSy" firstAttribute="centerX" secondItem="UuD-Zj-Pfe" secondAttribute="centerX" id="sxC-Bv-xji"/>
                                     <constraint firstItem="Cih-J2-jbz" firstAttribute="leading" secondItem="WEf-OZ-JCn" secondAttribute="trailing" constant="20" id="vGd-bg-GQr"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UuD-Zj-Pfe" firstAttribute="top" secondItem="TXr-Yu-qq9" secondAttribute="top" id="1tB-XX-p8m"/>
                             <constraint firstItem="UuD-Zj-Pfe" firstAttribute="leading" secondItem="TXr-Yu-qq9" secondAttribute="leading" id="Fye-xQ-cVd"/>
+                            <constraint firstItem="UuD-Zj-Pfe" firstAttribute="top" secondItem="HnK-wh-QfR" secondAttribute="top" id="HIN-41-INT"/>
                             <constraint firstItem="TXr-Yu-qq9" firstAttribute="bottom" secondItem="UuD-Zj-Pfe" secondAttribute="bottom" id="NgU-sb-v6G"/>
                             <constraint firstItem="UuD-Zj-Pfe" firstAttribute="trailing" secondItem="TXr-Yu-qq9" secondAttribute="trailing" id="kmY-Jg-NfK"/>
                         </constraints>
@@ -105,7 +113,7 @@
                         <outlet property="doneButton" destination="eiS-WZ-M4Q" id="y81-au-hP5"/>
                         <outlet property="placeImageView" destination="UuD-Zj-Pfe" id="2Ze-0q-EQg"/>
                         <outlet property="yesImage" destination="Cih-J2-jbz" id="G4T-PX-0k7"/>
-                        <segue destination="tde-iE-43e" kind="show" identifier="showDetailPage" id="L1x-IJ-6sq"/>
+                        <segue destination="tde-iE-43e" kind="presentation" identifier="showDetailPage" id="L1x-IJ-6sq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-wV-woI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,24 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ku5-AX-kW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1172" y="-31.484257871064472"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uu0-F9-GNg">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w1Q-Mx-hXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hDv-Cy-THl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bHR-PY-2Om">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="eTa-Zm-uaY" kind="relationship" relationship="rootViewController" id="t28-vS-z6A"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-364" y="170"/>
         </scene>
     </scenes>
     <resources>

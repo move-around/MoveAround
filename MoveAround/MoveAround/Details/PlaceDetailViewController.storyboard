@@ -99,11 +99,12 @@
                                     <constraint firstAttribute="width" constant="150" id="LBH-uI-ud8"/>
                                     <constraint firstAttribute="height" constant="40" id="TxL-ar-9UX"/>
                                 </constraints>
-                                <state key="normal" title="Uber">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="CALL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onUberTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="hhL-r8-VaK"/>
+                                    <action selector="onCallTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="8eL-Pa-UMj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="245 reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYU-Ao-wd6">
@@ -133,11 +134,12 @@
                                     <constraint firstAttribute="width" constant="150" id="HKC-wB-jPc"/>
                                     <constraint firstAttribute="height" constant="40" id="lca-CS-YY9"/>
                                 </constraints>
-                                <state key="normal" title="Call">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="UBER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onCallTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="0bG-bC-ygk"/>
+                                    <action selector="onUberTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="Jns-KM-K0k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5v-RU-4aE">
@@ -148,6 +150,18 @@
                                 </state>
                                 <connections>
                                     <action selector="onDirectionsTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="teQ-yX-6gm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-gL-spR">
+                                <rect key="frame" x="10" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="tCr-tL-CP0"/>
+                                    <constraint firstAttribute="height" constant="40" id="xRn-eG-CLA"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="onBackTap:" destination="4Ar-Z3-Uk0" eventType="touchUpInside" id="NrC-3y-lBK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -179,12 +193,14 @@
                             <constraint firstItem="nwD-wE-t3f" firstAttribute="top" secondItem="tPe-ya-TEQ" secondAttribute="bottom" constant="15" id="ceE-ho-lGA"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="ciQ-ec-zxz"/>
                             <constraint firstItem="FYU-Ao-wd6" firstAttribute="top" secondItem="HQd-JD-ASn" secondAttribute="bottom" constant="10" id="cwi-Xb-bGk"/>
+                            <constraint firstItem="oEb-gL-spR" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="10" id="dJy-hF-rLf"/>
                             <constraint firstItem="tVD-IW-5F7" firstAttribute="top" secondItem="nwD-wE-t3f" secondAttribute="bottom" constant="15" id="dTG-vi-g4N"/>
                             <constraint firstItem="ggU-Wd-zYc" firstAttribute="top" secondItem="Ska-if-pAp" secondAttribute="bottom" constant="21" id="eGA-P3-SxM"/>
                             <constraint firstItem="NJC-I0-WUy" firstAttribute="top" secondItem="tPe-ya-TEQ" secondAttribute="bottom" constant="18" id="fbO-nn-aZ2"/>
                             <constraint firstItem="aUL-Bb-8VS" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="jug-Fp-T4b"/>
                             <constraint firstItem="bsa-cE-tJb" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="15" id="l85-H8-nmL"/>
                             <constraint firstItem="Afx-Ss-r28" firstAttribute="top" secondItem="Ska-if-pAp" secondAttribute="bottom" constant="21" id="llv-Jt-ZeF"/>
+                            <constraint firstItem="oEb-gL-spR" firstAttribute="top" secondItem="vv2-jc-dyE" secondAttribute="top" constant="10" id="mgA-EJ-aNZ"/>
                             <constraint firstItem="Ska-if-pAp" firstAttribute="top" secondItem="tVD-IW-5F7" secondAttribute="bottom" constant="14" id="rbd-XN-RmY"/>
                             <constraint firstItem="FYU-Ao-wd6" firstAttribute="leading" secondItem="vv2-jc-dyE" secondAttribute="leading" constant="45" id="xKw-qL-LOs"/>
                             <constraint firstItem="Ska-if-pAp" firstAttribute="leading" secondItem="ynX-fe-Prl" secondAttribute="leading" constant="15" id="xyq-7p-6xe"/>
@@ -195,14 +211,15 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="bsa-cE-tJb" id="Vqd-0b-yDL"/>
-                        <outlet property="callButton" destination="ggU-Wd-zYc" id="MUr-JE-G8r"/>
+                        <outlet property="backButton" destination="oEb-gL-spR" id="S2z-Dz-G15"/>
+                        <outlet property="callButton" destination="Afx-Ss-r28" id="UxB-3T-Tee"/>
                         <outlet property="categoriesLabel" destination="HFm-wB-cd2" id="i2k-oh-pPT"/>
                         <outlet property="mapView" destination="Yov-x7-jfX" id="sbB-h1-Zvq"/>
                         <outlet property="nameLabel" destination="aUL-Bb-8VS" id="qQw-o7-1sI"/>
                         <outlet property="placeImageView" destination="fgo-yS-a6W" id="03r-sP-8Lo"/>
                         <outlet property="ratingImageView" destination="HQd-JD-ASn" id="zlD-vT-fWl"/>
                         <outlet property="reviewsCountLabel" destination="FYU-Ao-wd6" id="XmN-u8-NJV"/>
-                        <outlet property="uberButton" destination="Afx-Ss-r28" id="0gC-OY-C5O"/>
+                        <outlet property="uberButton" destination="ggU-Wd-zYc" id="N03-Ke-hgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aK4-ij-4Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,6 +228,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="700" height="700"/>
         <image name="default" width="1000" height="750"/>
         <image name="directions" width="700" height="700"/>
         <image name="read" width="700" height="700"/>
