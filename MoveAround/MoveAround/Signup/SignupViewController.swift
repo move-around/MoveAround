@@ -9,13 +9,27 @@
 import UIKit
 import GooglePlaces
 
-class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SignupViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var greeting: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
-    var tableData=[String]()
+    var cities = [City]()
+    
+    var defaultCities=[
+        City(name: "San Francisco, CA, United States", imageName: "sanfrancisco", imageUrl: nil),
+        City(name: "London, United Kingdom", imageName: "london", imageUrl: nil),
+        City(name: "Toronto, ON, Canada", imageName: "toronto", imageUrl: nil),
+        City(name: "New York, NY, United States", imageName: "newyork", imageUrl: nil),
+        City(name: "Moscow, Russia", imageName: "moscow", imageUrl: nil),
+        City(name: "Shanghai, China", imageName: "shanghai", imageUrl: nil),
+        City(name: "Berlin, Germany", imageName: "berlin", imageUrl: nil),
+        City(name: "Paris, France", imageName: "paris", imageUrl: nil)
+    ]
+
+    
+    
     var fetcher: GMSAutocompleteFetcher?
 
     
@@ -23,7 +37,7 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         if let currentUser = User.currentUser {
-            greeting.text = "Hi \(currentUser.firstName!)!"
+            greeting.text = "Welcome \(currentUser.firstName!)."
         }
         let neBoundsCorner = CLLocationCoordinate2D(latitude: -33.843366,
                                                     longitude: 151.134002)
@@ -39,73 +53,90 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Create the fetcher.
         fetcher = GMSAutocompleteFetcher(bounds: bounds, filter: filter)
         fetcher?.delegate = self
-        textField?.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.layer.borderColor = UIColor.lightGray.cgColor
-        tableView.layer.borderWidth = 1.0
-        tableView.tableFooterView = UIView()
-
-
-        nextButton.isEnabled = false
         
+        // Remove search bar border
+        searchBar.backgroundImage = UIImage()
+        tableView.tableFooterView = UIView()
+        
+        cities = defaultCities
+        
+        let orangeColor = UIColor(hex: "FF7112")
+        searchBar.searchBarStyle = .minimal
+        searchBar.setTextColor(color: orangeColor)
+        searchBar.setPlaceholderTextColor(color: orangeColor)
+        searchBar.setSearchImageColor(color: orangeColor)
+        searchBar.setTextFieldClearButtonColor(color: orangeColor)
+    
     }
 
-
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        fetcher?.sourceTextHasChanged(searchBar.text!)
+        
+  
+    }
+ 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as! CityCell
+        let city = cities[indexPath.row]
+        cell.nameLabel.text = city.name
+        
+        if let posterName = city.imageName {
+            cell.posterView.image = UIImage(named: posterName)
+        } else if let posterUrl = city.imageUrl {
+            let imageRequest = URLRequest(url: URL(string: posterUrl)!)
+            cell.posterView.setImageWith(imageRequest, placeholderImage: nil, success: { (imageRequest, imageResponse, image) -> Void in
+                // imageResponse will be nil if the image is cached
+                if imageResponse != nil {
+                    //print("Image was NOT cached, fade in image")
+                    cell.posterView.alpha = 0.0
+                    cell.posterView.image = image
+                    UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                        cell.posterView.alpha = 1.0
+                    })
+                } else {
+                    //print("Image was cached so just update the image")
+                    cell.posterView.image = image
+                }
+            }
+            )
+            
+        }
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func textFieldDidChange(textField: UITextField) {
-        fetcher?.sourceTextHasChanged(textField.text!)
-        tableView.isHidden = false
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        fetcher?.sourceTextHasChanged(searchText)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableData.count != 0 {
-            tableView.isHidden = false
-        } else {
-            tableView.isHidden = true
-        }
-        return tableData.count
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        textField.text = tableData[indexPath.row]
-        tableView.isHidden = true
-        view.endEditing(true)
-        nextButton.isEnabled = true
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier:"addCategoryCell")
+        performSegue(withIdentifier: "showRoutes", sender: cities[indexPath.row])
         
-        cell.selectionStyle =  UITableViewCellSelectionStyle.none
-        cell.backgroundColor = UIColor.clear
-        cell.contentView.backgroundColor = UIColor.clear
-        cell.textLabel?.textAlignment = NSTextAlignment.left
-        cell.textLabel?.textColor = UIColor.gray
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 14.0)
-        
-        cell.textLabel?.text = tableData[indexPath.row]
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let itinerary = Itinerary.currentItinerary
-        itinerary.destination = textField.text
+        let city = sender as! City
+        itinerary.destination = city.name
         Itinerary.currentItinerary = itinerary
     }
 
@@ -114,17 +145,23 @@ class SignupViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension SignupViewController: GMSAutocompleteFetcherDelegate {
     func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
-        tableData.removeAll()
+        cities.removeAll()
         
         for prediction in predictions {
-            tableData.append(prediction.attributedFullText.string)
-//
+
+            let placeId = prediction.placeID
+            GooglePlacesClient.getPhotoUrl(placeId, completion: { (photoUrl) in
+                let city = City(name: prediction.attributedFullText.string, imageName: nil, imageUrl: photoUrl)
+                self.cities.append(city)
+                
+                // This isn't optimal here but leaving it. Let's re-visit this when we have more time.
+                self.tableView.reloadData()
+            })
+
 //            print("\n",prediction.attributedFullText.string)
 //            print("\n",prediction.attributedPrimaryText.string)
 //            print("\n********")
         }
-        
-        tableView.reloadData()
     }
     
     func didFailAutocompleteWithError(_ error: Error) {

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     )
     PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
-    GMSPlacesClient.provideAPIKey("AIzaSyCvt5DdJ64JGgx0W44CFynbK0EHcUUHq6c")
+    GMSPlacesClient.provideAPIKey(GooglePlacesClient.apiKey)
     
 
     // Override point for customization after application launch.
