@@ -61,7 +61,6 @@ class YelpPlace: Place {
             categories = categoryNames.joined(separator: ", ")
             internalCategories = internalCategoryNames.joined(separator: ",")
             print("Categories for \(name!) = \(categories!)")
-            print("Internal Categories for \(name!) = \(internalCategories!)")
         } else {
             categories = nil
         }
@@ -94,6 +93,7 @@ class YelpPlace: Place {
         reviewCount = dictionary["review_count"] as? NSNumber
         
         id = dictionary["id"] as? String
+        print("Id for \(name!) = \(id!)")
     }
     
     class func places(array: [NSDictionary]) -> [YelpPlace] {

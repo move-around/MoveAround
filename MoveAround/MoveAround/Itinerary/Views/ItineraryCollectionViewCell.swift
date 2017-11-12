@@ -34,7 +34,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
                     placeImage.setImageWith(placeImageUrl)
                 }
                 placeName.text = place?.name
-                circularGradientImageWidthConstraint.constant = placeName.frame.width
+                circularGradientImageWidthConstraint.constant = placeName.frame.width + 60
                 placeAddress.text = place?.address
                 bannerButton.isHidden = true
                 if (placeItinerary == nil) {
@@ -94,6 +94,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
         switchPlaceImage.alpha = delta
         placeAddress.alpha = delta
         circularGradientImage.alpha = maxAlpha*delta
+        circularGradientImageWidthConstraint.constant = placeName.frame.width + 60
     }
 
 }

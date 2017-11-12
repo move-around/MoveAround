@@ -105,10 +105,14 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
 
-    @IBAction func loadPreviousDayItinerary(_ sender: UIBarButtonItem) {
+    @IBAction func loadPreviousDayItinerary(_ sender: Any) {
         // Fix the date for current date label and previous/next buttons
         let currentItinerary = Itinerary.currentItinerary
 
+        if Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)! < currentItinerary.startDate! {
+            return
+        }
+        
         nextDayButton.title = ">"
         nextDayButton.isEnabled = true
         
@@ -127,9 +131,13 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     
-    @IBAction func loadNextDayItinerary(_ sender: UIBarButtonItem) {
+    @IBAction func loadNextDayItinerary(_ sender: Any) {
         // Fix the date for current date label and previous/next buttons
         let currentItinerary = Itinerary.currentItinerary
+
+        if Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)! > currentItinerary.endDate! {
+            return
+        }
 
         prevDayButton.title = "<"
         prevDayButton.isEnabled = true
