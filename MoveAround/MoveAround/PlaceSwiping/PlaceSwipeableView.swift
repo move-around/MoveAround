@@ -75,6 +75,8 @@ class PlaceSwipeableView: UIView {
         
         noImageView.alpha = 0
         yesImageView.alpha = 0
+        
+        yesImageView.tintColorDidChange()
 
         
     }

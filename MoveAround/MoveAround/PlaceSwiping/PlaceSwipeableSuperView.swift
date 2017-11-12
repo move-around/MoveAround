@@ -37,7 +37,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func loadPlaceViews() {
         for (index, place) in places.enumerated() {
-            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: (self.frame.width - 350)/2, y: 15, width: 350, height: 450))
+            let newView: PlaceSwipeableView = PlaceSwipeableView(frame: CGRect.init(x: (self.frame.width - 350)/2, y: 25, width: 350, height: 450))
             newView.place = place
             newView.delegate = self
             

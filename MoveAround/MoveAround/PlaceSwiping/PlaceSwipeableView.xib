@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,35 +47,34 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes" translatesAutoresizingMaskIntoConstraints="NO" id="W2y-0R-roA">
-                    <rect key="frame" x="20" y="20" width="50" height="50"/>
+                    <rect key="frame" x="60" y="90" width="200" height="200"/>
+                    <color key="tintColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Qpx-ji-ERl"/>
-                        <constraint firstAttribute="width" constant="50" id="oWm-n7-mWI"/>
+                        <constraint firstAttribute="height" constant="200" id="Ule-yV-x3z"/>
+                        <constraint firstAttribute="width" constant="200" id="zcy-nF-uKp"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="K1G-em-e4y">
-                    <rect key="frame" x="250" y="20" width="50" height="50"/>
+                    <rect key="frame" x="60" y="90" width="200" height="200"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="0ex-KI-eVV"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1Nw-yv-bJ2"/>
-                        <constraint firstAttribute="width" constant="50" id="3Jc-ln-CY5"/>
-                        <constraint firstAttribute="height" constant="50" id="XzF-1i-RvA"/>
+                        <constraint firstAttribute="width" constant="200" id="HzH-oA-PZs"/>
+                        <constraint firstAttribute="height" constant="200" id="JNx-Hs-8yq"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.4431372549" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="K1G-em-e4y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="017-UH-REv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="heg-Kh-hYQ" secondAttribute="trailing" constant="15" id="5Jf-xv-HyR"/>
+                <constraint firstItem="K1G-em-e4y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="70F-2m-qUp"/>
+                <constraint firstItem="K1G-em-e4y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EBh-ru-ZDl"/>
                 <constraint firstItem="P9y-Wa-51f" firstAttribute="top" secondItem="heg-Kh-hYQ" secondAttribute="bottom" constant="5" id="ENI-AO-AVV"/>
                 <constraint firstItem="heg-Kh-hYQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="GFt-rL-aX9"/>
                 <constraint firstItem="ZLl-zO-ftU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IE8-VQ-tFw"/>
-                <constraint firstItem="W2y-0R-roA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="NYi-pw-qve"/>
                 <constraint firstItem="ZLl-zO-ftU" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="QBq-3z-cf8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K1G-em-e4y" secondAttribute="trailing" constant="20" id="Zrm-Xn-Lw5"/>
-                <constraint firstItem="W2y-0R-roA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="ays-20-9XW"/>
+                <constraint firstItem="W2y-0R-roA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TXL-BW-Ulr"/>
+                <constraint firstItem="W2y-0R-roA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Y8C-Y6-hVW"/>
                 <constraint firstItem="Gtm-3d-CjW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fY4-dF-PNR"/>
                 <constraint firstItem="Gtm-3d-CjW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gqS-h6-buM"/>
                 <constraint firstItem="Gtm-3d-CjW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hZz-Fr-1kY"/>

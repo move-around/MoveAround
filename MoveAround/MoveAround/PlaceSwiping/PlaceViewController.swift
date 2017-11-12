@@ -14,6 +14,7 @@ import CalendarDateRangePickerViewController
 class PlaceViewController: UIViewController, UIViewControllerTransitioningDelegate, PlaceSwipeableSuperViewDelegate {
     @IBOutlet weak var placeImageView: PlaceSwipeableSuperView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var yesImage: UIImageView!
     var startDate: Date!
     var endDate: Date!
 
@@ -25,6 +26,8 @@ class PlaceViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         placeImageView.delegate = self
+        yesImage.tintColorDidChange()
+
     }
 
     @IBAction func onInfoTapped(_ sender: UITapGestureRecognizer) {
