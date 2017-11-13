@@ -73,17 +73,16 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
                 let itineraryDestination = currentItinerary.destination!
                 if let itineraryData = ItineraryData.itineraryList[itineraryDestination]?[itineraryArchetype!] {
                     currentItinerary.dayItineraries = Itinerary.loadItinerary(itineraryData: itineraryData).dayItineraries
+                    
+                    // Also show the date picker right away
+                    let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                    dateRangePickerViewController.delegate = self
+                    dateRangePickerViewController.minimumDate = Date()
+                    dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
+                    let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
+                    self.present(navigationController, animated: true, completion: nil)
                 }
                 
-                // Also show the date picker right away
-                let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-                dateRangePickerViewController.delegate = self
-                dateRangePickerViewController.minimumDate = Date()
-                dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
-                //        dateRangePickerViewController.selectedStartDate = Date()
-                //        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
-                let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
-                self.present(navigationController, animated: true, completion: nil)
             }
         }
     }

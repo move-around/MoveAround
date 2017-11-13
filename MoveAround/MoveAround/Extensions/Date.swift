@@ -21,6 +21,12 @@ extension Date {
         return formatter
     }()
     
+    static let dayNameFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EE"
+        return formatter
+    }()
+    
     init(date:Date) {
         self = date
     }
@@ -30,6 +36,9 @@ extension Date {
     }
     func toStringWithYear() -> String {
         return Date.formatterOutWithYear.string(from: self)
+    }
+    func dayName() -> String {
+        return Date.dayNameFormatter.string(from: self)
     }
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import CHPulseButton
+import CalendarDateRangePickerViewController
 
 class QuickViewController: UIViewController {
 
@@ -27,30 +28,50 @@ class QuickViewController: UIViewController {
         wanderImage.tintColorDidChange()
 
     }
-    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-//        Itinerary.currentItinerary.generateItinerary()
+
+    @IBAction func onTap(_ sender: Any) {
+        
+        // Pre load an archetype itinerary
+        let currentItinerary = Itinerary.currentItinerary
+        // TODO(Mohit): Change this for the demo
+        let itineraryArchetype = "touristItinerary"
+        let itineraryDestination = currentItinerary.destination!
+        if let itineraryData = ItineraryData.itineraryList[itineraryDestination]?[itineraryArchetype] {
+            currentItinerary.dayItineraries = Itinerary.loadItinerary(itineraryData: itineraryData).dayItineraries
+            
+            // Also show the date picker right away
+            let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            dateRangePickerViewController.delegate = self
+            dateRangePickerViewController.minimumDate = Date()
+            dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
+            let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
+            self.present(navigationController, animated: true, completion: nil)
+        }
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+extension QuickViewController : CalendarDateRangePickerViewControllerDelegate {
+    func didTapCancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
+        
+        self.dismiss(animated: true, completion: nil)
+        let itinerary = Itinerary.currentItinerary
+        itinerary.startDate = startDate
+        itinerary.endDate = endDate
         
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
         
         let itineraryLoadingView = itineraryStoryboard.instantiateViewController(withIdentifier: "loadingScreenViewController")
         let window: UIWindow = UIApplication.shared.keyWindow!
         window.rootViewController = itineraryLoadingView
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

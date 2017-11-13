@@ -27,7 +27,14 @@ class ItineraryData: NSObject {
                                          ["koja-kitchen-san-francisco-7","Lunch at"],
                                          ["golden-gate-bridge-san-francisco",""],
                                          ["crissy-field-center-san-francisco-2",""],
-                                         ["roma-antica-san-francisco-3","Dinner at"]]]
+                                         ["roma-antica-san-francisco-3","Dinner at"]],
+                                        [["craftsman-and-wolves-san-francisco","Breakfast at"],
+                                         ["alamo-square-san-francisco",""],
+                                         ["mission-dolores-park-san-francisco",""],
+                                         ["la-taqueria-san-francisco-2","Lunch at"],
+                                         ["clarion-alley-san-francisco",""],
+                                         ["foreign-cinema-san-francisco","Dinner at"],
+                                         ["bi-rite-creamery-san-francisco",""]]]
     
     static let touristItineraryForManhattanBeach = [[["north-end-caffe-manhattan-beach-3","Breakfast at"],
                                           ["manhattan-village-manhattan-beach-2",""],

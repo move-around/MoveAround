@@ -259,14 +259,6 @@
             </objects>
             <point key="canvasLocation" x="660" y="1135.6821589205399"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="DjE-nc-poG">
-            <objects>
-                <viewControllerPlaceholder id="TJI-kN-Tdg" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aUA-Dn-Eaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="290" y="1547"/>
-        </scene>
         <!--Quick View Controller-->
         <scene sceneID="HAk-3q-lz8">
             <objects>
@@ -352,6 +344,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="circle" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="onTap:" destination="ISq-ha-zfe" eventType="touchUpInside" id="sJg-Ga-AFE"/>
                                     <outletCollection property="gestureRecognizers" destination="sxX-ic-jhm" appends="YES" id="CBs-wB-4DM"/>
                                 </connections>
                             </view>
