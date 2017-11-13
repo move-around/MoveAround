@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="Tqd-Ka-XXC"/>
                     <connections>
                         <outlet property="collectionView" destination="f67-iP-3jw" id="ZMI-br-oRT"/>
-                        <segue destination="5qT-1y-vrl" kind="show" identifier="showDetail" id="ef7-c7-YCd"/>
+                        <segue destination="5qT-1y-vrl" kind="presentation" identifier="showDetail" id="ef7-c7-YCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPk-za-KdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +286,7 @@
                         <outlet property="prevDayButton" destination="g2w-WK-afN" id="eqO-g2-wCD"/>
                         <outlet property="tableView" destination="paA-OO-hVN" id="fdD-8z-Ts8"/>
                         <segue destination="NcC-7d-Rea" kind="show" identifier="showPlaces" id="jkz-Tv-1Ax"/>
-                        <segue destination="5qT-1y-vrl" kind="show" identifier="showDetail" id="Cnw-2V-Mrj"/>
+                        <segue destination="5qT-1y-vrl" kind="presentation" identifier="showDetail" id="Cnw-2V-Mrj"/>
                         <segue destination="SPr-M0-atM" kind="show" identifier="showItineraryMap" id="wOT-mf-rlH"/>
                     </connections>
                 </viewController>
@@ -346,13 +346,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1020 Hyde St" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQc-au-Azn">
-                                                    <rect key="frame" x="0.0" y="94" width="103.5" height="21"/>
+                                                    <rect key="frame" x="16" y="94" width="103.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-ou-yX9">
-                                                    <rect key="frame" x="334" y="97" width="40" height="40"/>
+                                                    <rect key="frame" x="318" y="97" width="40" height="40"/>
                                                     <color key="tintColor" red="1" green="0.44237741829999999" blue="0.075671128929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="8UE-kj-OuK"/>
@@ -360,7 +360,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:30 PM to 4:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-cy-faa">
-                                                    <rect key="frame" x="0.0" y="116" width="154" height="21"/>
+                                                    <rect key="frame" x="16" y="116" width="154" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -469,7 +469,7 @@
                         <outlet property="nextDayButton" destination="Uy6-VP-7dn" id="fKb-Jf-7UR"/>
                         <outlet property="prevDayButton" destination="v50-gW-buA" id="rFA-S0-Mo7"/>
                         <segue destination="SPr-M0-atM" kind="show" identifier="showItineraryMap" id="Wad-5W-7qc"/>
-                        <segue destination="5qT-1y-vrl" kind="show" identifier="showDetail" id="L8s-K6-hcn"/>
+                        <segue destination="5qT-1y-vrl" kind="presentation" identifier="showDetail" id="L8s-K6-hcn"/>
                         <segue destination="NcC-7d-Rea" kind="show" identifier="showPlaces" id="06e-T4-VCy"/>
                     </connections>
                 </viewController>
