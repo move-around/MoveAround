@@ -18,12 +18,13 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UILabel!
     @IBOutlet weak var placeAddress: UILabel!
-    @IBOutlet weak var timePeriodLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var switchPlaceImage: UIImageView!
     @IBOutlet weak var bannerButton: UIButton!
     @IBOutlet weak var imageCoverView: UIView!
     @IBOutlet weak var circularGradientImage: UIImageView!
     @IBOutlet weak var circularGradientImageWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var placePurposeLabel: UILabel!
     
     var placeItinerary: PlaceItinerary?
     
@@ -41,6 +42,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
                     placeItinerary = PlaceItinerary()
                 }
                 placeItinerary?.place = place!
+                categoriesLabel.text = place?.categories!
             }
         }
     }
@@ -90,7 +92,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
         let minAlpha: CGFloat = 0.01
         let maxAlpha: CGFloat = 0.50
         imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
-        timePeriodLabel.alpha = delta
+        categoriesLabel.alpha = delta
         switchPlaceImage.alpha = delta
         placeAddress.alpha = delta
         circularGradientImage.alpha = maxAlpha*delta

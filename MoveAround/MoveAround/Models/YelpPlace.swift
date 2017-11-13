@@ -118,5 +118,9 @@ class YelpPlace: Place {
         _ = YelpClient.sharedInstance.searchWithTerm(term, location: location, sort: sort, categories: categories, deals: deals, radius: radius, limit: limit, offset: offset, completion: completion)
     }
     
+    class func businessForId(id: String, completion: @escaping (Place?, Error?) -> Void) {
+        _ = YelpClient.sharedInstance.getBusinessForId(id: id, completion: completion)
+    }
+    
 
 }

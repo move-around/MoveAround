@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import CalendarDateRangePickerViewController
 
-class DiscoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DiscoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var manualImage: UIImageView!
     @IBOutlet weak var quickImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     let archetypeArray =
-        [Archetype(name: "Foodie", imageName: "foodie", description: "Interested in food and beverages.  Seeks new food experiences as a hobby."),
-         Archetype(name: "Night Owl", imageName: "nightowl", description: "Stays up late. Participates in noctural activities."),
-         Archetype(name: "Adventurer", imageName: "adventurer", description: "Engages in adventures and active exercises."),
-         Archetype(name: "Touristy", imageName: "touristy", description: "Enjoys attractions of cultural value or historical significance."),
-         Archetype(name: "Unique", imageName: "unique", description: "Finds leisure in off the beaten path experiences."),
-         Archetype(name: "Artistic", imageName: "artsy", description: "Enthusiastic about the arts.  Enjoys cultural exhibitions."),
-         Archetype(name: "Thrifty", imageName: "budget", description: "Travelling on a budget and looking for deals.")
+        [Archetype(name: "Foodie", imageName: "foodie", description: "Interested in food and beverages.  Seeks new food experiences as a hobby.", itineraryName: "foodieItinerary"),
+         Archetype(name: "Party Animal", imageName: "nightowl", description: "Likes to Party. Participates in noctural activities.", itineraryName: "partyItinerary"),
+         Archetype(name: "Adventurer", imageName: "adventurer", description: "Engages in adventures and active exercises.", itineraryName: "adventurerItinerary"),
+         Archetype(name: "Touristy", imageName: "touristy", description: "Enjoys attractions of cultural value or historical significance.", itineraryName: "touristItinerary"),
+         Archetype(name: "Unique", imageName: "unique", description: "Finds leisure in off the beaten path experiences.", itineraryName: "uniqueItinerary"),
+         Archetype(name: "Artistic", imageName: "artsy", description: "Enthusiastic about the arts.  Enjoys cultural exhibitions.", itineraryName: "artsyItinerary"),
+         Archetype(name: "Thrifty", imageName: "budget", description: "Travelling on a budget and looking for deals.", itineraryName: "thriftyItinerary")
     ]
     
     override func viewDidLoad() {
@@ -31,6 +32,12 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         manualImage.tintColorDidChange()
         quickImage.tintColorDidChange()
+        
+        // Add tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapEdit(recognizer:)))
+        tableView.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+
 
     }
 
@@ -56,6 +63,39 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
 
+    // MARK: - TapGestureRecognizer
+    @objc func tapEdit(recognizer: UITapGestureRecognizer)  {
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let tapLocation = recognizer.location(in: self.tableView)
+            if let tapIndexPath = self.tableView.indexPathForRow(at: tapLocation) {
+                let currentItinerary = Itinerary.currentItinerary
+                let itineraryArchetype = archetypeArray[tapIndexPath.row].itineraryName
+                let itineraryDestination = currentItinerary.destination!
+                if let itineraryData = ItineraryData.itineraryList[itineraryDestination]?[itineraryArchetype!] {
+                    currentItinerary.dayItineraries = Itinerary.loadItinerary(itineraryData: itineraryData).dayItineraries
+                }
+                
+                // Also show the date picker right away
+                let dateRangePickerViewController = CalendarDateRangePickerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                dateRangePickerViewController.delegate = self
+                dateRangePickerViewController.minimumDate = Date()
+                dateRangePickerViewController.maximumDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())
+                //        dateRangePickerViewController.selectedStartDate = Date()
+                //        dateRangePickerViewController.selectedEndDate = Calendar.current.date(byAdding: .day, value: 5, to: Date())
+                let navigationController = UINavigationController(rootViewController: dateRangePickerViewController)
+                self.present(navigationController, animated: true, completion: nil)
+            }
+        }
+    }
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeTransition()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return FadeTransition()
+    }
+
     /*
     // MARK: - Navigation
 
@@ -67,3 +107,26 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
     */
 
 }
+
+extension DiscoverViewController : CalendarDateRangePickerViewControllerDelegate {
+    func didTapCancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapDoneWithDateRange(startDate: Date!, endDate: Date!) {
+        
+        self.dismiss(animated: true, completion: nil)
+        let itinerary = Itinerary.currentItinerary
+        itinerary.startDate = startDate
+        itinerary.endDate = endDate
+        
+        let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
+        
+        let itineraryLoadingView = itineraryStoryboard.instantiateViewController(withIdentifier: "loadingScreenViewController")
+        let window: UIWindow = UIApplication.shared.keyWindow!
+        window.rootViewController = itineraryLoadingView
+        
+    }
+    
+}
+

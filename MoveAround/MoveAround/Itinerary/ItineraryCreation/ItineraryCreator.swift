@@ -25,6 +25,14 @@ class ItineraryCreator: NSObject {
                                                     ["coffee", "cafes"],
                                                     ["italianFood", "mediterraneanFood", "japaneseFood","restaurant"],
                                                     ["nightlife"]]
+    
+    static let placePurposeDefault : [String] = ["Breakfast at ",
+                                                 "",
+                                                 "Lunch at",
+                                                 "",
+                                                 "",
+                                                 "Dinner at",
+                                                 "Drinks at"]
 
     class func generateItinerary(itinerary: Itinerary) {
         // Before we create the itinerary we want to do some magic here,
@@ -83,6 +91,7 @@ class ItineraryCreator: NSObject {
         for dayItinerary in itinerary.dayItineraries {
             if dayItinerary != nil {
                 createDayItinerary(dayItinerary: dayItinerary!, itinerary: itinerary)
+                dayItinerary?.placePurpose = placePurposeDefault
             }
         }
     }

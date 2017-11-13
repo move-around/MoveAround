@@ -10,4 +10,5 @@ struct Archetype {
     var name: String
     var imageName: String
     var description: String
+    var itineraryName: String?
 }

@@ -184,7 +184,8 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItineraryCollectionViewCell", for: indexPath) as! ItineraryCollectionViewCell
         // TODO (mohit) : Set the place itinerary data structure here properly
-        cell.timePeriodLabel.text = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
+        // cell.timePeriodLabel.text = initialTimeSlots[indexPath.row][0] + " to " + initialTimeSlots[indexPath.row][1]
+        cell.placePurposeLabel.text = dayItinerary?.placePurpose[indexPath.row]
         if (dayItinerary?.placesItineraries[indexPath.row] != nil && dayItinerary?.placesItineraries[indexPath.row]?.place != nil) {
             cell.place = dayItinerary?.placesItineraries[indexPath.row]?.place
         } else {

@@ -58,6 +58,7 @@
 		E422E9741FA6BB1F00B61025 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E422E9731FA6BB1F00B61025 /* UIColor.swift */; };
 		E42BE5961FB6CE3200C54F73 /* UltraVisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BE5951FB6CE3200C54F73 /* UltraVisualLayout.swift */; };
 		E42BE5981FB6E52000C54F73 /* ItineraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BE5971FB6E52000C54F73 /* ItineraryCollectionViewCell.swift */; };
+		E42BE59A1FB90FEF00C54F73 /* ItineraryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42BE5991FB90FEF00C54F73 /* ItineraryData.swift */; };
 		E44C11371F9FB691000E1686 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C11361F9FB691000E1686 /* UIImageView.swift */; };
 		E44C1BE01FB2A5AD003589CA /* ItineraryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */; };
 		E46EC24B1FA6E5230069621E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */; };
@@ -130,6 +131,7 @@
 		E422E9731FA6BB1F00B61025 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E42BE5951FB6CE3200C54F73 /* UltraVisualLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraVisualLayout.swift; sourceTree = "<group>"; };
 		E42BE5971FB6E52000C54F73 /* ItineraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E42BE5991FB90FEF00C54F73 /* ItineraryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryData.swift; path = MoveAround/Itinerary/ItineraryCreation/ItineraryData.swift; sourceTree = SOURCE_ROOT; };
 		E44C11361F9FB691000E1686 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryCreator.swift; path = MoveAround/Itinerary/ItineraryCreation/ItineraryCreator.swift; sourceTree = SOURCE_ROOT; };
 		E46EC24A1FA6E5230069621E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				E422E9541FA3C7EB00B61025 /* KMeans.swift */,
 				E422E9551FA3C7EC00B61025 /* Vector.swift */,
 				E44C1BDF1FB2A5AD003589CA /* ItineraryCreator.swift */,
+				E42BE5991FB90FEF00C54F73 /* ItineraryData.swift */,
 			);
 			name = ItineraryCreation;
 			path = "New Group";
@@ -622,6 +625,7 @@
 				646340341FB80CC900772784 /* CityCell.swift in Sources */,
 				64ABC02D1FB57CE100F7E8F4 /* ManualViewController.swift in Sources */,
 				64A9727D1FA85A0A00DBEBD1 /* Date.swift in Sources */,
+				E42BE59A1FB90FEF00C54F73 /* ItineraryData.swift in Sources */,
 				64CA91411F9475DB0029C267 /* SignupViewController.swift in Sources */,
 				64920D351F92FFB400A96D25 /* FadeTransition.swift in Sources */,
 				6463403A1FB825A900772784 /* UIImage.swift in Sources */,

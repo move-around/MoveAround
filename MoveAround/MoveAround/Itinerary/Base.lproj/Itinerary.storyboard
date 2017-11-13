@@ -327,9 +327,9 @@
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circularGradient" translatesAutoresizingMaskIntoConstraints="NO" id="fXH-Tj-Wdf">
-                                                    <rect key="frame" x="86.5" y="48" width="200" height="40"/>
+                                                    <rect key="frame" x="87" y="36.5" width="200" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="blz-32-p19"/>
+                                                        <constraint firstAttribute="height" constant="50" id="blz-32-p19"/>
                                                         <constraint firstAttribute="width" constant="200" id="d8S-YB-wdS"/>
                                                     </constraints>
                                                 </imageView>
@@ -339,6 +339,12 @@
                                                         <constraint firstAttribute="height" constant="100" id="iuF-dl-RJt"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zir-GI-H0Z">
+                                                    <rect key="frame" x="165.5" y="33" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golden Gate Bridge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01B-eY-Js8">
                                                     <rect key="frame" x="78" y="54" width="218.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -385,11 +391,12 @@
                                             <constraint firstAttribute="bottom" secondItem="sAu-iF-Awi" secondAttribute="bottom" id="9YP-Q2-ip0"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Z2F-cy-faa" secondAttribute="bottom" id="HDG-ab-GxG"/>
                                             <constraint firstAttribute="bottom" secondItem="FNT-rU-nG9" secondAttribute="bottom" id="HM5-m3-Hov"/>
-                                            <constraint firstItem="fXH-Tj-Wdf" firstAttribute="centerY" secondItem="isE-12-5Je" secondAttribute="centerY" id="NOb-GZ-2lJ"/>
+                                            <constraint firstItem="fXH-Tj-Wdf" firstAttribute="centerY" secondItem="isE-12-5Je" secondAttribute="centerY" constant="-7" id="NOb-GZ-2lJ"/>
                                             <constraint firstAttribute="trailing" secondItem="FNT-rU-nG9" secondAttribute="trailing" id="NnU-Oh-7ff"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="kY3-ou-yX9" secondAttribute="bottom" id="RBP-Ua-5Km"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="kY3-ou-yX9" secondAttribute="trailing" id="RnP-U9-K4a"/>
                                             <constraint firstItem="kY3-ou-yX9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z2F-cy-faa" secondAttribute="trailing" constant="8" id="S9I-Xa-aNg"/>
+                                            <constraint firstItem="zir-GI-H0Z" firstAttribute="centerX" secondItem="isE-12-5Je" secondAttribute="centerX" id="Wv1-bY-WzN"/>
                                             <constraint firstAttribute="trailing" secondItem="K5t-5H-5Er" secondAttribute="trailing" id="XXE-qO-PAR"/>
                                             <constraint firstItem="fXH-Tj-Wdf" firstAttribute="centerX" secondItem="isE-12-5Je" secondAttribute="centerX" id="XYa-YI-WeD"/>
                                             <constraint firstItem="K5t-5H-5Er" firstAttribute="top" secondItem="isE-12-5Je" secondAttribute="top" id="YHx-Jh-ivu"/>
@@ -400,6 +407,7 @@
                                             <constraint firstItem="01B-eY-Js8" firstAttribute="centerX" secondItem="isE-12-5Je" secondAttribute="centerX" id="fw4-Dg-Ih6"/>
                                             <constraint firstItem="K5t-5H-5Er" firstAttribute="leading" secondItem="isE-12-5Je" secondAttribute="leading" id="iIt-hs-rPm"/>
                                             <constraint firstItem="sAu-iF-Awi" firstAttribute="top" secondItem="isE-12-5Je" secondAttribute="top" id="jbi-9b-CEQ"/>
+                                            <constraint firstItem="01B-eY-Js8" firstAttribute="top" secondItem="zir-GI-H0Z" secondAttribute="bottom" id="kr0-bN-qrr"/>
                                             <constraint firstItem="Z2F-cy-faa" firstAttribute="leading" secondItem="isE-12-5Je" secondAttribute="leadingMargin" id="llp-XX-EhP"/>
                                             <constraint firstItem="01B-eY-Js8" firstAttribute="centerY" secondItem="isE-12-5Je" secondAttribute="centerY" id="ngS-om-2i8"/>
                                             <constraint firstAttribute="bottom" secondItem="9Uo-vD-gPX" secondAttribute="bottom" id="oc0-rh-c5X"/>
@@ -410,14 +418,15 @@
                                         <size key="customSize" width="374" height="137"/>
                                         <connections>
                                             <outlet property="bannerButton" destination="K5t-5H-5Er" id="jLI-DP-AdH"/>
+                                            <outlet property="categoriesLabel" destination="Z2F-cy-faa" id="ljC-1C-Yfw"/>
                                             <outlet property="circularGradientImage" destination="fXH-Tj-Wdf" id="whj-Vz-xLj"/>
                                             <outlet property="circularGradientImageWidthConstraint" destination="d8S-YB-wdS" id="f9P-kO-ekf"/>
                                             <outlet property="imageCoverView" destination="FNT-rU-nG9" id="7fm-Af-ryP"/>
                                             <outlet property="placeAddress" destination="ZQc-au-Azn" id="8Vh-SK-z6J"/>
                                             <outlet property="placeImage" destination="sAu-iF-Awi" id="Vau-7J-j9l"/>
                                             <outlet property="placeName" destination="01B-eY-Js8" id="YQp-hx-Lyu"/>
+                                            <outlet property="placePurposeLabel" destination="zir-GI-H0Z" id="03h-iE-nRy"/>
                                             <outlet property="switchPlaceImage" destination="kY3-ou-yX9" id="wXw-lN-dgs"/>
-                                            <outlet property="timePeriodLabel" destination="Z2F-cy-faa" id="UVO-pU-7EX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
