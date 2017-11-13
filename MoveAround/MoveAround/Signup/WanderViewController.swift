@@ -36,6 +36,7 @@ class WanderViewController: UIViewController {
     }
     
     func findPlace() {
+        /*
         // To keep things simple, just randomize a bunch of params
         let viewCategory = ViewCategory()
         let offsetNumber = Int(arc4random_uniform(20))
@@ -49,7 +50,11 @@ class WanderViewController: UIViewController {
             if let places = places {
                 self.performSegue(withIdentifier: self.segueToDetail, sender: places.first)
             }
-        }
+        }*/
+        
+        YelpPlace.businessForId(id: "fort-funston-san-francisco-3", completion: { (place: Place?, error: Error?) in
+            self.performSegue(withIdentifier: self.segueToDetail, sender: place)
+        })
     }
     
     override func didReceiveMemoryWarning() {

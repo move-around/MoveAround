@@ -12,7 +12,6 @@ class PlacesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var placeName: UILabel!
-    @IBOutlet weak var placePriceRance: UILabel!
     @IBOutlet weak var placeType: UILabel!
     @IBOutlet weak var placeSelectedImage: UIImageView!
     
@@ -23,7 +22,9 @@ class PlacesCollectionViewCell: UICollectionViewCell {
             }
             placeName.text = place?.name
             // TODO (mohit) Make this better, also set price range somehow
-            placeType.text = place?.categories?.split(separator: ",")[0].lowercased()
+            if let pType = place?.categories?.split(separator: ",")[0] {
+                placeType.text = String(pType)
+            }
             
             if (Itinerary.currentItinerary.placesOfInterest.filter{$0.id == place?.id}.count > 0 ||
                 Itinerary.currentItinerary.plannedPlaces.filter{$0.id == place?.id}.count > 0) {

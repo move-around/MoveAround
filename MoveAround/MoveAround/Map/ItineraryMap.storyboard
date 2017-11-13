@@ -4,8 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,11 +23,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="NvA-sZ-YAP">
-                                <rect key="frame" x="310" y="35" width="50" height="50"/>
+                                <rect key="frame" x="314" y="21" width="60" height="60"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="532-Ow-AcN"/>
-                                    <constraint firstAttribute="height" constant="50" id="h7t-9Z-ASy"/>
+                                    <constraint firstAttribute="width" constant="60" id="532-Ow-AcN"/>
+                                    <constraint firstAttribute="height" constant="60" id="h7t-9Z-ASy"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="6gr-Yq-Unj" appends="YES" id="FQY-yA-Yee"/>
@@ -40,13 +40,14 @@
                             <constraint firstItem="BNF-lG-xYz" firstAttribute="leading" secondItem="3mX-wM-EAN" secondAttribute="leading" id="4OU-PY-5eL"/>
                             <constraint firstItem="BNF-lG-xYz" firstAttribute="top" secondItem="PUK-Kj-BJy" secondAttribute="top" id="QTY-z6-mB8"/>
                             <constraint firstItem="BNF-lG-xYz" firstAttribute="trailing" secondItem="3mX-wM-EAN" secondAttribute="trailing" id="Uac-qu-yLr"/>
-                            <constraint firstItem="3mX-wM-EAN" firstAttribute="trailing" secondItem="NvA-sZ-YAP" secondAttribute="trailing" constant="15" id="kfa-cM-0Oy"/>
-                            <constraint firstItem="NvA-sZ-YAP" firstAttribute="top" secondItem="3mX-wM-EAN" secondAttribute="top" constant="15" id="q00-yD-DGJ"/>
+                            <constraint firstItem="3mX-wM-EAN" firstAttribute="trailing" secondItem="NvA-sZ-YAP" secondAttribute="trailing" constant="1" id="kfa-cM-0Oy"/>
+                            <constraint firstItem="NvA-sZ-YAP" firstAttribute="top" secondItem="3mX-wM-EAN" secondAttribute="top" constant="1" id="q00-yD-DGJ"/>
                             <constraint firstItem="BNF-lG-xYz" firstAttribute="bottom" secondItem="3mX-wM-EAN" secondAttribute="bottom" id="zcc-80-7Fq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3mX-wM-EAN"/>
                     </view>
                     <connections>
+                        <outlet property="cameraImage" destination="NvA-sZ-YAP" id="ZeA-tl-xCe"/>
                         <outlet property="mapView" destination="BNF-lG-xYz" id="SdE-zL-38N"/>
                         <segue destination="eFs-qf-q8F" kind="show" identifier="tagSegue" id="d0b-Um-zSy"/>
                         <segue destination="dda-36-BPy" kind="show" identifier="fullImageSegue" id="Dzr-Sz-Y10"/>
@@ -156,6 +157,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="64" height="64"/>
+        <image name="camera" width="700" height="700"/>
     </resources>
 </document>

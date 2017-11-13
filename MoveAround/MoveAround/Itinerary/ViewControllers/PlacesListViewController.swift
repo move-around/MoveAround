@@ -35,7 +35,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
         // Add SearchBar to the NavigationBar
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
-        searchBar.placeholder = "Landmarks"
+        searchBar.placeholder = "Search"
         
         // Add Scroll Loading view for infinite scrolling
         let frame = CGRect(x: 0, y: collectionView.contentSize.height, width: collectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
@@ -54,6 +54,14 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapEdit(recognizer:)))
         collectionView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
+
+        let orangeColor = UIColor(hex: "FF7112")
+        searchBar.searchBarStyle = .minimal
+        searchBar.setTextColor(color: orangeColor)
+        searchBar.setPlaceholderTextColor(color: orangeColor)
+        searchBar.setSearchImageColor(color: orangeColor)
+        searchBar.setTextFieldClearButtonColor(color: orangeColor)
+        
     }
     
     func doSearch(searchString: String, useOffset: Bool) {
@@ -91,7 +99,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = UIColor.init(hex: "FF7112")
+        navigationController?.navigationBar.barTintColor = UIColor.white // UIColor.init(hex: "FF7112")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -131,7 +139,7 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
         
     }
     
-    
+    /*
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -141,8 +149,8 @@ class PlacesListViewController: UIViewController, UICollectionViewDataSource, UI
         // dimension for the cell's width and height.
         
         let width: CGFloat = collectionView.bounds.width/2 - 20
-        return CGSize(width: width, height: 250)
-    }
+        return CGSize(width: width, height: 180)
+    }*/
     
     
     // MARK:- Search view functions

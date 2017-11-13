@@ -23,6 +23,7 @@ class SignupViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         City(name: "Toronto, ON, Canada", imageName: "toronto", imageUrl: nil),
         City(name: "New York, NY, United States", imageName: "newyork", imageUrl: nil),
         City(name: "Moscow, Russia", imageName: "moscow", imageUrl: nil),
+        City(name: "Manhattan Beach, CA, United States", imageName: "manhattanbeach", imageUrl: nil),
         City(name: "Shanghai, China", imageName: "shanghai", imageUrl: nil),
         City(name: "Berlin, Germany", imageName: "berlin", imageUrl: nil),
         City(name: "Paris, France", imageName: "paris", imageUrl: nil)

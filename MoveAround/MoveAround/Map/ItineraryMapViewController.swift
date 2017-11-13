@@ -11,6 +11,7 @@ import MapKit
 
 class ItineraryMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var cameraImage: UIImageView!
     @IBOutlet weak var mapView: MapView!
     var places: [Place] = [Place]()
     var image: UIImage?
@@ -19,6 +20,7 @@ class ItineraryMapViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewDidLoad()
         mapView.places = places
         mapView.parentVC = self
+        cameraImage.tintColorDidChange()
     }
 
     override func didReceiveMemoryWarning() {

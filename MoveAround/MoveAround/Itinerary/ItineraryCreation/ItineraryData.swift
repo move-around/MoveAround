@@ -10,7 +10,9 @@ import UIKit
 
 class ItineraryData: NSObject {
 
-    static let itineraryList = ["San Francisco, CA, United States": ["touristItinerary": touristItineraryForSF]]
+    static let itineraryList = ["San Francisco, CA, United States": ["touristItinerary": touristItineraryForSF],
+                                "Manhattan Beach, CA, United States": ["touristItinerary": touristItineraryForManhattanBeach]
+                                ]
     // Demo Itinerary
     static let touristItineraryForSF = [[["hollywood-cafe-san-francisco","Breakfast at"],
                                          ["pier-39-san-francisco",""],
@@ -26,5 +28,19 @@ class ItineraryData: NSObject {
                                          ["golden-gate-bridge-san-francisco",""],
                                          ["crissy-field-center-san-francisco-2",""],
                                          ["roma-antica-san-francisco-3","Dinner at"]]]
-
+    
+    static let touristItineraryForManhattanBeach = [[["north-end-caffe-manhattan-beach-3","Breakfast at"],
+                                          ["manhattan-village-manhattan-beach-2",""],
+                                          ["manhattan-beach-post-manhattan-beach","Lunch at"],
+                                          ["manhattan-beach-bike-path-manhattan-beach",""],
+                                          ["downtown-manhattan-beach-manhattan-beach",""],
+                                          ["little-sister-manhattan-beach","Dinner at"],
+                                          ["strand-bar-manhattan-beach","Drinks at"]],
+                                         [["corner-bakery-cafe-manhattan-beach","Breakfast at"],
+                                          ["hermosa-beach-pier-hermosa-beach",""],
+                                          ["marthas-22nd-street-grill-hermosa-beach","Lunch at"],
+                                          ["paradis-hermosa-beach-2",""],
+                                          ["palos-verdes-beach-palos-verdes-estates",""],
+                                          ["del-amo-fashion-center-torrance",""],
+                                          ["paul-martins-american-grill-el-segundo-3","Dinner at"]]]
 }
