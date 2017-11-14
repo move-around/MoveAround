@@ -459,12 +459,12 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Friday" id="adm-Yd-K88">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;- Thursday" id="v50-gW-buA">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Thursday" id="v50-gW-buA">
                             <connections>
                                 <action selector="loadPreviousDayItinerary:" destination="6Gn-SX-mRE" id="JlR-bP-yQA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Saturday -&gt;" id="Uy6-VP-7dn">
+                        <barButtonItem key="rightBarButtonItem" title="Saturday &gt;" id="Uy6-VP-7dn">
                             <connections>
                                 <action selector="loadNextDayItinerary:" destination="6Gn-SX-mRE" id="NGM-gU-sax"/>
                             </connections>
@@ -627,7 +627,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wad-5W-7qc"/>
-        <segue reference="ef7-c7-YCd"/>
+        <segue reference="L8s-K6-hcn"/>
         <segue reference="06e-T4-VCy"/>
     </inferredMetricsTieBreakers>
 </document>

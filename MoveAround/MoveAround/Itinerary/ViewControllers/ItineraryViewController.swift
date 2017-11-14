@@ -50,7 +50,7 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
                 let durationInDays = Int(round(dateInterval.duration/86400)) + 1
                 if (durationInDays > 1) {
                     let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
-                    self.nextDayButton.title = (tomorrow?.dayName())! + " ->"
+                    self.nextDayButton.title = (tomorrow?.dayName())! + " >"
                     nextDayButton.isEnabled = true
                 }
             }
@@ -89,13 +89,13 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
         if (yesterday! >= currentItinerary.startDate!) {
             prevDayButton.isEnabled = true
-            prevDayButton.title = "<- " + (yesterday?.dayName())!
+            prevDayButton.title = "< " + (yesterday?.dayName())!
         }
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
         if (tomorrow! <= currentItinerary.endDate!) {
             nextDayButton.isEnabled = true
-            nextDayButton.title = (tomorrow?.dayName())! + " ->"
+            nextDayButton.title = (tomorrow?.dayName())! + " >"
         }
         
         dayLabel.title = currentDate?.toStringWithYear()
@@ -118,7 +118,7 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
         dayLabel.title = currentDate?.toStringWithYear()
         
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
-        nextDayButton.title = (tomorrow?.dayName())! + " ->"
+        nextDayButton.title = (tomorrow?.dayName())! + " >"
         nextDayButton.isEnabled = true
 
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
@@ -127,7 +127,7 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
             prevDayButton.title = ""
         }
         else {
-            prevDayButton.title = "<- " + (yesterday?.dayName())!
+            prevDayButton.title = "< " + (yesterday?.dayName())!
         }
         reloadDayItinerary()
     }
@@ -146,7 +146,7 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
         dayLabel.title = currentDate?.toStringWithYear()
 
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDate!)
-        prevDayButton.title = "<- " + (yesterday?.dayName())!
+        prevDayButton.title = "< " + (yesterday?.dayName())!
         prevDayButton.isEnabled = true
 
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: currentDate!)
@@ -156,7 +156,7 @@ class ItineraryViewController: UIViewController, UICollectionViewDelegate, UICol
             nextDayButton.title = ""
         }
         else {
-            nextDayButton.title = (tomorrow?.dayName())! + " ->"
+            nextDayButton.title = (tomorrow?.dayName())! + " >"
         }
         reloadDayItinerary()
     }
