@@ -73,13 +73,13 @@ class ItineraryData: NSObject {
                                          ["the-coffee-lab-toronto-2",""],
                                          ["her-fathers-cider-bar-and-kitchen-toronto","Dinner at"],
                                          ["cc-lounge-and-whisky-bar-toronto-2","Drinks at"],
-                                         ["fly-2-0-toronto-2",""]],
+                                         ["cube-toronto",""]],
                                        [["lolas-kitchen-toronto","Breakfast at"],
                                             ["the-distillery-district-toronto",""],
                                             ["antler-kitchen-and-bar-toronto","Lunch at"],
                                             ["the-coffee-lab-toronto-2",""],
                                             ["her-fathers-cider-bar-and-kitchen-toronto","Dinner at"],
                                             ["cc-lounge-and-whisky-bar-toronto-2","Drinks at"],
-                                            ["fly-2-0-toronto-2",""]]]
+                                            ["cube-toronto",""]]]
 }
 
