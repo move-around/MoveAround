@@ -11,7 +11,8 @@ import UIKit
 class ItineraryData: NSObject {
 
     static let itineraryList = ["San Francisco, CA, United States": ["touristItinerary": touristItineraryForSF, "foodieItinerary": foodieItineraryForSF],
-                                "Manhattan Beach, CA, United States": ["touristItinerary": touristItineraryForManhattanBeach]
+                                "Manhattan Beach, CA, United States": ["touristItinerary": touristItineraryForManhattanBeach],
+                                "Toronto, ON, Canada": ["partyItinerary": partyItineraryForToronto]
                                 ]
     // Demo Itinerary
     static let touristItineraryForSF = [[["hollywood-cafe-san-francisco","Breakfast at"],
@@ -65,4 +66,20 @@ class ItineraryData: NSObject {
                                           ["palos-verdes-beach-palos-verdes-estates",""],
                                           ["del-amo-fashion-center-torrance",""],
                                           ["paul-martins-american-grill-el-segundo-3","Dinner at"]]]
+    
+    static let partyItineraryForToronto = [[["lolas-kitchen-toronto","Breakfast at"],
+                                         ["the-distillery-district-toronto",""],
+                                         ["antler-kitchen-and-bar-toronto","Lunch at"],
+                                         ["the-coffee-lab-toronto-2",""],
+                                         ["her-fathers-cider-bar-and-kitchen-toronto","Dinner at"],
+                                         ["cc-lounge-and-whisky-bar-toronto-2","Drinks at"],
+                                         ["fly-2-0-toronto-2",""]],
+                                       [["lolas-kitchen-toronto","Breakfast at"],
+                                            ["the-distillery-district-toronto",""],
+                                            ["antler-kitchen-and-bar-toronto","Lunch at"],
+                                            ["the-coffee-lab-toronto-2",""],
+                                            ["her-fathers-cider-bar-and-kitchen-toronto","Dinner at"],
+                                            ["cc-lounge-and-whisky-bar-toronto-2","Drinks at"],
+                                            ["fly-2-0-toronto-2",""]]]
 }
+
