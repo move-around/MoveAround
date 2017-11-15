@@ -130,8 +130,11 @@ extension PlaceViewController : CalendarDateRangePickerViewControllerDelegate {
         
         Itinerary.currentItinerary = itinerary
         
-        
-        ItineraryCreator.generateItinerary(itinerary: Itinerary.currentItinerary)
+        if let itineraryData = ItineraryData.itineraryList[itinerary.destination!]!["touristItinerary"] {
+            itinerary.dayItineraries = Itinerary.loadItinerary(itineraryData: itineraryData).dayItineraries
+        } else {
+            ItineraryCreator.generateItinerary(itinerary: Itinerary.currentItinerary)
+        }
 
         
         let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)

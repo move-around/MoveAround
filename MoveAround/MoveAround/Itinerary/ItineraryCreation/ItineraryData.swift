@@ -10,7 +10,7 @@ import UIKit
 
 class ItineraryData: NSObject {
 
-    static let itineraryList = ["San Francisco, CA, United States": ["touristItinerary": touristItineraryForSF],
+    static let itineraryList = ["San Francisco, CA, United States": ["touristItinerary": touristItineraryForSF, "foodieItinerary": foodieItineraryForSF],
                                 "Manhattan Beach, CA, United States": ["touristItinerary": touristItineraryForManhattanBeach]
                                 ]
     // Demo Itinerary
@@ -35,6 +35,21 @@ class ItineraryData: NSObject {
                                          ["clarion-alley-san-francisco",""],
                                          ["foreign-cinema-san-francisco","Dinner at"],
                                          ["bi-rite-creamery-san-francisco",""]]]
+    
+    static let foodieItineraryForSF = [[["outerlands-san-francisco", "Breakfast at"],
+                                        ["rose-garden-san-francisco", ""],
+                                        ["dragon-beaux-san-francisco", "Lunch at"],
+                                        ["home-san-francisco-28", "Coffee at"],
+                                        ["alamo-square-san-francisco", ""],
+                                        ["liholiho-yacht-club-san-francisco-2", "Dinner at"],
+                                        ["shakedown-san-francisco", ""]],
+                                       [["morning-due-cafe-san-francisco", "Breakfast at"],
+                                        ["clarion-alley-san-francisco", ""],
+                                        ["ichido-san-francisco-6", "Lunch at"],
+                                        ["special-xtra-2-san-francisco", ""],
+                                        ["san-francisco-museum-of-modern-art-san-francisco-6", ""],
+                                        ["swan-oyster-depot-san-francisco", "Dinner at"],
+                                        ["hi-lo-club-san-francisco", "Drinks at"]]]
     
     static let touristItineraryForManhattanBeach = [[["north-end-caffe-manhattan-beach-3","Breakfast at"],
                                           ["manhattan-village-manhattan-beach-2",""],
