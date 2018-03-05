@@ -24,18 +24,23 @@ class YelpPlace: Place {
         
         phoneNumber = dictionary["phone"] as? String
         
-        
+        if let coordinates = dictionary["coordinates"] as? [String:Double] {
+            self.longitude = coordinates["longitude"]
+            self.latitude = coordinates["latitude"]
+            self.positionVector = Vector([self.latitude!, self.longitude!])
+        }
+
         let location = dictionary["location"] as? NSDictionary
         var address = ""
         if location != nil {
-            if let coordinates = location!["coordinate"] as? [String:Double] {
-                self.longitude = coordinates["longitude"]
-                self.latitude = coordinates["latitude"]
-                self.positionVector = Vector([self.latitude!, self.longitude!])
+            if let address1 = location!["address1"] as? String, !address1.isEmpty {
+                address = "\(address1)"
             }
-            let addressArray = location!["address"] as? NSArray
-            if addressArray != nil && addressArray!.count > 0 {
-                address = addressArray![0] as! String
+            if let address2 = location!["address2"] as? String, !address2.isEmpty  {
+                address += ", \(address2)"
+            }
+            if let address3 = location!["address3"] as? String, !address3.isEmpty {
+                address += ", \(address3)"
             }
             
             let neighborhoods = location!["neighborhoods"] as? NSArray
@@ -48,18 +53,18 @@ class YelpPlace: Place {
         }
         self.address = address
         
-        let categoriesArray = dictionary["categories"] as? [[String]]
+        let categoriesArray = dictionary["categories"] as? [NSDictionary]
         if categoriesArray != nil {
-            var categoryNames = [String]()
-            var internalCategoryNames = [String]()
+            var categoryAliases = [String]()
+            var categoryTitles = [String]()
             for category in categoriesArray! {
-                let categoryName = category[0]
-                let internalCategoryName = category[1]
-                categoryNames.append(categoryName)
-                internalCategoryNames.append(internalCategoryName)
+                let categoryAlias = category["alias"] as! String
+                let categoryTitle = category["title"] as! String
+                categoryAliases.append(categoryAlias)
+                categoryTitles.append(categoryTitle)
             }
-            categories = categoryNames.joined(separator: ", ")
-            internalCategories = internalCategoryNames.joined(separator: ",")
+            categories = categoryTitles.joined(separator: ", ")
+            internalCategories = categoryAliases.joined(separator: ",")
             print("Categories for \(name!) = \(categories!)")
         } else {
             categories = nil
@@ -73,11 +78,10 @@ class YelpPlace: Place {
             distance = nil
         }
         
-        let ratingImageURLString = dictionary["rating_img_url_large"] as? String
-        if ratingImageURLString != nil {
-            ratingImageURL = URL(string: ratingImageURLString!)
-        } else {
-            ratingImageURL = nil
+        let rating = dictionary["rating"] as? NSNumber
+        if rating != nil {
+            ratingImage = "yelp_small_" + String(describing: rating!)
+            print(ratingImage!)
         }
         
         let resUrl = dictionary["reservation_url"] as? String
@@ -108,7 +112,7 @@ class YelpPlace: Place {
 //    class func searchWithId(id: String, completion: @escaping ([Place]?, Error?) -> Void) {
 //        _ = YelpClient.sharedInstance.searchWithId(id, completion: completion)
 //    }
-//    
+//
     
   class func searchWithTerm(term: String, offset: Int, completion: @escaping ([Place]?, Error?) -> Void) {
     _ = YelpClient.sharedInstance.searchWithTerm(term, offset: offset, completion: completion)

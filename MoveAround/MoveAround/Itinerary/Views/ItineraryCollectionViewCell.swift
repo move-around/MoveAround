@@ -42,7 +42,7 @@ class ItineraryCollectionViewCell: UICollectionViewCell {
                     placeItinerary = PlaceItinerary()
                 }
                 placeItinerary?.place = place!
-                categoriesLabel.text = place?.categories!
+                categoriesLabel.text = place?.categories ?? ""
             }
         }
     }

@@ -34,9 +34,10 @@ class PlaceDetailViewController: UIViewController  {
             placeImageView.setImageWith(url)
         }
         nameLabel.text = place.name
-        if let url = place.ratingImageURL {
-            ratingImageView.setImageWith(url)
+        if let ratingImageString = place.ratingImage {
+            ratingImageView.image = UIImage(named: ratingImageString)
         }
+        
         addressLabel.text = place.address
         categoriesLabel.text = place.categories
         let reviewCount = String(describing: place.reviewCount!)

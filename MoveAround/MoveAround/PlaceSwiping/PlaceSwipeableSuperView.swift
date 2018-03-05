@@ -97,7 +97,7 @@ class PlaceSwipeableSuperView: UIView, PlaceSwipeableViewDelegate {
     
     func populatePlaces() {
         // For now, let's just do a Yelp search.
-        let sort = YelpSortMode.highestRated
+        let sort = YelpSortMode.rating
 
         let categories = TempCache.sharedInstance.itinerary?.interests.map{$0.yelpCode}
         let location = TempCache.sharedInstance.itinerary?.destination

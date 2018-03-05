@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Alamofire (4.5.1)
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
@@ -69,6 +70,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - Alamofire
   - BDBOAuth1Manager
   - CalendarDateRangePickerViewController
   - CHPulseButton
@@ -84,6 +86,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CalendarDateRangePickerViewController: 9e82a36a21ad7338f4e21a314469bfabe1f738fb
@@ -103,6 +106,6 @@ SPEC CHECKSUMS:
   Parse: cdc0f1f975ee8be0409e66f21b05df4ae067047c
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
 
-PODFILE CHECKSUM: 1d7e0dc778063a152add04041c8e4ca2e7a3fee5
+PODFILE CHECKSUM: 32cbe7057aeda4f8fa91f32a1fce8f4daa976ae4
 
 COCOAPODS: 1.3.1

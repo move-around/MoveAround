@@ -10,6 +10,7 @@
 		640FBF191FB6A8FA00E3354A /* ArchetypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640FBF181FB6A8FA00E3354A /* ArchetypeCell.swift */; };
 		640FBF1D1FB6A9D600E3354A /* Archetype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640FBF1C1FB6A9D600E3354A /* Archetype.swift */; };
 		640FBF211FB7D57400E3354A /* GooglePlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640FBF201FB7D57400E3354A /* GooglePlacesClient.swift */; };
+		641B3B2B20467EC700E90FB2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641B3B2C20467EC700E90FB2 /* Alamofire.framework */; };
 		644ACFB01F91E424003C5B97 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A04C231F8DDC8D00E03A19 /* YelpClient.swift */; };
 		644ACFB11F91E435003C5B97 /* YelpPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BB8F601F91D1BE00743DDA /* YelpPlace.swift */; };
 		646340341FB80CC900772784 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646340331FB80CC900772784 /* CityCell.swift */; };
@@ -83,6 +84,7 @@
 		640FBF181FB6A8FA00E3354A /* ArchetypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchetypeCell.swift; sourceTree = "<group>"; };
 		640FBF1C1FB6A9D600E3354A /* Archetype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archetype.swift; sourceTree = "<group>"; };
 		640FBF201FB7D57400E3354A /* GooglePlacesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesClient.swift; sourceTree = "<group>"; };
+		641B3B2C20467EC700E90FB2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		646340331FB80CC900772784 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		646340351FB81BDF00772784 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		646340371FB8257500772784 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641B3B2B20467EC700E90FB2 /* Alamofire.framework in Frameworks */,
 				E3A093B5A9E469A1282E901F /* Pods_MoveAround.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +301,7 @@
 		C2E5DDB1E23CA6CF261FC01A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				641B3B2C20467EC700E90FB2 /* Alamofire.framework */,
 				F7DF9A3B3FD04FA3A7BE3301 /* Pods_MoveAround.framework */,
 			);
 			name = Frameworks;
@@ -506,6 +510,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MoveAround/Pods-MoveAround-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CHPulseButton/CHPulseButton.framework",
@@ -526,6 +531,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHPulseButton.framework",

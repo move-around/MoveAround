@@ -129,17 +129,18 @@ extension PlaceViewController : CalendarDateRangePickerViewControllerDelegate {
         itinerary.dayItineraries = [DayItinerary?](repeating: nil, count: durationInDays)
         
         Itinerary.currentItinerary = itinerary
+        let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
+        
+        let itineraryLoadingView = itineraryStoryboard.instantiateViewController(withIdentifier: "loadingScreenViewController") as? LoadingScreenViewController
+
         
         if let itineraryData = ItineraryData.itineraryList[itinerary.destination!]!["touristItinerary"] {
-            itinerary.dayItineraries = Itinerary.loadItinerary(itineraryData: itineraryData).dayItineraries
+            itineraryLoadingView?.itineraryData = itineraryData
         } else {
             ItineraryCreator.generateItinerary(itinerary: Itinerary.currentItinerary)
         }
 
-        
-        let itineraryStoryboard = UIStoryboard(name: "Itinerary", bundle: nil)
-        
-        let itineraryLoadingView = itineraryStoryboard.instantiateViewController(withIdentifier: "loadingScreenViewController")
+    
         //itineraryNavigationController.tabBarItem.title = "Itinerary"
         let window: UIWindow = UIApplication.shared.keyWindow!
         window.rootViewController = itineraryLoadingView

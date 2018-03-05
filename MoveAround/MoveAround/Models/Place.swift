@@ -15,7 +15,7 @@ class Place: NSObject {
     var internalCategories: String?
     var distance: String?
     var hours: String?
-    var ratingImageURL: URL?
+    var ratingImage: String?
     var reviewCount: NSNumber?
     var itineraryTime: String?  // Will probs change be a enum/struct
     var latitude: Double?

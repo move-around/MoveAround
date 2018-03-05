@@ -4,47 +4,31 @@
 //
 
 import UIKit
+import Alamofire
 
-import AFNetworking
-import BDBOAuth1Manager
+let yelpAPIKey = "vt-PqUb8fPEZv5CTM506vXETrLfNhupiEM8w2-qctjvlp5sboYZlki9sWXwu2l-WFBby57zlyc_58xnfwu1lk8RbGnlXi2I262wZaIrewDtkeWfM5uCD2FsUnH3xWXYx"
+let baseUrl = URL(string: "https://api.yelp.com/v3/")
 
-// You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
-let yelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA"
-let yelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ"
-let yelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV"
-let yelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y"
-
-enum YelpSortMode: Int {
-    case bestMatched = 0, distance, highestRated
+enum YelpSortMode: String {
+    case best_match, distance, rating, review_count
 }
 
-class YelpClient: BDBOAuth1RequestOperationManager {
-    var accessToken: String!
-    var accessSecret: String!
+class YelpClient {
+    var apiKey: String!
+    var headers: HTTPHeaders!
+
+    static let sharedInstance = YelpClient(apiKey: yelpAPIKey)
     
-    //MARK: Shared Instance
-    
-    static let sharedInstance = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    init(apiKey key: String!) {
+        self.apiKey = key
+        self.headers = ["Authorization": "Bearer \(key!)"]
     }
     
-    init(consumerKey key: String!, consumerSecret secret: String!, accessToken: String!, accessSecret: String!) {
-        self.accessToken = accessToken
-        self.accessSecret = accessSecret
-        let baseUrl = URL(string: "https://api.yelp.com/v2/")
-        super.init(baseURL: baseUrl, consumerKey: key, consumerSecret: secret);
-        
-        let token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
-        self.requestSerializer.saveAccessToken(token)
-    }
-    
-    func searchWithTerm(_ term: String, offset: Int, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
+    func searchWithTerm(_ term: String, offset: Int, completion: @escaping ([Place]?, Error?) -> Void) {
         return searchWithTerm(term, location: nil, sort: nil, categories: nil, deals: nil, radius: nil, limit: nil, offset: offset, completion: completion)
     }
     
-    func searchWithTerm(_ term: String?, location: String?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) -> AFHTTPRequestOperation {
+    func searchWithTerm(_ term: String?, location: String?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, radius: Float?, limit: Int?, offset: Int?, completion: @escaping ([Place]?, Error?) -> Void) {
         // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
         
         var parameters: [String : AnyObject] = [String :AnyObject]()
@@ -60,15 +44,15 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         }
         
         if sort != nil {
-            parameters["sort"] = sort!.rawValue as AnyObject?
+            parameters["sort_by"] = sort!.rawValue as AnyObject?
         }
-        
+
         if categories != nil && categories!.count > 0 {
-            parameters["category_filter"] = (categories!).joined(separator: ",") as AnyObject?
+            parameters["categories"] = (categories!).joined(separator: ",") as AnyObject?
         }
-        
-        if deals != nil {
-            parameters["deals_filter"] = deals! as AnyObject?
+
+        if deals != nil && deals! {
+            parameters["attributes"] = "deals" as AnyObject
         }
         
         if radius != nil && radius! > 0 {
@@ -82,35 +66,42 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         if offset != nil {
             parameters["offset"] = offset! as NSNumber?
         }
-        
         print(parameters)
         
-        return self.get("search", parameters: parameters,
-                        success: { (operation: AFHTTPRequestOperation, response: Any) -> Void in
-                            if let response = response as? [String: Any]{
-                                let dictionaries = response["businesses"] as? [NSDictionary]
-                                if dictionaries != nil {
-                                    completion(YelpPlace.places(array: dictionaries!), nil)
-                                }
-                            }
-        },
-                        failure: { (operation: AFHTTPRequestOperation?, error: Error) -> Void in
-                            print(error)
-                            completion(nil, error)
-        })!
+        let apiUrl = baseUrl?.appendingPathComponent("businesses/search")
+        
+        Alamofire.request(apiUrl!, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: self.headers).responseJSON { (response) in
+            if let error = response.result.error {
+                print(error)
+                completion(nil, error)
+            }
+            if let response = response.result.value as? [String: Any]{
+                print(response)
+                let dictionaries = response["businesses"] as? [NSDictionary]
+                if dictionaries != nil {
+                    completion(YelpPlace.places(array: dictionaries!), nil)
+                }
+            }
+        }
+
     }
 
-    func getBusinessForId(id: String, completion: @escaping (Place?, Error?) -> Void) -> AFHTTPRequestOperation {
-        return self.get("business/"+id, parameters: nil,
-                        success: { (operation: AFHTTPRequestOperation, response: Any) -> Void in
-                            if let response = response as? NSDictionary{
-                                completion(YelpPlace(dictionary: response), nil)
-                            }
-        },
-                        failure: { (operation: AFHTTPRequestOperation?, error: Error) -> Void in
-                            print(error)
-                            completion(nil, error)
-        })!
+
+    func getBusinessForId(id: String, completion: @escaping (Place?, Error?) -> Void) {
+        print("inside getBusinessForId: \(id)")
+        sleep(1) // Temporarily here to deal with Yelp throttling
+        let apiUrl = baseUrl?.appendingPathComponent("businesses/\(id)")
+        Alamofire.request(apiUrl!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: self.headers).responseJSON { (response) in
+            if let error = response.result.error {
+                print(error)
+                completion(nil, error)
+            }
+            if let response = response.result.value as? NSDictionary {
+                print(response)
+                completion(YelpPlace(dictionary: response), nil)
+            }
+        }
+
     }
     
 }
